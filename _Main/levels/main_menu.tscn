@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://ckcd5xpra2wxe"]
+
+[ext_resource type="Texture2D" uid="uid://c3byqtfvj20cv" path="res://assets/ui_gui_ux/PNG/posthuman_title_card.png" id="1_unjrb"]
+[ext_resource type="FontFile" uid="uid://nttplfmrq8br" path="res://assets/ui_gui_ux/fonts/ArchivoBlack-Regular.ttf" id="2_hcywl"]
+[ext_resource type="Shader" uid="uid://6v0ersxveh41" path="res://shaders/crt_vhs.gdshader" id="3_hcywl"]
+
+[sub_resource type="Theme" id="Theme_unjrb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcywl"]
+bg_color = Color(0, 0, 0, 0.40392157)
+skew = Vector2(-0.025, -0.015)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_pthtg"]
+default_font = ExtResource("2_hcywl")
+default_font_size = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pthtg"]
+shader = ExtResource("3_hcywl")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.15600000741
+shader_parameter/scanlines_width = 0.3510000166725
+shader_parameter/grille_opacity = 0.3090000146775
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 1.0000000475
+shader_parameter/roll_variation = 4.00000018674012
+shader_parameter/distort_intensity = 0.1730000082175
+shader_parameter/noise_opacity = 0.18800000893
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.10000000475
+shader_parameter/aberration = 0.01000004797499998
+shader_parameter/brightness = 1.955
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.74400003534
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.095
+shader_parameter/vignette_opacity = 0.586000027835
+
+[node name="MainMenu" type="Control" unique_id=1101505415]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundContainer" type="MarginContainer" parent="." unique_id=648222829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="BackgroundContainer" unique_id=1740807554]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("1_unjrb")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="ButtonsPanels" type="Panel" parent="." unique_id=226264380]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42552084
+anchor_top = 0.5046296
+anchor_right = 0.55468744
+anchor_bottom = 0.82777774
+grow_vertical = 2
+theme = SubResource("Theme_unjrb")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcywl")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsPanels" unique_id=1072463667]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044354852
+anchor_top = 0.0573066
+anchor_right = 0.95
+anchor_bottom = 0.9499999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ButtonsPanels/VBoxContainer" unique_id=1594657611]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_pthtg")
+theme_override_colors/font_color = Color(0.7411765, 0.87058824, 0.78039217, 1)
+text = "NEW GAME_"
+alignment = 0
+
+[node name="Button2" type="Button" parent="ButtonsPanels/VBoxContainer" unique_id=1050107488]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_pthtg")
+theme_override_colors/font_color = Color(0.78431374, 0.32156864, 0.45882353, 1)
+text = "CONTINUE://_"
+alignment = 0
+
+[node name="Button3" type="Button" parent="ButtonsPanels/VBoxContainer" unique_id=761807027]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_pthtg")
+theme_override_colors/font_color = Color(0.7490196, 0.8392157, 0.7490196, 1)
+text = "OPTIONS_"
+alignment = 0
+
+[node name="Button4" type="Button" parent="ButtonsPanels/VBoxContainer" unique_id=1715149621]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_pthtg")
+theme_override_colors/font_color = Color(0.78431374, 0.8862745, 0.75686276, 1)
+text = "QUIT_"
+alignment = 0
+
+[node name="CanvasLayer_Shaders" type="CanvasLayer" parent="." unique_id=1028470866]
+
+[node name="VHSShader" type="ColorRect" parent="CanvasLayer_Shaders" unique_id=169738179]
+material = SubResource("ShaderMaterial_pthtg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

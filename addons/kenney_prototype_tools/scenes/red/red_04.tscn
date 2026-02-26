@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b023mro2g8bdh"]
+
+[ext_resource type="Material" uid="uid://b8s7ei0hpivs0" path="res://addons/kenney_prototype_tools/materials/red/material_04.tres" id="1_ujy2i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_orukj"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rhwmi"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Cube" type="Node3D" unique_id=781735275]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1521518472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+material_override = ExtResource("1_ujy2i")
+mesh = SubResource("BoxMesh_orukj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh" unique_id=1888743327]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/StaticBody3D" unique_id=111983854]
+shape = SubResource("ConcavePolygonShape3D_rhwmi")

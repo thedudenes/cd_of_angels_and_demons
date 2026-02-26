@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://eerkxg5xi513"]
+
+[ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/Cold Sunset Equirect.png" id="1_2r0ec"]
+[ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
+[ext_resource type="PackedScene" uid="uid://baa4mr215itg8" path="res://addons/kenney_prototype_tools/scenes/dark/dark_06.tscn" id="3_rsc05"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ki0e4"]
+panorama = ExtResource("1_2r0ec")
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_ndqj5"]
+sky_material = SubResource("PanoramaSkyMaterial_ki0e4")
+
+[sub_resource type="Environment" id="Environment_dyftu"]
+background_mode = 2
+sky = SubResource("Sky_ndqj5")
+ambient_light_color = Color(0.5058824, 0.2, 0.19607843, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_sun_scatter = 0.3
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(1, 0.48000002, 0.48000002, 1)
+adjustment_enabled = true
+adjustment_brightness = 1.08
+adjustment_contrast = 1.01
+
+[node name="test_level" type="Node3D" unique_id=1050110730]
+
+[node name="evniroment" type="Node3D" parent="." unique_id=2102353068]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="evniroment" unique_id=1693356828]
+transform = Transform3D(-0.55629575, -0.5875946, -0.5875947, 0, -0.7071068, 0.7071067, -0.83098435, 0.39336047, 0.39336053, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="evniroment" unique_id=474102526]
+environment = SubResource("Environment_dyftu")
+
+[node name="Player" parent="." unique_id=850132343 instance=ExtResource("2_dyftu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006733179, 0)
+move_speed = 6.0
+
+[node name="prototyping" type="Node3D" parent="." unique_id=54370828]
+
+[node name="Cube" parent="." unique_id=1964916918 instance=ExtResource("3_rsc05")]
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
+
+[node name="Cube2" parent="." unique_id=390932196 instance=ExtResource("3_rsc05")]
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, 0)
+
+[node name="Cube3" parent="." unique_id=492461417 instance=ExtResource("3_rsc05")]
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, -20)
+
+[node name="Cube4" parent="." unique_id=1620598566 instance=ExtResource("3_rsc05")]
+transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, 0, -0.25, -20)
