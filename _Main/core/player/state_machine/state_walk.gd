@@ -25,3 +25,7 @@ func update(delta: float) -> void:
 		player.rotation.y = lerp_angle(player.rotation.y, target_rotation, rotation_speed * delta)
 	else:
 		switch_state.emit("idle")
+
+func input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("melee_attack"):
+		switch_state_emit("melee_attack")

@@ -9,7 +9,6 @@ extends Node3D
 func _ready() -> void:
 # Disconnects from parent transformation matrix
 	set_as_top_level(true)
-	
 
 func _physics_process(_delta: float) -> void:
 	_camera_zoom()

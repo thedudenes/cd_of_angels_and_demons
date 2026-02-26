@@ -3,6 +3,7 @@ extends PlayerState
 var input_dir: Vector2
 
 func enter() -> void:
+	initialize()
 	if animations:
 		animations.play("universal_anim_library/Sword_Idle")
 	
@@ -14,7 +15,11 @@ func update(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	if input_dir.length() > 0:
 		switch_state_emit("walk")
-		
+
 func input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("melee_attack"):
 		switch_state_emit("melee_attack")
+
+func animation_finished(s:String) -> void:
+	if s == "universal_anim_library/Sword_Idle":
+		switch_state_emit("idle")
