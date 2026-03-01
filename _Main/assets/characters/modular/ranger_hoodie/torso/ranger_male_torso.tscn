@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://b0yhbivt6ap6h"]
-
-[ext_resource type="PackedScene" uid="uid://br27x2kon23fo" path="res://_Main/assets/characters/modular/ranger_hoodie/torso/ranger_male_torso.glb" id="1_2f5lf"]
-
-[node name="ranger_male_torso" unique_id=189812718 instance=ExtResource("1_2f5lf")]

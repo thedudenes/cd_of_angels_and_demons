@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://0h7vt3uvt5wh"]
-
-[ext_resource type="PackedScene" uid="uid://be302oe8t2dv7" path="res://_Main/assets/characters/modular/ranger_hoodie/hood/ranger_male_hood.glb" id="1_ptpcv"]
-
-[node name="ranger_male_hood" unique_id=1984400753 instance=ExtResource("1_ptpcv")]

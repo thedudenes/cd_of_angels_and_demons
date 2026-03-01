@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://djtuwbrbm4lvj"]
-
-[ext_resource type="PackedScene" uid="uid://d4kwpy7jmu4of" path="res://_Main/assets/characters/modular/ranger_hoodie/boots/ranger_male_boots.glb" id="1_44dx2"]
-
-[node name="ranger_male_boots" unique_id=1144748682 instance=ExtResource("1_44dx2")]
