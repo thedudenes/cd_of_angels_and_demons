@@ -29,3 +29,5 @@ func update(delta: float) -> void:
 func input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("melee_attack"):
 		switch_state_emit("melee_attack")
+	if Input.is_action_just_pressed("roll"):
+		switch_state_emit("roll")
