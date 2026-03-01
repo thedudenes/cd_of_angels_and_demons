@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dg5n6qhd0j00t" path="res://_Main/assets/characters/quat_male_naked/male-naked-full-body_T_Superhero_Male_Normal.png" id="5_yh3te"]
 [ext_resource type="AnimationLibrary" uid="uid://dtxn4wh6wum8w" path="res://_Main/assets/animations/animation_library_one/universal_anim_library.res" id="6_5ohnk"]
 [ext_resource type="Script" uid="uid://bvow3rjmncepe" path="res://_Main/core/player/state_machine/machine_state.gd" id="9_2h7yj"]
+[ext_resource type="ArrayMesh" uid="uid://bgoyw4fk6aryq" path="res://_Main/assets/characters/hairstyles/char_hair_mesh.tres" id="9_4y4mf"]
 [ext_resource type="Script" uid="uid://cnc4bbo4ytc2b" path="res://_Main/core/player/state_machine/idle_state.gd" id="10_2h7yj"]
+[ext_resource type="ArrayMesh" uid="uid://r4hlaoo61p4a" path="res://_Main/assets/characters/hairstyles/char_beard_mesh.tres" id="10_twxi0"]
 [ext_resource type="Script" uid="uid://dlokn0wep0k4d" path="res://_Main/core/player/state_machine/melee_idle_state.gd" id="12_5imty"]
 [ext_resource type="Script" uid="uid://b3fvktjqgh47m" path="res://_Main/core/player/state_machine/state_walk.gd" id="12_vgkaa"]
 [ext_resource type="Script" uid="uid://bjomde6asalib" path="res://_Main/core/player/state_machine/melee_attack_state.gd" id="13_54lt1"]
@@ -643,6 +645,12 @@ skin = ExtResource("1_ggeck")
 [node name="SuperHero_Male" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1510624555]
 mesh = SubResource("ArrayMesh_54lt1")
 skin = ExtResource("1_ggeck")
+
+[node name="Hair" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1650450400]
+mesh = ExtResource("9_4y4mf")
+
+[node name="Beard" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=716783515]
+mesh = ExtResource("10_twxi0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1730600996]
 libraries/universal_anim_library = ExtResource("6_5ohnk")
