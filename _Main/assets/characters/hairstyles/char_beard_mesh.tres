@@ -6,7 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82jme"]
 resource_name = "MI_Hair_1.001"
 cull_mode = 2
-albedo_color = Color(0.65857285, 0.3632354, 0.14903116, 1)
+albedo_color = Color(0.65882355, 0.3647059, 0.14901961, 1)
 albedo_texture = ExtResource("1_mw2eu")
 normal_enabled = true
 normal_texture = ExtResource("2_w1qml")

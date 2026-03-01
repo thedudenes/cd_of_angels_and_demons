@@ -648,9 +648,11 @@ skin = ExtResource("1_ggeck")
 
 [node name="Hair" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1650450400]
 mesh = ExtResource("9_4y4mf")
+skin = ExtResource("1_ggeck")
 
 [node name="Beard" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=716783515]
 mesh = ExtResource("10_twxi0")
+skin = ExtResource("1_ggeck")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1730600996]
 libraries/universal_anim_library = ExtResource("6_5ohnk")

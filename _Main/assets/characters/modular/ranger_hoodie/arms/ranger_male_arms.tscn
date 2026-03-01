@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cv8y04f5yuiyi"]
+
+[ext_resource type="PackedScene" uid="uid://bf161sbvo13ps" path="res://_Main/assets/characters/modular/ranger_hoodie/arms/ranger_male_arms.glb" id="1_byxmf"]
+
+[node name="ranger_male_arms" unique_id=1636239706 instance=ExtResource("1_byxmf")]

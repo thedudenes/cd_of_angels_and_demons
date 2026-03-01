@@ -44,14 +44,14 @@ move_speed = 6.0
 
 [node name="prototyping" type="Node3D" parent="." unique_id=54370828]
 
-[node name="Cube" parent="." unique_id=1964916918 instance=ExtResource("3_rsc05")]
+[node name="Cube" parent="prototyping" unique_id=1964916918 instance=ExtResource("3_rsc05")]
 transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
 
-[node name="Cube2" parent="." unique_id=390932196 instance=ExtResource("3_rsc05")]
+[node name="Cube2" parent="prototyping" unique_id=390932196 instance=ExtResource("3_rsc05")]
 transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, 0)
 
-[node name="Cube3" parent="." unique_id=492461417 instance=ExtResource("3_rsc05")]
+[node name="Cube3" parent="prototyping" unique_id=492461417 instance=ExtResource("3_rsc05")]
 transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, -20)
 
-[node name="Cube4" parent="." unique_id=1620598566 instance=ExtResource("3_rsc05")]
+[node name="Cube4" parent="prototyping" unique_id=1620598566 instance=ExtResource("3_rsc05")]
 transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, 0, -0.25, -20)
