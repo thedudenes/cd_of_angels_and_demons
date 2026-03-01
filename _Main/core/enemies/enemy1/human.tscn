@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://vsfaqmy2tfkr"]
+
+[ext_resource type="Script" uid="uid://blouanjo2x8bp" path="res://_Main/core/enemies/enemy1/human.gd" id="1_d8ig4"]
+[ext_resource type="Script" uid="uid://c1up501krxolc" path="res://_Main/core/enemies/behaviour_machine.gd" id="2_b81n4"]
+[ext_resource type="Script" uid="uid://c8lniil00jqri" path="res://_Main/core/enemies/enemy1/behaviour/patrol.gd" id="3_1pseh"]
+[ext_resource type="Script" uid="uid://cu45odw27tjg5" path="res://_Main/core/enemies/enemy1/tasks/stay_still_and_patroll.gd" id="4_w8c7t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d8ig4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d8ig4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8c7t"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="Human" type="CharacterBody3D" unique_id=360165436]
+script = ExtResource("1_d8ig4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=576525871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_d8ig4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=430237530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_d8ig4")
+surface_material_override/0 = SubResource("StandardMaterial3D_w8c7t")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1509294746]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1726799299]
+
+[node name="BehaviourMachine" type="Node" parent="." unique_id=260797890 node_paths=PackedStringArray("animations", "enemy")]
+script = ExtResource("2_b81n4")
+animations = NodePath("../AnimationPlayer")
+enemy = NodePath("..")
+
+[node name="Agro" type="Node" parent="BehaviourMachine" unique_id=1281411044]
+
+[node name="HaayEstoyAgro" type="Node" parent="BehaviourMachine/Agro" unique_id=275324730]
+
+[node name="Flee" type="Node" parent="BehaviourMachine" unique_id=982044220]
+
+[node name="Patrol" type="Node" parent="BehaviourMachine" unique_id=1832406769]
+script = ExtResource("3_1pseh")
+injectables = Array[Dictionary]([{
+"animations": NodePath("../../AnimationPlayer")
+}])
+
+[node name="Still" type="Node" parent="BehaviourMachine/Patrol" unique_id=1591945266]
+script = ExtResource("4_w8c7t")
+
+[node name="PP" type="Node" parent="BehaviourMachine/Patrol" unique_id=1729335090]
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=519861333]
+transform = Transform3D(1, 0, 0, 0, -2.0129094e-07, 1, 0, -4.605, -4.371139e-08, 0, 1.5, 0.5)

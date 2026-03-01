@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/Cold Sunset Equirect.png" id="1_2r0ec"]
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
 [ext_resource type="PackedScene" uid="uid://baa4mr215itg8" path="res://addons/kenney_prototype_tools/scenes/dark/dark_06.tscn" id="3_rsc05"]
+[ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/enemy1/human.tscn" id="4_ki0e4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ki0e4"]
 panorama = ExtResource("1_2r0ec")
@@ -27,6 +28,10 @@ adjustment_enabled = true
 adjustment_brightness = 1.08
 adjustment_contrast = 1.01
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_rsc05"]
+vertices = PackedVector3Array(-0.49999982, 1.5, -0.49999988, -0.49999982, 1.5, 0.5000001, 0.5000002, 1.5, 0.5000001, 0.5000002, 1.5, -0.49999988)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
 [node name="test_level" type="Node3D" unique_id=1050110730]
 
 [node name="evniroment" type="Node3D" parent="." unique_id=2102353068]
@@ -45,13 +50,20 @@ move_speed = 6.0
 [node name="prototyping" type="Node3D" parent="." unique_id=54370828]
 
 [node name="Cube" parent="." unique_id=1964916918 instance=ExtResource("3_rsc05")]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
+transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, 0, -0.25, 0)
 
 [node name="Cube2" parent="." unique_id=390932196 instance=ExtResource("3_rsc05")]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, 0)
+transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, -19.999998, -0.25, 0)
 
 [node name="Cube3" parent="." unique_id=492461417 instance=ExtResource("3_rsc05")]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, -20)
+transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, -19.999998, -0.25, -19.999998)
 
 [node name="Cube4" parent="." unique_id=1620598566 instance=ExtResource("3_rsc05")]
-transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, 0, -0.25, -20)
+transform = Transform3D(19.999996, 0, 0, 0, 0.25, 0, 0, 0, 19.999996, 0, -0.25, -19.999998)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=935441676]
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
+navigation_mesh = SubResource("NavigationMesh_rsc05")
+
+[node name="Human" parent="." unique_id=360165436 instance=ExtResource("4_ki0e4")]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0, 0, 3)

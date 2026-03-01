@@ -1,14 +1,14 @@
-[gd_resource type="ArrayMesh" format=4 uid="uid://r4hlaoo61p4a"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://dk6qwjeby7anc"]
 
-[ext_resource type="Texture2D" uid="uid://bnk2o5d0hrm7y" path="res://_Main/assets/characters/hairstyles/character_beard_hair_T_Hair_1_BaseColor.png" id="1_mw2eu"]
-[ext_resource type="Texture2D" uid="uid://c4fsixhqlrs86" path="res://_Main/assets/characters/hairstyles/character_beard_hair_T_Hair_1_Normal.png" id="2_w1qml"]
+[ext_resource type="Texture2D" uid="uid://bnk2o5d0hrm7y" path="res://_Main/assets/characters/hairstyles/character_beard_hair_T_Hair_1_BaseColor.png" id="1_poc2v"]
+[ext_resource type="Texture2D" uid="uid://c4fsixhqlrs86" path="res://_Main/assets/characters/hairstyles/character_beard_hair_T_Hair_1_Normal.png" id="2_e0pr0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82jme"]
 resource_name = "MI_Hair_1.001"
 cull_mode = 2
-albedo_texture = ExtResource("1_mw2eu")
+albedo_texture = ExtResource("1_poc2v")
 normal_enabled = true
-normal_texture = ExtResource("2_w1qml")
+normal_texture = ExtResource("2_e0pr0")
 
 [resource]
 resource_name = "character_beard_hair_Plane_006"
