@@ -29,7 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func initialize_states() -> void:
 	var children = get_children().filter(func(child): return child is PlayerState)
 	for state: PlayerState in children:
-		print("STATE: ",state)
+		#print("STATE: ",state)
 		states[state.name.to_lower()] = state
 		state.animations = animations
 		state.player = player
