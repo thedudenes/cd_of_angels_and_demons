@@ -1,7 +1,6 @@
 extends CharacterBody3D
 class_name Enemy
 
-@export var raycast: RayCast3D
+@export var detection_area: Area3D
 
-func _ready() -> void:
-	pass
+var player: Player = null

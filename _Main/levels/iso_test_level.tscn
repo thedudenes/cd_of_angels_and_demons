@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/Cold Sunset Equirect.png" id="1_2r0ec"]
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
 [ext_resource type="PackedScene" uid="uid://baa4mr215itg8" path="res://addons/kenney_prototype_tools/scenes/dark/dark_06.tscn" id="3_rsc05"]
-[ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/enemy1/human.tscn" id="4_ki0e4"]
+[ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="4_ki0e4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ki0e4"]
 panorama = ExtResource("1_2r0ec")
@@ -65,5 +65,11 @@ transform = Transform3D(19.999996, 0, 0, 0, 0.25, 0, 0, 0, 19.999996, 0, -0.25, 
 transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
 navigation_mesh = SubResource("NavigationMesh_rsc05")
 
-[node name="Human" parent="." unique_id=360165436 instance=ExtResource("4_ki0e4")]
-transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0, 0, 3)
+[node name="Humanoid" parent="." unique_id=360165436 instance=ExtResource("4_ki0e4")]
+transform = Transform3D(0.9063078, 0, -0.42261827, 0, 1, 0, 0.42261827, 0, 0.9063078, -2.8260717, 0, 4.100109)
+
+[node name="Humanoid2" parent="." unique_id=904625627 instance=ExtResource("4_ki0e4")]
+transform = Transform3D(-0.34202012, 0, 0.9396926, 0, 1, 0, -0.9396926, 0, -0.34202012, 5.518545, 0, -2.470291)
+
+[node name="Humanoid3" parent="." unique_id=1329696624 instance=ExtResource("4_ki0e4")]
+transform = Transform3D(-0.6427877, 0, -0.7660446, 0, 1, 0, 0.7660446, 0, -0.6427877, -5, 0, -4)

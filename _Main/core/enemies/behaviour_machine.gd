@@ -31,8 +31,8 @@ func _physics_process(delta: float) -> void:
 		current_behaviour.current_task.physics_update(delta)
 
 func switch_behaviour(new_behaviour_name: String) -> void:
-	print("1.0 SWITCH BEHAVIOUR")
-	print("1.1 BEHAVIOURS: ",behaviours)
+	#print("1.0 SWITCH BEHAVIOUR")
+	#print("1.1 BEHAVIOURS: ",behaviours)
 	if behaviours.has(new_behaviour_name):
 		#print("1.2: ",behaviours[new_behaviour_name])
 		var previous_behaviour = current_behaviour
@@ -40,8 +40,8 @@ func switch_behaviour(new_behaviour_name: String) -> void:
 			previous_behaviour.current_task.exit()
 		current_behaviour = behaviours[new_behaviour_name]
 		behaviour_changed.emit(previous_behaviour, current_behaviour)
-		print("1.2 NEW BEHAVIOUR: ",current_behaviour)
-		print("1.3 CURRENT TASK: ",current_behaviour.initial_task)
+		#print("1.2 NEW BEHAVIOUR: ",current_behaviour)
+		#print("1.3 CURRENT TASK: ",current_behaviour.initial_task)
 		switch_task(current_behaviour.initial_task)
 	else:
 		push_error("ERROR: behaviour '" + new_behaviour_name + "' not found!")
