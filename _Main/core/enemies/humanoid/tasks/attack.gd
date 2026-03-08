@@ -1,7 +1,7 @@
 extends Task
 
 func enter() -> void:
-	print("ENTER ATTACK")
+	#print("ENTER ATTACK")
 	connect_signals()
 	animations.play("universal_anim_library/Sword_Attack")
 

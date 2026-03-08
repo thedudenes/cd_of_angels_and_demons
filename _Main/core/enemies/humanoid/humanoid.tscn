@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://vsfaqmy2tfkr"]
 
-[ext_resource type="Script" uid="uid://blouanjo2x8bp" path="res://_Main/core/enemies/humanoid/human.gd" id="1_d8ig4"]
+[ext_resource type="Script" uid="uid://blouanjo2x8bp" path="res://_Main/core/enemies/humanoid/humanoid.gd" id="1_d8ig4"]
 [ext_resource type="Script" uid="uid://c1up501krxolc" path="res://_Main/core/enemies/behaviour_machine.gd" id="2_b81n4"]
+[ext_resource type="ArrayMesh" uid="uid://c1aacjkudjco1" path="res://_Main/core/enemies/humanoid/assets/arms/arms_1.tres" id="2_dyduf"]
 [ext_resource type="ArrayMesh" uid="uid://cw0be20imvld3" path="res://_Main/core/enemies/humanoid/assets/torso/torso_1.tres" id="2_ethl6"]
 [ext_resource type="Script" uid="uid://bmxn5kepng6cv" path="res://_Main/core/enemies/humanoid/behaviours/patrol.gd" id="3_vpyvq"]
+[ext_resource type="ArrayMesh" uid="uid://ct67u4438s0x6" path="res://_Main/core/enemies/humanoid/assets/torso/torso_2.tres" id="3_ww5b4"]
+[ext_resource type="ArrayMesh" uid="uid://fck62d0bg0xt" path="res://_Main/core/enemies/humanoid/assets/legs/legs_1.tres" id="4_dyduf"]
 [ext_resource type="ArrayMesh" uid="uid://ce7a0nn2cfgq4" path="res://_Main/core/enemies/humanoid/assets/legs/legs_2.tres" id="4_ethl6"]
 [ext_resource type="Script" uid="uid://cu45odw27tjg5" path="res://_Main/core/enemies/humanoid/tasks/still.gd" id="4_w8c7t"]
 [ext_resource type="Script" uid="uid://ufyrmmqiyky3" path="res://_Main/core/enemies/humanoid/behaviours/agro.gd" id="5_dnd7n"]
 [ext_resource type="ArrayMesh" uid="uid://ddulsdgub7523" path="res://_Main/core/enemies/humanoid/assets/boots/boots_2.tres" id="5_ethl6"]
 [ext_resource type="Script" uid="uid://dh5kgmcuw6p2e" path="res://_Main/core/enemies/humanoid/tasks/attack.gd" id="5_vpyvq"]
+[ext_resource type="ArrayMesh" uid="uid://caaaa52psgfry" path="res://_Main/core/enemies/humanoid/assets/boots/boots_1.tres" id="6_dyduf"]
 [ext_resource type="ArrayMesh" uid="uid://cbmk66mglgb0m" path="res://_Main/core/enemies/humanoid/assets/arms/arms_2.tres" id="6_ethl6"]
 [ext_resource type="ArrayMesh" uid="uid://dsrcalus8bpme" path="res://_Main/core/enemies/humanoid/assets/gauntlets/gauntlets_1.tres" id="7_e4m4v"]
 [ext_resource type="Script" uid="uid://cwhp13o32q4nc" path="res://_Main/core/enemies/humanoid/idle.gd" id="8_41sjg"]
@@ -17,15 +21,34 @@
 [ext_resource type="ArrayMesh" uid="uid://cr1cwtsejscjp" path="res://_Main/core/enemies/humanoid/assets/head/head_1.tres" id="11_ww5b4"]
 [ext_resource type="Script" uid="uid://ch3xrbu0qatv8" path="res://_Main/core/enemies/humanoid/tasks/walk_to.gd" id="13_41sjg"]
 [ext_resource type="AnimationLibrary" uid="uid://dtxn4wh6wum8w" path="res://_Main/assets/animations/animation_library_one/universal_anim_library.res" id="14_dyduf"]
-[ext_resource type="Script" uid="uid://c2qaywox4gv23" path="res://_Main/core/enemies/humanoid/tie_shoelaces.gd" id="19_3ncju"]
+[ext_resource type="Script" uid="uid://c2qaywox4gv23" path="res://_Main/core/enemies/humanoid/tasks/tie_shoelaces.gd" id="19_3ncju"]
+[ext_resource type="Script" uid="uid://b2e0npwit2j4p" path="res://_Main/core/enemies/humanoid/return_to_point.gd" id="20_jeytv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d8ig4"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_41sjg"]
-points = PackedVector3Array(0, 0, 0, 0, 10, -1.6, 5, 10, 0, -5, 10, 0, 0, 10, 1.6)
+points = PackedVector3Array(0, 0, 0, 0, 15, -1.6, 5, 15, 0, -5, 15, 0, 0, 15, 1.6)
 
-[node name="Humanoid" type="CharacterBody3D" unique_id=360165436 node_paths=PackedStringArray("nav_agent", "detection_area")]
+[node name="Humanoid" type="CharacterBody3D" unique_id=360165436 node_paths=PackedStringArray("slots", "nav_agent", "detection_area")]
 script = ExtResource("1_d8ig4")
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
+meshes = Dictionary[String, Array]({
+"arms": [ExtResource("2_dyduf"), ExtResource("6_ethl6")],
+"belt": [ExtResource("11_dyduf")],
+"boots": [ExtResource("6_dyduf"), ExtResource("5_ethl6")],
+"gauntlet": [ExtResource("7_e4m4v"), null],
+"helmet": [ExtResource("11_ww5b4")],
+"legs": [ExtResource("4_dyduf"), ExtResource("4_ethl6")],
+"torso": [ExtResource("2_ethl6"), ExtResource("3_ww5b4")]
+})
 nav_agent = NodePath("NavigationAgent3D")
 detection_area = NodePath("Armature/GeneralSkeleton/BoneAttachment3D/Area3D")
 
@@ -495,32 +518,32 @@ bones/64/position = Vector3(8.080867e-09, 0.07890003, -2.0942137e-08)
 bones/64/rotation = Quaternion(8.730481e-11, 1, -1.192093e-07, 1.1640998e-10)
 bones/64/scale = Vector3(1, 1, 0.9999995)
 
-[node name="Torso" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1049402504]
-mesh = ExtResource("2_ethl6")
-skin = ExtResource("10_seq4x")
-
-[node name="Legs" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=694248393]
-mesh = ExtResource("4_ethl6")
-skin = ExtResource("10_seq4x")
-
-[node name="Boots" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=354690643]
-mesh = ExtResource("5_ethl6")
-skin = ExtResource("10_seq4x")
-
 [node name="Arms" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1445820457]
-mesh = ExtResource("6_ethl6")
-skin = ExtResource("10_seq4x")
-
-[node name="Gauntlet" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=789754524]
-mesh = ExtResource("7_e4m4v")
+mesh = ExtResource("2_dyduf")
 skin = ExtResource("10_seq4x")
 
 [node name="Belt" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1765793125]
 mesh = ExtResource("11_dyduf")
 skin = ExtResource("10_seq4x")
 
+[node name="Boots" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=354690643]
+mesh = ExtResource("6_dyduf")
+skin = ExtResource("10_seq4x")
+
+[node name="Gauntlet" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=789754524]
+mesh = ExtResource("7_e4m4v")
+skin = ExtResource("10_seq4x")
+
 [node name="Helmet" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1360454840]
 mesh = ExtResource("11_ww5b4")
+skin = ExtResource("10_seq4x")
+
+[node name="Legs" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=694248393]
+mesh = ExtResource("4_dyduf")
+skin = ExtResource("10_seq4x")
+
+[node name="Torso" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1049402504]
+mesh = ExtResource("2_ethl6")
 skin = ExtResource("10_seq4x")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/GeneralSkeleton" unique_id=1264481086]
@@ -561,6 +584,9 @@ script = ExtResource("13_41sjg")
 
 [node name="tie shoelaces" type="Node" parent="BehaviourTree/patrol" unique_id=1809606177]
 script = ExtResource("19_3ncju")
+
+[node name="return to point" type="Node" parent="BehaviourTree/patrol" unique_id=1374861238]
+script = ExtResource("20_jeytv")
 
 [node name="agro" type="Node" parent="BehaviourTree" unique_id=2118258015 node_paths=PackedStringArray("injectables")]
 script = ExtResource("5_dnd7n")

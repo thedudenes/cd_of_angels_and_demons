@@ -27,12 +27,10 @@ script = ExtResource("1_yh3te")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=841421166]
 script = ExtResource("2_epu1m")
-max_zoom = 15
-min_zoom = 7
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1501976801]
 transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 14, 20, 14)
-fov = 35.0
+fov = 31.3
 size = 10.0
 
 [node name="Armature" type="Node3D" parent="." unique_id=489527137]

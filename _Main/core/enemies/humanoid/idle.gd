@@ -1,7 +1,7 @@
 extends Task
 
 func enter() -> void:
-	print("ENTER IDLE")
+	#print("ENTER IDLE")
 	connect_signals()
 	animations.play("universal_anim_library/Sword_Idle")
 
@@ -10,6 +10,6 @@ func update(_delta: float) -> void:
 
 func animation_finished(s: String) -> void:
 	if s == "universal_anim_library/Sword_Idle":
-		print("ANIM FINISHED: ",s)
+		#print("ANIM FINISHED: ",s)
 		emit_task_finished(true)
 	pass

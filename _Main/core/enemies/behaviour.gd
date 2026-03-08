@@ -26,7 +26,7 @@ func initialize_tasks() -> void:
 	for task: Task in children:
 		tasks[task.name.to_lower()] = task
 		for name_key in injectables:
-			print("NAME KEY: ",name_key)
+			#print("NAME KEY: ",name_key)
 			var path = injectables[name_key].get_path()
 			task[name_key] = get_node(path)
 		if not task.task_finished.is_connected(task_finished):

@@ -27,7 +27,7 @@ func emit_task_finished(b: bool) -> void:
 
 func connect_signals() -> void:
 	if !animations.animation_finished.is_connected(animation_finished):
-		print("CONNECT ANIMATIONS SIGNALS")
+		#print("CONNECT ANIMATIONS SIGNALS")
 		animations.animation_finished.connect(animation_finished)
 
 func animation_finished(_s: String) -> void:

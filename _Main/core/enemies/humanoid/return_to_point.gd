@@ -8,17 +8,9 @@ func enter() -> void:
 	#print("ENTER: WALK TO")
 	animations.play("universal_anim_library/Walk") # Changed to Walk
 	
-	# 1. Get a random reachable point or a specific offset
-	# This assumes your enemy script has access to its NavigationAgent3D
 	var nav_agent = enemy.nav_agent
-	
-	# Pick a random direction
-	var random_direction = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1)).normalized()
 
-	# Pick a random distance between 2 and 6 units
-	var random_distance = randf_range(7.0, 15.0)
-
-	target_position = enemy.global_position + (random_direction * random_distance)
+	target_position = enemy.spawn_point
 	
 	# 2. Tell the agent where to go
 	nav_agent.target_position = target_position

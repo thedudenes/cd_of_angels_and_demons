@@ -14,10 +14,10 @@ func _ready() -> void:
 		switch_behaviour(default_behaviour.name.to_lower())
 
 func initialize() -> void:
-	print("INIT BEHAVIOUR MACHINE")
+	#print("INIT BEHAVIOUR MACHINE")
 	var children = get_children().filter(func(child): return child is Behaviour)
 	for behaviour in children:
-		print("BEHAVIOUR: ",behaviour)
+		#print("BEHAVIOUR: ",behaviour)
 		behaviours[behaviour.name.to_lower()] = behaviour
 		behaviour.switch_behaviour.connect(switch_behaviour)
 		behaviour.switch_task.connect(switch_task)
@@ -47,9 +47,9 @@ func switch_behaviour(new_behaviour_name: String) -> void:
 		push_error("ERROR: behaviour '" + new_behaviour_name + "' not found!")
 
 func switch_task(new_task_name) -> void:
-	print("2.0 SWITCH TASK")
+	#print("2.0 SWITCH TASK")
 	if current_behaviour.tasks.has(new_task_name):
-		print("2.1 new_task_name: ",new_task_name)
+		#print("2.1 new_task_name: ",new_task_name)
 		var previous_state = current_behaviour.current_task
 		if current_behaviour.current_task:
 			current_behaviour.current_task.exit()

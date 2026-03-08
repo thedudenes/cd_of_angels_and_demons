@@ -2,29 +2,29 @@ extends Behaviour
 
 func task_finished(success: bool) -> void:
 	var old_task = current_task
-	print("AGRO TASK FINISHED: ", old_task.name)
+	#print("AGRO TASK FINISHED: ", old_task.name)
 	match old_task.name.to_lower():
 		"attack":
 			if success:
-				print("success")
+				#print("success")
 				emit_switch_task("attack2")
 			else:
-				print("failure")
+				#print("failure")
 				emit_switch_behaviour("patrol")
 			return
 		"idle":
 			if success:
-				print("succes")
+				#print("succes")
 				emit_switch_task("attack")
 			else:
-				print("failure")
+				#print("failure")
 				emit_switch_behaviour("agro")
 		"attack2":
 			if success:
-				print("success")
+				#print("success")
 				emit_switch_behaviour("patrol")
 			else:
-				print("failure")
+				#print("failure")
 				emit_switch_behaviour("patrol")
 			return
 		_:
