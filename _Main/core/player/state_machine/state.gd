@@ -33,5 +33,5 @@ func disconnect_signals() -> void:
 	if animations.animation_finished.is_connected(animation_finished):
 		animations.animation_finished.disconnect(animation_finished)
 
-func animation_finished(s:String) -> void:
+func animation_finished(_s:String) -> void:
 	pass

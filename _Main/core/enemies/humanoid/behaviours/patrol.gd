@@ -9,11 +9,26 @@ func task_finished(success: bool) -> void:
 			if success:
 				emit_switch_behaviour("agro")
 			else:
-				emit_switch_task("walk_to")
+				if randf() > 0.1:
+					emit_switch_task("walk to")
+				else:
+					emit_switch_task("tie shoelaces")
 			return
-		"walk_to":
+		"walk to":
 			if success:
-				emit_switch_task("still")
+				if randf() > 0.1:
+					emit_switch_task("still")
+				else:
+					emit_switch_task("tie shoelaces")
+			else:
+				emit_switch_behaviour("agro")
+			return
+		"tie shoelaces":
+			if success:
+				if randf() < 0.5:
+					emit_switch_task("still")
+				else:
+					emit_switch_task("walk to")
 			else:
 				emit_switch_behaviour("agro")
 			return

@@ -1,7 +1,7 @@
 extends Task
 
 # Tuning parameters
-@export var movement_speed: float = 2.5
+@export var movement_speed: float = 2
 var target_position: Vector3 = Vector3.ZERO
 
 func enter() -> void:
