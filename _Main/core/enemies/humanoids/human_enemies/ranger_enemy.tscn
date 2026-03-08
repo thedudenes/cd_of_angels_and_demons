@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dkrwm4auyvf0h" path="res://_Main/assets/characters/ranger/ranger_male_char_T_Regular_Male_Normal.png" id="7_ebmiq"]
 [ext_resource type="AnimationLibrary" uid="uid://dtxn4wh6wum8w" path="res://_Main/assets/animations/animation_library_one/universal_anim_library.res" id="8_stsyi"]
 [ext_resource type="ArrayMesh" uid="uid://cbmk66mglgb0m" path="res://_Main/core/enemies/humanoid/assets/arms/arms_2.tres" id="8_xf4vp"]
-[ext_resource type="ArrayMesh" uid="uid://ct67u4438s0x6" path="res://_Main/core/enemies/humanoid/assets/torso/torso.tres" id="9_ebmiq"]
+[ext_resource type="ArrayMesh" uid="uid://ct67u4438s0x6" path="res://_Main/core/enemies/humanoid/assets/torso/torso_2.tres" id="9_ebmiq"]
 [ext_resource type="ArrayMesh" uid="uid://ddulsdgub7523" path="res://_Main/core/enemies/humanoid/assets/boots/boots_2.tres" id="10_ebmiq"]
-[ext_resource type="ArrayMesh" uid="uid://ce7a0nn2cfgq4" path="res://_Main/core/enemies/humanoid/assets/legs/legs_1.tres" id="11_njp3g"]
+[ext_resource type="ArrayMesh" uid="uid://ce7a0nn2cfgq4" path="res://_Main/core/enemies/humanoid/assets/legs/legs_2.tres" id="11_njp3g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk76k"]
 resource_name = "M_Main"

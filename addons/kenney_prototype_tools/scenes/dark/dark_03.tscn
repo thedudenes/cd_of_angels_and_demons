@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dourmri6a7ls0"]
+[gd_scene format=3 uid="uid://dourmri6a7ls0"]
 
-[ext_resource type="Material" uid="uid://cehjio2370tmg" path="res://addons/kenney_prototype_tools/materials/dark/material_03.tres" id="1_0o86h"]
+[ext_resource type="Material" uid="uid://c8g7bo8rro21q" path="res://_Main/assets/materials/test_material.material" id="1_jeswe"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_orukj"]
 
-[node name="Cube" type="Node3D"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jeswe"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Cube" type="Node3D" unique_id=381873764]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=877380058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
-material_override = ExtResource("1_0o86h")
+material_override = ExtResource("1_jeswe")
 mesh = SubResource("BoxMesh_orukj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh" unique_id=1916179841]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/StaticBody3D" unique_id=877958876]
+shape = SubResource("ConcavePolygonShape3D_jeswe")

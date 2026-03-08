@@ -1,75 +1,187 @@
 [gd_scene format=3 uid="uid://eerkxg5xi513"]
 
-[ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/Cold Sunset Equirect.png" id="1_2r0ec"]
+[ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/all_sky/Cold Sunset Equirect.png" id="1_ndqj5"]
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
-[ext_resource type="PackedScene" uid="uid://baa4mr215itg8" path="res://addons/kenney_prototype_tools/scenes/dark/dark_06.tscn" id="3_rsc05"]
-[ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="4_ki0e4"]
+[ext_resource type="Material" uid="uid://c8g7bo8rro21q" path="res://_Main/assets/materials/test_material.material" id="4_ki0e4"]
+[ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="5_1j0re"]
+[ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/structures/victorian_thing.tscn" id="5_2r0ec"]
+[ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/structures/statue_generic.tscn" id="5_ndqj5"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ki0e4"]
-panorama = ExtResource("1_2r0ec")
-energy_multiplier = 2.0
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ndqj5"]
+panorama = ExtResource("1_ndqj5")
+energy_multiplier = 0.3
 
-[sub_resource type="Sky" id="Sky_ndqj5"]
-sky_material = SubResource("PanoramaSkyMaterial_ki0e4")
+[sub_resource type="Sky" id="Sky_ki0e4"]
+sky_material = SubResource("PanoramaSkyMaterial_ndqj5")
 
 [sub_resource type="Environment" id="Environment_dyftu"]
 background_mode = 2
-sky = SubResource("Sky_ndqj5")
-ambient_light_color = Color(0.5058824, 0.2, 0.19607843, 1)
+sky = SubResource("Sky_ki0e4")
+ambient_light_source = 3
+ambient_light_color = Color(0.5084095, 0.7016969, 0.80738515, 1)
+ambient_light_energy = 2.79
+reflected_light_source = 2
+tonemap_exposure = 1.41
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-fog_sun_scatter = 0.3
-volumetric_fog_density = 0.01
-volumetric_fog_albedo = Color(1, 0.48000002, 0.48000002, 1)
+fog_mode = 1
+fog_light_energy = 2.25
+fog_sun_scatter = 1.0
+fog_density = 0.1776
+fog_aerial_perspective = 0.24
 adjustment_enabled = true
-adjustment_brightness = 1.08
-adjustment_contrast = 1.01
+adjustment_brightness = 1.06
+adjustment_contrast = 1.135
+adjustment_saturation = 0.8
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_rsc05"]
-vertices = PackedVector3Array(-0.49999982, 1.5, -0.49999988, -0.49999982, 1.5, 0.5000001, 0.5000002, 1.5, 0.5000001, 0.5000002, 1.5, -0.49999988)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+[sub_resource type="BoxMesh" id="BoxMesh_rsc05"]
+material = ExtResource("4_ki0e4")
+size = Vector3(100, 0.05, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndqj5"]
+size = Vector3(100, 0.05, 100)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1j0re"]
+vertices = PackedVector3Array(-10, 1.3190918, -24.25, -10.25, 1.5690918, -25.25, -11.5, 1.3190918, -25.75, -19.5, 1.3190918, -16, -9.25, 1.3190918, -16, -11.5, 1.3190918, -29.25, -10.25, 1.5690918, -29.75, -9.5, 1.3190918, -31, -9.5, 1.3190918, -49.5, -25.25, 1.3190918, -12.75, -24.25, 1.5690918, -13, -23.25, 1.3190918, -14.75, -19.75, 1.3190918, -14.5, -9.25, 1.3190918, -24, -49.5, 1.3190918, -11, -25, 1.3190918, -11, -49.5, 1.3190918, -49.5, -6.5, 1.3190918, -31, -6.5, 1.3190918, -49.5, 6.25, 1.3190918, -16.5, 7.25, 1.5690918, -16.75, 8, 1.3190918, -18.25, -3.25, 1.3190918, -25.25, -3.25, 1.3190918, -15.75, -5.75, 1.5690918, -29.75, -4.5, 1.3190918, -29.25, -4.75, 1.3190918, -25.5, 6, 1.3190918, -15.75, 9.5, 1.3190918, -18, 9.75, 1.3190918, -49.5, 11, 1.3190918, -18.25, 11.75, 1.5690918, -16.75, 13, 1.3190918, -16, 49.5, 1.3190918, -16, 49.5, 1.3190918, -49.5, -6, 1.3190918, -26.75, -7.25, 1.3190918, -29.5, -10, 1.3190918, -28.25, -10, 1.3190918, -26.75, -8.75, 1.3190918, -25.5, -7.25, 1.3190918, -25.5, -8.75, 1.3190918, -29.5, -6, 1.3190918, -28.25, -4.25, 4.319092, -14.5, -4.5, 4.319092, -24.5, -5, 4.569092, -24.5, -5, 4.819092, -14, 6, 4.819092, -14, 6, 4.319092, -14.5, -8, 1.3190918, -16, -4.5, 1.3190918, -15.75, -4.5, 1.3190918, -24.25, -8, 1.3190918, -24.25, -5.75, 5.319092, -13, -6, 5.319092, -23.75, -6.5, 5.319092, -23.5, -6.75, 5.319092, -13.25, -6.5, 5.319092, -12.25, -5.75, 5.319092, -12.5, -6.5, 5.319092, -0.75, -6, 5.319092, -0.75, -18, 5.319092, -13.25, -17.75, 5.319092, -12.5, 5.75, 5.319092, -12.5, 5.5, 5.319092, -13, 11.5, 1.3190918, -13.75, 10.25, 1.3190918, -16.5, 7.5, 1.3190918, -15.25, 7.5, 1.3190918, -13.75, 8.75, 1.3190918, -12.5, 10.25, 1.3190918, -12.5, 8.75, 1.3190918, -16.5, 11.5, 1.3190918, -15.25, 13, 1.3190918, -13, 49.5, 1.3190918, -13, -18.5, 1.3190918, -14.5, -18.5, 1.3190918, -13, -18, 1.3190918, -12.75, -9.25, 1.3190918, -11.25, -9.25, 1.3190918, -14.5, -18.25, 1.3190918, -11.25, -8, 1.3190918, -14.5, -8, 1.3190918, -13, -6.75, 1.3190918, -13, -6.75, 1.3190918, -14.5, -5.5, 1.3190918, -14.5, -5.5, 1.3190918, -13, -4.5, 1.3190918, -13, -4.5, 1.3190918, -14.5, -3.25, 1.3190918, -14.5, -3.25, 1.3190918, -11.25, 6.25, 1.3190918, -11.25, 6.25, 1.3190918, -14.5, -19.75, 1.3190918, -10.25, -20.75, 1.3190918, -13, -23.5, 1.3190918, -12, -23.5, 1.3190918, -10.25, -22.5, 1.3190918, -9.25, -20.75, 1.3190918, -9.25, -22.5, 1.3190918, -13, -19.75, 1.3190918, -12, -2.5, 1.3190918, -0.25, -2, 1.5690918, 1, -1, 1.3190918, 1.25, 7.25, 1.3190918, -9.75, -3.25, 1.3190918, -9.75, 11.5, 1.5690918, -12, 11.25, 1.3190918, -11, -1, 1.3190918, 5, -2.25, 1.5690918, 5.5, -3, 1.3190918, 6.75, -2, 1.3190918, 13.25, 0.5, 1.3190918, 13.25, 7.5, 1.3190918, -11.25, 1.5, 1.3190918, 17.5, 49.5, 1.3190918, 17.5, -3.25, 1.3190918, -0.5, -7.5, 4.569092, -11.5, -8.75, 4.569092, -11.5, -8, 4.319092, -10.75, -8, 4.319092, 0.25, -7.5, 4.569092, 0.25, -4.25, 4.569092, -11.25, 6.5, 4.569092, -11.25, -5, 4.569092, -11.5, -5, 4.569092, -0.5, -4.5, 4.319092, -0.5, -6.25, 1.3190918, 6.75, -7, 1.5690918, 5.25, -8, 1.3190918, 5, -5, 1.3190918, 16, -5, 1.3190918, 14, -23.25, 1.3190918, -7.5, -24.25, 1.3190918, -9, -25.25, 1.3190918, -9.5, -8, 1.3190918, 1.25, -9.25, 1.3190918, 1, -20, 1.3190918, -7.5, -49.5, 1.3190918, 16.25, -9.25, 1.3190918, -9.75, -18, 1.3190918, -9.75, -8, 1.3190918, 0, -6.25, 1.3190918, 0, -6, 1.3190918, -0.5, -4.5, 1.3190918, -9.75, -8, 1.3190918, -9.75, -4.5, 1.3190918, -0.25, -6.5, 1.3190918, 2.5, -6.5, 1.3190918, 4, -5.5, 1.3190918, 5, -3.5, 1.3190918, 5, -2.5, 1.3190918, 4, -2.5, 1.3190918, 2.25, -5.25, 1.3190918, 1.25, -3.5, 1.3190918, 1.25, -4, 7.819092, 15, -3.25, 7.819092, 18.75, 0.5, 7.819092, 17.75, -0.5, 7.819092, 14, -2.75, 1.3190918, 49.5, -2.75, 1.3190918, 19.75, -4.25, 1.3190918, 19.25, -49.5, 1.3190918, 49.5, -2.5, 1.3190918, 16.25, -2.5, 1.3190918, 17.25, -2, 1.3190918, 16.75, 1.25, 1.3190918, 18.75, 49.5, 1.3190918, 49.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(11, 10, 9), PackedInt32Array(3, 12, 11), PackedInt32Array(0, 13, 4), PackedInt32Array(9, 15, 14), PackedInt32Array(11, 9, 5), PackedInt32Array(5, 9, 8), PackedInt32Array(8, 9, 14), PackedInt32Array(8, 14, 16), PackedInt32Array(2, 3, 5), PackedInt32Array(5, 3, 11), PackedInt32Array(8, 18, 7), PackedInt32Array(7, 18, 17), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 23), PackedInt32Array(21, 23, 22), PackedInt32Array(25, 24, 17), PackedInt32Array(22, 26, 25), PackedInt32Array(19, 27, 23), PackedInt32Array(21, 22, 28), PackedInt32Array(28, 22, 25), PackedInt32Array(25, 17, 28), PackedInt32Array(28, 17, 18), PackedInt32Array(28, 18, 29), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 29), PackedInt32Array(32, 29, 33), PackedInt32Array(33, 29, 34), PackedInt32Array(29, 30, 28), PackedInt32Array(40, 39, 35), PackedInt32Array(35, 39, 38), PackedInt32Array(35, 38, 37), PackedInt32Array(35, 37, 36), PackedInt32Array(37, 41, 36), PackedInt32Array(36, 42, 35), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(48, 47, 43), PackedInt32Array(43, 47, 46), PackedInt32Array(52, 51, 49), PackedInt32Array(49, 51, 50), PackedInt32Array(58, 57, 53), PackedInt32Array(53, 57, 56), PackedInt32Array(53, 56, 55), PackedInt32Array(53, 55, 54), PackedInt32Array(59, 57, 60), PackedInt32Array(60, 57, 58), PackedInt32Array(61, 56, 62), PackedInt32Array(62, 56, 57), PackedInt32Array(53, 64, 58), PackedInt32Array(58, 64, 63), PackedInt32Array(70, 69, 65), PackedInt32Array(65, 69, 68), PackedInt32Array(65, 68, 67), PackedInt32Array(65, 67, 66), PackedInt32Array(67, 71, 66), PackedInt32Array(66, 72, 65), PackedInt32Array(32, 33, 73), PackedInt32Array(73, 33, 74), PackedInt32Array(76, 75, 77), PackedInt32Array(77, 75, 79), PackedInt32Array(77, 79, 78), PackedInt32Array(78, 80, 77), PackedInt32Array(84, 83, 81), PackedInt32Array(81, 83, 82), PackedInt32Array(88, 87, 85), PackedInt32Array(85, 87, 86), PackedInt32Array(92, 91, 89), PackedInt32Array(89, 91, 90), PackedInt32Array(98, 97, 93), PackedInt32Array(93, 97, 96), PackedInt32Array(93, 96, 95), PackedInt32Array(93, 95, 94), PackedInt32Array(95, 99, 94), PackedInt32Array(94, 100, 93), PackedInt32Array(102, 101, 103), PackedInt32Array(103, 101, 105), PackedInt32Array(103, 105, 104), PackedInt32Array(73, 107, 106), PackedInt32Array(109, 108, 110), PackedInt32Array(110, 108, 111), PackedInt32Array(111, 108, 112), PackedInt32Array(104, 113, 107), PackedInt32Array(108, 103, 112), PackedInt32Array(112, 103, 114), PackedInt32Array(114, 103, 104), PackedInt32Array(114, 104, 107), PackedInt32Array(107, 73, 114), PackedInt32Array(114, 73, 74), PackedInt32Array(114, 74, 115), PackedInt32Array(101, 116, 105), PackedInt32Array(117, 119, 118), PackedInt32Array(120, 119, 121), PackedInt32Array(121, 119, 117), PackedInt32Array(124, 123, 122), PackedInt32Array(126, 125, 122), PackedInt32Array(122, 125, 124), PackedInt32Array(128, 127, 129), PackedInt32Array(129, 127, 131), PackedInt32Array(129, 131, 130), PackedInt32Array(133, 132, 134), PackedInt32Array(134, 132, 14), PackedInt32Array(129, 136, 135), PackedInt32Array(111, 131, 110), PackedInt32Array(110, 131, 127), PackedInt32Array(132, 137, 136), PackedInt32Array(129, 130, 136), PackedInt32Array(136, 130, 132), PackedInt32Array(132, 130, 14), PackedInt32Array(14, 130, 138), PackedInt32Array(140, 139, 137), PackedInt32Array(137, 139, 136), PackedInt32Array(14, 15, 134), PackedInt32Array(142, 141, 143), PackedInt32Array(143, 141, 145), PackedInt32Array(143, 145, 144), PackedInt32Array(144, 146, 143), PackedInt32Array(149, 148, 147), PackedInt32Array(151, 150, 152), PackedInt32Array(152, 150, 149), PackedInt32Array(152, 149, 153), PackedInt32Array(153, 149, 147), PackedInt32Array(152, 153, 154), PackedInt32Array(158, 157, 155), PackedInt32Array(155, 157, 156), PackedInt32Array(161, 160, 159), PackedInt32Array(161, 159, 130), PackedInt32Array(130, 159, 138), PackedInt32Array(138, 159, 162), PackedInt32Array(165, 164, 163), PackedInt32Array(166, 159, 160), PackedInt32Array(166, 114, 159), PackedInt32Array(159, 114, 115), PackedInt32Array(159, 115, 167)]
 
 [node name="test_level" type="Node3D" unique_id=1050110730]
 
-[node name="evniroment" type="Node3D" parent="." unique_id=2102353068]
+[node name="Evniroment" type="Node3D" parent="." unique_id=2102353068]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="evniroment" unique_id=1693356828]
-transform = Transform3D(-0.55629575, -0.5875946, -0.5875947, 0, -0.7071068, 0.7071067, -0.83098435, 0.39336047, 0.39336053, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Evniroment" unique_id=1693356828]
+transform = Transform3D(0.97011375, 0.12894422, -0.20555404, 1.7666551e-08, 0.8471218, 0.5313989, 0.24264997, -0.51551765, 0.8218046, 0, 0, 0)
+light_color = Color(0.92461795, 0.41996285, 0.34493977, 1)
+light_indirect_energy = 4.497
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="evniroment" unique_id=474102526]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Evniroment" unique_id=474102526]
 environment = SubResource("Environment_dyftu")
 
 [node name="Player" parent="." unique_id=850132343 instance=ExtResource("2_dyftu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006733179, 0)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 15.597563, 0.026801907, 3.4665394)
 move_speed = 6.0
 
 [node name="prototyping" type="Node3D" parent="." unique_id=54370828]
 
-[node name="Cube" parent="." unique_id=1964916918 instance=ExtResource("3_rsc05")]
-transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, 0, -0.25, 0)
+[node name="victorian_thing" parent="prototyping" unique_id=2029570271 instance=ExtResource("5_2r0ec")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -21.637104, 1.9073486e-06, -11.093023)
 
-[node name="Cube2" parent="." unique_id=390932196 instance=ExtResource("3_rsc05")]
-transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, -19.999998, -0.25, 0)
+[node name="victorian_thing3" parent="prototyping" unique_id=1494480943 instance=ExtResource("5_2r0ec")]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, -4.478745, 5.722046e-06, 3.137494)
 
-[node name="Cube3" parent="." unique_id=492461417 instance=ExtResource("3_rsc05")]
-transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, -19.999998, -0.25, -19.999998)
+[node name="victorian_thing4" parent="prototyping" unique_id=1059082553 instance=ExtResource("5_2r0ec")]
+transform = Transform3D(7.8680495e-07, 0, -6, 0, 6, 0, 6, 0, 7.8680495e-07, -8.007622, 7.6293945e-06, -27.51715)
 
-[node name="Cube4" parent="." unique_id=1620598566 instance=ExtResource("3_rsc05")]
-transform = Transform3D(19.999996, 0, 0, 0, 0.25, 0, 0, 0, 19.999996, 0, -0.25, -19.999998)
+[node name="victorian_thing2" parent="prototyping" unique_id=1426444590 instance=ExtResource("5_2r0ec")]
+transform = Transform3D(-6, 0, 5.2453663e-07, 0, 6, 0, -5.2453663e-07, 0, -6, 9.495911, -1.9073486e-06, -14.552677)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=935441676]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
-navigation_mesh = SubResource("NavigationMesh_rsc05")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="prototyping" unique_id=1438301762]
+mesh = SubResource("BoxMesh_rsc05")
 
-[node name="Humanoid" parent="." unique_id=360165436 instance=ExtResource("4_ki0e4")]
-transform = Transform3D(0.9063078, 0, -0.42261827, 0, 1, 0, 0.42261827, 0, 0.9063078, -2.8260717, 0, 4.100109)
+[node name="StaticBody3D" type="StaticBody3D" parent="prototyping/MeshInstance3D" unique_id=215979358]
 
-[node name="Humanoid2" parent="." unique_id=904625627 instance=ExtResource("4_ki0e4")]
-transform = Transform3D(-0.34202012, 0, 0.9396926, 0, 1, 0, -0.9396926, 0, -0.34202012, 5.518545, 0, -2.470291)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prototyping/MeshInstance3D/StaticBody3D" unique_id=239170067]
+shape = SubResource("BoxShape3D_ndqj5")
 
-[node name="Humanoid3" parent="." unique_id=1329696624 instance=ExtResource("4_ki0e4")]
-transform = Transform3D(-0.6427877, 0, -0.7660446, 0, 1, 0, 0.7660446, 0, -0.6427877, -5, 0, -4)
+[node name="generic_statue" parent="prototyping" unique_id=332542039 instance=ExtResource("5_ndqj5")]
+transform = Transform3D(-0.64704764, 0, 2.4148145, 0, 2.5, 0, -2.4148145, 0, -0.64704764, -1.6117086, 0.14479464, 16.282682)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="prototyping" unique_id=526380222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2259185, 0)
+navigation_mesh = SubResource("NavigationMesh_1j0re")
+
+[node name="enemies" type="Node" parent="." unique_id=850095061]
+
+[node name="Humanoid" parent="enemies" unique_id=360165436 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 35.561707, 0, 4)
+
+[node name="Humanoid2" parent="enemies" unique_id=1428574209 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -32.8144, 3.8146973e-06, 32.307228)
+
+[node name="Humanoid3" parent="enemies" unique_id=474933484 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 17.077782, 3.8146973e-06, -38.432755)
+
+[node name="Humanoid4" parent="enemies" unique_id=891615332 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 20.35077, 3.8146973e-06, 40.18804)
+
+[node name="Humanoid5" parent="enemies" unique_id=451514977 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -34.096283, 1.1444092e-05, -32.19577)
+
+[node name="Humanoid6" parent="enemies" unique_id=1470871924 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 47.716686, 0, -4.751583)
+
+[node name="Humanoid7" parent="enemies" unique_id=1059367795 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -20.65942, 3.8146973e-06, 23.555645)
+
+[node name="Humanoid8" parent="enemies" unique_id=971247822 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 29.232761, 3.8146973e-06, -47.184338)
+
+[node name="Humanoid9" parent="enemies" unique_id=1744449227 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 32.505753, 3.8146973e-06, 31.436459)
+
+[node name="Humanoid10" parent="enemies" unique_id=265545822 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -21.941303, 1.1444092e-05, -40.947353)
+
+[node name="Humanoid11" parent="enemies" unique_id=1861501420 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 46.24482, 0, 9.904339)
+
+[node name="Humanoid12" parent="enemies" unique_id=1340057199 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -22.131285, 3.8146973e-06, 38.211567)
+
+[node name="Humanoid13" parent="enemies" unique_id=654557069 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 27.760897, 3.8146973e-06, -32.528416)
+
+[node name="Humanoid14" parent="enemies" unique_id=1905841926 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 31.033888, 3.8146973e-06, 46.09238)
+
+[node name="Humanoid15" parent="enemies" unique_id=812144118 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -23.413168, 1.1444092e-05, -26.291431)
+
+[node name="Humanoid16" parent="enemies" unique_id=1260466423 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 25.959717, 0, 5.093849)
+
+[node name="Humanoid17" parent="enemies" unique_id=499083674 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -42.41639, 3.8146973e-06, 33.401077)
+
+[node name="Humanoid18" parent="enemies" unique_id=990970179 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 7.475792, 3.8146973e-06, -37.338905)
+
+[node name="Humanoid19" parent="enemies" unique_id=1667738419 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 10.748781, 3.8146973e-06, 41.28189)
+
+[node name="Humanoid20" parent="enemies" unique_id=1872893761 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -43.698273, 1.1444092e-05, -31.101921)
+
+[node name="Humanoid21" parent="enemies" unique_id=402458237 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 38.114697, 0, -3.657734)
+
+[node name="Humanoid22" parent="enemies" unique_id=1923133008 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -30.26141, 3.8146973e-06, 24.649494)
+
+[node name="Humanoid23" parent="enemies" unique_id=958089932 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 19.630772, 3.8146973e-06, -46.09049)
+
+[node name="Humanoid24" parent="enemies" unique_id=813137424 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 22.903763, 3.8146973e-06, 32.530308)
+
+[node name="Humanoid25" parent="enemies" unique_id=781409367 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -31.543293, 1.1444092e-05, -39.853504)
+
+[node name="Humanoid26" parent="enemies" unique_id=1558922424 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 36.64283, 0, 10.998188)
+
+[node name="Humanoid27" parent="enemies" unique_id=2141196837 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -31.733274, 3.8146973e-06, 39.305416)
+
+[node name="Humanoid28" parent="enemies" unique_id=1780559785 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 18.158907, 3.8146973e-06, -31.434566)
+
+[node name="Humanoid29" parent="enemies" unique_id=1507356439 instance=ExtResource("5_1j0re")]
+transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 21.431898, 3.8146973e-06, 47.18623)
+
+[node name="Humanoid30" parent="enemies" unique_id=154673820 instance=ExtResource("5_1j0re")]
+transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -33.01516, 1.1444092e-05, -25.197582)
