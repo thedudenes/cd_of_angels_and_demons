@@ -1,41 +1,51 @@
 [gd_scene format=3 uid="uid://eerkxg5xi513"]
 
-[ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/Cold Sunset Equirect.png" id="1_2r0ec"]
+[ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/all_sky/Cold Sunset Equirect.png" id="1_ndqj5"]
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
-[ext_resource type="PackedScene" uid="uid://baa4mr215itg8" path="res://addons/kenney_prototype_tools/scenes/dark/dark_06.tscn" id="3_rsc05"]
+[ext_resource type="PackedScene" uid="uid://dourmri6a7ls0" path="res://addons/kenney_prototype_tools/scenes/dark/dark_03.tscn" id="4_ndqj5"]
+[ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/structures/statue_generic.tscn" id="5_ndqj5"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ki0e4"]
-panorama = ExtResource("1_2r0ec")
-energy_multiplier = 2.0
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ndqj5"]
+panorama = ExtResource("1_ndqj5")
+energy_multiplier = 0.3
 
-[sub_resource type="Sky" id="Sky_ndqj5"]
-sky_material = SubResource("PanoramaSkyMaterial_ki0e4")
+[sub_resource type="Sky" id="Sky_ki0e4"]
+sky_material = SubResource("PanoramaSkyMaterial_ndqj5")
 
 [sub_resource type="Environment" id="Environment_dyftu"]
 background_mode = 2
-sky = SubResource("Sky_ndqj5")
-ambient_light_color = Color(0.5058824, 0.2, 0.19607843, 1)
+sky = SubResource("Sky_ki0e4")
+ambient_light_source = 3
+ambient_light_color = Color(0.5084095, 0.7016969, 0.80738515, 1)
+ambient_light_energy = 2.79
+reflected_light_source = 2
+tonemap_exposure = 1.41
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-fog_sun_scatter = 0.3
-volumetric_fog_density = 0.01
-volumetric_fog_albedo = Color(1, 0.48000002, 0.48000002, 1)
+fog_mode = 1
+fog_light_energy = 2.25
+fog_sun_scatter = 1.0
+fog_density = 0.1776
+fog_aerial_perspective = 0.24
 adjustment_enabled = true
-adjustment_brightness = 1.08
-adjustment_contrast = 1.01
+adjustment_brightness = 1.06
+adjustment_contrast = 1.135
+adjustment_saturation = 0.8
 
 [node name="test_level" type="Node3D" unique_id=1050110730]
 
-[node name="evniroment" type="Node3D" parent="." unique_id=2102353068]
+[node name="Evniroment" type="Node3D" parent="." unique_id=2102353068]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="evniroment" unique_id=1693356828]
-transform = Transform3D(-0.55629575, -0.5875946, -0.5875947, 0, -0.7071068, 0.7071067, -0.83098435, 0.39336047, 0.39336053, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Evniroment" unique_id=1693356828]
+transform = Transform3D(0.97011375, 0.12894422, -0.20555404, 1.7666551e-08, 0.8471218, 0.5313989, 0.24264997, -0.51551765, 0.8218046, 0, 0, 0)
+light_color = Color(0.92461795, 0.41996285, 0.34493977, 1)
+light_indirect_energy = 4.497
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="evniroment" unique_id=474102526]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Evniroment" unique_id=474102526]
 environment = SubResource("Environment_dyftu")
 
 [node name="Player" parent="." unique_id=850132343 instance=ExtResource("2_dyftu")]
@@ -44,14 +54,8 @@ move_speed = 6.0
 
 [node name="prototyping" type="Node3D" parent="." unique_id=54370828]
 
-[node name="Cube" parent="prototyping" unique_id=1964916918 instance=ExtResource("3_rsc05")]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 0, -0.25, 0)
+[node name="floor" parent="prototyping" unique_id=381873764 instance=ExtResource("4_ndqj5")]
+transform = Transform3D(53.071926, 0, 0, 0, 0.10062498, 0, 0, 0, 52.27609, -26.72392, -0.090112686, -27.29025)
 
-[node name="Cube2" parent="prototyping" unique_id=390932196 instance=ExtResource("3_rsc05")]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, 0)
-
-[node name="Cube3" parent="prototyping" unique_id=492461417 instance=ExtResource("3_rsc05")]
-transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -20, -0.25, -20)
-
-[node name="Cube4" parent="prototyping" unique_id=1620598566 instance=ExtResource("3_rsc05")]
-transform = Transform3D(19.999998, 0, 0, 0, 0.25, 0, 0, 0, 19.999998, 0, -0.25, -20)
+[node name="generic_statue" parent="prototyping" unique_id=332542039 instance=ExtResource("5_ndqj5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.976, -0.08184847, -1.1652827)

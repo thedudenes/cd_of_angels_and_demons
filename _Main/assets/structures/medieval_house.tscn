@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d2egbpuowslcg"]
+
+[ext_resource type="PackedScene" uid="uid://cx62862gwv0bm" path="res://_Main/assets/structures/imports/medieval_house.glb" id="1_xvi17"]
+
+[node name="Sketchfab_Scene" unique_id=1435868422 instance=ExtResource("1_xvi17")]

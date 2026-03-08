@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ua81fjwm5n0h"]
+
+[ext_resource type="Texture2D" uid="uid://4mv25w256ns8" path="res://_Main/assets/enviromental/stone_floor__tile_texture_0.png" id="1_63mhj"]
+[ext_resource type="Texture2D" uid="uid://dmeaakpcyp85b" path="res://_Main/assets/enviromental/stone_floor__tile_texture_1.png" id="2_f83vr"]
+[ext_resource type="Texture2D" uid="uid://bkkf8b1vtl862" path="res://_Main/assets/enviromental/stone_floor__tile_texture_2.png" id="3_npoca"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_63mhj")
+metallic = 1.0
+metallic_texture = ExtResource("2_f83vr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_f83vr")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_npoca")
+ao_enabled = true
+ao_texture = ExtResource("2_f83vr")
+uv1_scale = Vector3(5, 5, 1)
