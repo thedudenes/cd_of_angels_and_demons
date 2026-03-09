@@ -3,14 +3,14 @@
 [ext_resource type="Skin" uid="uid://cl6iq8mbeqhq5" path="res://_Main/core/player/resources/manny_skin_res.tres" id="1_ggeck"]
 [ext_resource type="Script" uid="uid://bbsl1ji7x0ytc" path="res://_Main/core/player/player.gd" id="1_yh3te"]
 [ext_resource type="Script" uid="uid://c4sju2mk662gh" path="res://_Main/core/player/camera_pivot.gd" id="2_epu1m"]
-[ext_resource type="ArrayMesh" uid="uid://cqqaqhssneuir" path="res://_Main/assets/characters/quat_male_naked/Mannequin.tres" id="3_twxi0"]
-[ext_resource type="ArrayMesh" uid="uid://bjsu26atuduwm" path="res://_Main/assets/characters/quat_male_naked/Eyebrows.tres" id="5_ofwrw"]
+[ext_resource type="ArrayMesh" uid="uid://cqqaqhssneuir" path="res://_Main/assets/characters/base_character/meshes/Mannequin.tres" id="3_twxi0"]
+[ext_resource type="ArrayMesh" uid="uid://bjsu26atuduwm" path="res://_Main/assets/characters/base_character/meshes/Eyebrows.tres" id="5_ofwrw"]
 [ext_resource type="AnimationLibrary" uid="uid://dtxn4wh6wum8w" path="res://_Main/assets/animations/animation_library_one/universal_anim_library.res" id="6_5ohnk"]
-[ext_resource type="ArrayMesh" uid="uid://dspch45bbpvns" path="res://_Main/assets/characters/quat_male_naked/Eyes.tres" id="6_twxi0"]
-[ext_resource type="ArrayMesh" uid="uid://feakmgoj68me" path="res://_Main/assets/characters/quat_male_naked/SuperHero_Male.tres" id="7_l37u3"]
-[ext_resource type="ArrayMesh" uid="uid://br2cexpf25onq" path="res://_Main/assets/characters/quat_male_naked/Hair.tres" id="8_l37u3"]
+[ext_resource type="ArrayMesh" uid="uid://dspch45bbpvns" path="res://_Main/assets/characters/base_character/meshes/Eyes.tres" id="6_twxi0"]
+[ext_resource type="ArrayMesh" uid="uid://feakmgoj68me" path="res://_Main/assets/characters/base_character/meshes/SuperHero_Male.tres" id="7_l37u3"]
+[ext_resource type="ArrayMesh" uid="uid://br2cexpf25onq" path="res://_Main/assets/characters/base_character/meshes/Hair.tres" id="8_l37u3"]
 [ext_resource type="Script" uid="uid://bvow3rjmncepe" path="res://_Main/core/player/state_machine/machine_state.gd" id="9_2h7yj"]
-[ext_resource type="ArrayMesh" uid="uid://dk6qwjeby7anc" path="res://_Main/assets/characters/quat_male_naked/Beard.tres" id="9_l37u3"]
+[ext_resource type="ArrayMesh" uid="uid://dk6qwjeby7anc" path="res://_Main/assets/characters/base_character/meshes/Beard.tres" id="9_l37u3"]
 [ext_resource type="Script" uid="uid://cnc4bbo4ytc2b" path="res://_Main/core/player/state_machine/idle_state.gd" id="10_2h7yj"]
 [ext_resource type="ArrayMesh" uid="uid://cr1cwtsejscjp" path="res://_Main/core/enemies/humanoid/assets/head/head_1.tres" id="10_4y4mf"]
 [ext_resource type="Script" uid="uid://dlokn0wep0k4d" path="res://_Main/core/player/state_machine/melee_idle_state.gd" id="12_5imty"]
@@ -23,6 +23,7 @@ radius = 0.2861328
 height = 1.8354492
 
 [node name="Player" type="CharacterBody3D" unique_id=850132343 groups=["player"]]
+transform = Transform3D(0.4794259, 0.14330022, -0.8658036, 0, 0.98657817, 0.16328977, 0.8775824, -0.078285344, 0.47299114, -4.4689627, 4.265918, 8.500882)
 script = ExtResource("1_yh3te")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=841421166]

@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dspch45bbpvns"]
 
-[ext_resource type="Texture2D" uid="uid://cp4rna6n0os2c" path="res://_Main/assets/characters/quat_male_naked/male-naked-full-body_T_Eye_Brown.png" id="1_kc66e"]
+[ext_resource type="Texture2D" uid="uid://cp4rna6n0os2c" path="res://_Main/assets/characters/base_character/imports/male-naked-full-body_T_Eye_Brown.png" id="1_kc66e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqo7j"]
 resource_name = "MI_Eyes"

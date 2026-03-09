@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8gkwmflidwqe"
-path.s3tc="res://.godot/imported/male-naked-full-body_T_Hair_1_BaseColor.png-b3a516d355f9c666277d366b769f3467.s3tc.ctex"
-path.etc2="res://.godot/imported/male-naked-full-body_T_Hair_1_BaseColor.png-b3a516d355f9c666277d366b769f3467.etc2.ctex"
+uid="uid://b12in7dvyl2ol"
+path.s3tc="res://.godot/imported/head_andrew_T_Superhero_Male_Dark.png-48fa4eb0325eab61211dd196cf5d736d.s3tc.ctex"
+path.etc2="res://.godot/imported/head_andrew_T_Superhero_Male_Dark.png-48fa4eb0325eab61211dd196cf5d736d.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f30cc84cd1ee4fa1c40e16f1acadff7b"
+"md5": "a510817b2732d2de6bacce0e9096e4ce"
 }
 
 [deps]
 
-source_file="res://_Main/assets/characters/quat_male_naked/male-naked-full-body_T_Hair_1_BaseColor.png"
-dest_files=["res://.godot/imported/male-naked-full-body_T_Hair_1_BaseColor.png-b3a516d355f9c666277d366b769f3467.s3tc.ctex", "res://.godot/imported/male-naked-full-body_T_Hair_1_BaseColor.png-b3a516d355f9c666277d366b769f3467.etc2.ctex"]
+source_file="res://_Main/assets/characters/base_character/head_andrew_T_Superhero_Male_Dark.png"
+dest_files=["res://.godot/imported/head_andrew_T_Superhero_Male_Dark.png-48fa4eb0325eab61211dd196cf5d736d.s3tc.ctex", "res://.godot/imported/head_andrew_T_Superhero_Male_Dark.png-48fa4eb0325eab61211dd196cf5d736d.etc2.ctex"]
 
 [params]
 

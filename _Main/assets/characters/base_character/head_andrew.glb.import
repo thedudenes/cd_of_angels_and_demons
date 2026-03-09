@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b3g7hhc2lw460"
-path="res://.godot/imported/male-naked-full-body.glb-817fd7719aadc3e005694fe6388b919e.scn"
+uid="uid://j22pu6opscis"
+path="res://.godot/imported/head_andrew.glb-fcf453a0450f816cb6840c9462ef9719.scn"
 
 [deps]
 
-source_file="res://_Main/assets/characters/quat_male_naked/male-naked-full-body.glb"
-dest_files=["res://.godot/imported/male-naked-full-body.glb-817fd7719aadc3e005694fe6388b919e.scn"]
+source_file="res://_Main/assets/characters/base_character/head_andrew.glb"
+dest_files=["res://.godot/imported/head_andrew.glb-fcf453a0450f816cb6840c9462ef9719.scn"]
 
 [params]
 
