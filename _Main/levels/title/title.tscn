@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d0iw8ex6m4ehq"]
+
+[ext_resource type="Script" uid="uid://dclbvlvbytctd" path="res://_Main/levels/level.gd" id="1_ofx4j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dbbp4"]
+sun_angle_max = 53.61
+sun_curve = 0.24367575
+
+[sub_resource type="Sky" id="Sky_ofx4j"]
+sky_material = SubResource("ProceduralSkyMaterial_dbbp4")
+
+[sub_resource type="Environment" id="Environment_ins7v"]
+background_mode = 2
+sky = SubResource("Sky_ofx4j")
+
+[node name="Title" type="Node3D" unique_id=1123228803]
+script = ExtResource("1_ofx4j")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1640472228]
+environment = SubResource("Environment_ins7v")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=38594103]

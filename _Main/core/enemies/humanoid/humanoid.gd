@@ -13,8 +13,6 @@ var spawn_point: Vector3
 func _ready() -> void:
 	spawn_point = global_position
 	for key in slots:
-		#print("SLOT ASSET: ",key)
-		#print("MESHES: ",meshes[key])
 		slots[key].mesh = meshes[key].pick_random()
 
 func _physics_process(delta: float) -> void:

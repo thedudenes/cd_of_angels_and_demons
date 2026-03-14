@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/all_sky/Cold Sunset Equirect.png" id="1_ndqj5"]
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
-[ext_resource type="Material" uid="uid://c8g7bo8rro21q" path="res://_Main/assets/materials/test_material.material" id="4_ki0e4"]
+[ext_resource type="Material" uid="uid://c0wmu6deyjyhs" path="res://_Main/assets/materials/scorched land/scorched_land.tres" id="4_1j0re"]
 [ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="5_1j0re"]
 [ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/structures/victorian_thing.tscn" id="5_2r0ec"]
 [ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/structures/statue_generic.tscn" id="5_ndqj5"]
@@ -38,7 +38,7 @@ adjustment_contrast = 1.135
 adjustment_saturation = 0.8
 
 [sub_resource type="BoxMesh" id="BoxMesh_rsc05"]
-material = ExtResource("4_ki0e4")
+material = ExtResource("4_1j0re")
 size = Vector3(100, 0.05, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndqj5"]
@@ -93,92 +93,362 @@ navigation_mesh = SubResource("NavigationMesh_1j0re")
 
 [node name="enemies" type="Node" parent="." unique_id=850095061]
 
-[node name="Humanoid" parent="enemies" unique_id=360165436 instance=ExtResource("5_1j0re")]
+[node name="Humanoid" parent="enemies" unique_id=360165436 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 35.561707, 0, 4)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid2" parent="enemies" unique_id=1428574209 instance=ExtResource("5_1j0re")]
+[node name="Humanoid2" parent="enemies" unique_id=1428574209 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -32.8144, 3.8146973e-06, 32.307228)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid3" parent="enemies" unique_id=474933484 instance=ExtResource("5_1j0re")]
+[node name="Humanoid3" parent="enemies" unique_id=474933484 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 17.077782, 3.8146973e-06, -38.432755)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid4" parent="enemies" unique_id=891615332 instance=ExtResource("5_1j0re")]
+[node name="Humanoid4" parent="enemies" unique_id=891615332 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 20.35077, 3.8146973e-06, 40.18804)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid5" parent="enemies" unique_id=451514977 instance=ExtResource("5_1j0re")]
+[node name="Humanoid5" parent="enemies" unique_id=451514977 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -34.096283, 1.1444092e-05, -32.19577)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid6" parent="enemies" unique_id=1470871924 instance=ExtResource("5_1j0re")]
+[node name="Humanoid6" parent="enemies" unique_id=1470871924 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 47.716686, 0, -4.751583)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid7" parent="enemies" unique_id=1059367795 instance=ExtResource("5_1j0re")]
+[node name="Humanoid7" parent="enemies" unique_id=1059367795 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -20.65942, 3.8146973e-06, 23.555645)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid8" parent="enemies" unique_id=971247822 instance=ExtResource("5_1j0re")]
+[node name="Humanoid8" parent="enemies" unique_id=971247822 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 29.232761, 3.8146973e-06, -47.184338)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid9" parent="enemies" unique_id=1744449227 instance=ExtResource("5_1j0re")]
+[node name="Humanoid9" parent="enemies" unique_id=1744449227 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 32.505753, 3.8146973e-06, 31.436459)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid10" parent="enemies" unique_id=265545822 instance=ExtResource("5_1j0re")]
+[node name="Humanoid10" parent="enemies" unique_id=265545822 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -21.941303, 1.1444092e-05, -40.947353)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid11" parent="enemies" unique_id=1861501420 instance=ExtResource("5_1j0re")]
+[node name="Humanoid11" parent="enemies" unique_id=1861501420 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 46.24482, 0, 9.904339)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid12" parent="enemies" unique_id=1340057199 instance=ExtResource("5_1j0re")]
+[node name="Humanoid12" parent="enemies" unique_id=1340057199 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -22.131285, 3.8146973e-06, 38.211567)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid13" parent="enemies" unique_id=654557069 instance=ExtResource("5_1j0re")]
+[node name="Humanoid13" parent="enemies" unique_id=654557069 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 27.760897, 3.8146973e-06, -32.528416)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid14" parent="enemies" unique_id=1905841926 instance=ExtResource("5_1j0re")]
+[node name="Humanoid14" parent="enemies" unique_id=1905841926 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 31.033888, 3.8146973e-06, 46.09238)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid15" parent="enemies" unique_id=812144118 instance=ExtResource("5_1j0re")]
+[node name="Humanoid15" parent="enemies" unique_id=812144118 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -23.413168, 1.1444092e-05, -26.291431)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid16" parent="enemies" unique_id=1260466423 instance=ExtResource("5_1j0re")]
+[node name="Humanoid16" parent="enemies" unique_id=1260466423 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 25.959717, 0, 5.093849)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid17" parent="enemies" unique_id=499083674 instance=ExtResource("5_1j0re")]
+[node name="Humanoid17" parent="enemies" unique_id=499083674 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -42.41639, 3.8146973e-06, 33.401077)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid18" parent="enemies" unique_id=990970179 instance=ExtResource("5_1j0re")]
+[node name="Humanoid18" parent="enemies" unique_id=990970179 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 7.475792, 3.8146973e-06, -37.338905)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid19" parent="enemies" unique_id=1667738419 instance=ExtResource("5_1j0re")]
+[node name="Humanoid19" parent="enemies" unique_id=1667738419 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 10.748781, 3.8146973e-06, 41.28189)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid20" parent="enemies" unique_id=1872893761 instance=ExtResource("5_1j0re")]
+[node name="Humanoid20" parent="enemies" unique_id=1872893761 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -43.698273, 1.1444092e-05, -31.101921)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid21" parent="enemies" unique_id=402458237 instance=ExtResource("5_1j0re")]
+[node name="Humanoid21" parent="enemies" unique_id=402458237 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 38.114697, 0, -3.657734)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid22" parent="enemies" unique_id=1923133008 instance=ExtResource("5_1j0re")]
+[node name="Humanoid22" parent="enemies" unique_id=1923133008 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -30.26141, 3.8146973e-06, 24.649494)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid23" parent="enemies" unique_id=958089932 instance=ExtResource("5_1j0re")]
+[node name="Humanoid23" parent="enemies" unique_id=958089932 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 19.630772, 3.8146973e-06, -46.09049)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid24" parent="enemies" unique_id=813137424 instance=ExtResource("5_1j0re")]
+[node name="Humanoid24" parent="enemies" unique_id=813137424 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 22.903763, 3.8146973e-06, 32.530308)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid25" parent="enemies" unique_id=781409367 instance=ExtResource("5_1j0re")]
+[node name="Humanoid25" parent="enemies" unique_id=781409367 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -31.543293, 1.1444092e-05, -39.853504)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid26" parent="enemies" unique_id=1558922424 instance=ExtResource("5_1j0re")]
+[node name="Humanoid26" parent="enemies" unique_id=1558922424 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 36.64283, 0, 10.998188)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid27" parent="enemies" unique_id=2141196837 instance=ExtResource("5_1j0re")]
+[node name="Humanoid27" parent="enemies" unique_id=2141196837 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.7706579, 0, -0.6372493, 0, 1, 0, 0.6372493, 0, 0.7706579, -31.733274, 3.8146973e-06, 39.305416)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid28" parent="enemies" unique_id=1780559785 instance=ExtResource("5_1j0re")]
+[node name="Humanoid28" parent="enemies" unique_id=1780559785 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.75660723, 0, 0.6538698, 0, 1, 0, -0.6538698, 0, -0.75660723, 18.158907, 3.8146973e-06, -31.434566)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid29" parent="enemies" unique_id=1507356439 instance=ExtResource("5_1j0re")]
+[node name="Humanoid29" parent="enemies" unique_id=1507356439 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(0.51978767, 0, 0.8542956, 0, 1, 0, -0.8542956, 0, 0.51978767, 21.431898, 3.8146973e-06, 47.18623)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}
 
-[node name="Humanoid30" parent="enemies" unique_id=154673820 instance=ExtResource("5_1j0re")]
+[node name="Humanoid30" parent="enemies" unique_id=154673820 node_paths=PackedStringArray("slots") instance=ExtResource("5_1j0re")]
 transform = Transform3D(-0.9706495, 0, -0.24049911, 0, 1, 0, 0.24049911, 0, -0.9706495, -33.01516, 1.1444092e-05, -25.197582)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}

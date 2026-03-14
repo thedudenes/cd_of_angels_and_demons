@@ -19,7 +19,7 @@ config/name="cn_angels_and_demons"
 config/description="isometric action role playing videogame
 "
 config/version="0.0.1"
-run/main_scene="uid://eerkxg5xi513"
+run/main_scene="uid://d3op7yv4017en"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 boot_splash/image="uid://c3byqtfvj20cv"
@@ -28,6 +28,8 @@ config/icon="uid://b3lmf8xnbx18n"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GameManager="*uid://b28h16fxxmryx"
+UiManager="*uid://lcxnkqfda7ei"
 
 [dialogic]
 
@@ -77,6 +79,7 @@ audio/channel_defaults={
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

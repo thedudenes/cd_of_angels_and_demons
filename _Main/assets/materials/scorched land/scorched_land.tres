@@ -1,0 +1,23 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://c0wmu6deyjyhs"]
+
+[ext_resource type="Texture2D" uid="uid://crqrdkguwggv8" path="res://_Main/assets/materials/scorched land/scorched_land_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dq2jb1sxxml2w" path="res://_Main/assets/materials/scorched land/scorched_land_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dmngmsi2pb8wt" path="res://_Main/assets/materials/scorched land/scorched_land_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dpfaewi4dsc22" path="res://_Main/assets/materials/scorched land/scorched_land_emission.png" id="5"]
+
+[resource]
+albedo_texture = ExtResource("1")
+orm_texture = ExtResource("2")
+emission_enabled = true
+emission_energy_multiplier = 16.0
+emission_texture = ExtResource("5")
+normal_enabled = true
+normal_scale = 1.5
+normal_texture = ExtResource("3")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 64
+heightmap_max_layers = 64
+uv1_scale = Vector3(25, 18.5, 32)
+uv1_triplanar_sharpness = 150.0

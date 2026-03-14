@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://164cx1aasf3d"]
+
+[ext_resource type="Theme" uid="uid://nbw4mqfu8hoa" path="res://_Main/core/ui/theme.tres" id="1_8n0d6"]
+[ext_resource type="Script" uid="uid://c8snjl62n74ct" path="res://_Main/core/ui/scripts/main_menu.gd" id="1_hmlsb"]
+[ext_resource type="Script" uid="uid://b7mj7bkgvw804" path="res://_Main/core/ui/scripts/ui_controller.gd" id="1_jpmm6"]
+[ext_resource type="Script" uid="uid://cilc1uev63ccl" path="res://_Main/core/ui/in_game_ui.gd" id="4_24h73"]
+[ext_resource type="Script" uid="uid://dmta2bv6vf6xr" path="res://_Main/core/ui/scripts/interaction_message.gd" id="5_7qjkt"]
+
+[sub_resource type="Theme" id="Theme_8n0d6"]
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 15
+MarginContainer/constants/margin_right = 15
+MarginContainer/constants/margin_top = 15
+VBoxContainer/constants/separation = 20
+
+[node name="UiController" type="CanvasLayer" unique_id=1596074769 node_paths=PackedStringArray("main_menu", "in_game_ui")]
+script = ExtResource("1_jpmm6")
+main_menu = NodePath("MainMenu")
+in_game_ui = NodePath("InGameUI")
+
+[node name="MainMenu" type="Control" parent="." unique_id=1840661187]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmlsb")
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenu" unique_id=985470696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -94.5
+offset_right = 283.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8n0d6")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer" unique_id=1291140580]
+layout_mode = 2
+theme = SubResource("Theme_8n0d6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/PanelContainer/MarginContainer" unique_id=523090394]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1604789050]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "Codename: Of Angels And Demons"
+
+[node name="NewGame" type="Button" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=518521842]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "New Game"
+
+[node name="Quit" type="Button" parent="MainMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=637058303]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "Quit"
+
+[node name="InGameUI" type="Control" parent="." unique_id=1937100942]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_24h73")
+
+[node name="InteractionMessage" type="Control" parent="InGameUI" unique_id=1648355670 node_paths=PackedStringArray("message")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_7qjkt")
+message = NodePath("PanelContainer/MarginContainer/HBoxContainer/Label")
+
+[node name="PanelContainer" type="PanelContainer" parent="InGameUI/InteractionMessage" unique_id=1902604090]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_8n0d6")
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameUI/InteractionMessage/PanelContainer" unique_id=47126735]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InGameUI/InteractionMessage/PanelContainer/MarginContainer" unique_id=41114408]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InGameUI/InteractionMessage/PanelContainer/MarginContainer/HBoxContainer" unique_id=1821959409]
+layout_mode = 2
+text = "interaction message"
+
+[connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/NewGame" to="MainMenu" method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
