@@ -4,7 +4,7 @@ var input_dir: Vector2
 
 func enter() -> void:
 	if animations:
-		animations.play("universal_anim_library/Idle")
+		animations.play("animation_library_one/Idle")
 	
 func update(_delta: float) -> void:
 	# move player velocity towards zero

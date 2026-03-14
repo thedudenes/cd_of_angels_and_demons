@@ -1062,7 +1062,7 @@ mesh = SubResource("ArrayMesh_a5hun")
 skin = ExtResource("4_n2fbv")
 
 [node name="Male_Ranger_Body_Belt_2" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1732935616]
-visible = false
+transform = Transform3D(1.1169937, 0, 0, 0, 1, 0, 0, 0, 0.97398174, 0, 0, 0)
 mesh = SubResource("ArrayMesh_bm6rs")
 skin = ExtResource("4_n2fbv")
 

@@ -6,7 +6,7 @@ var target_position: Vector3 = Vector3.ZERO
 
 func enter() -> void:
 	#print("ENTER: WALK TO")
-	animations.play("universal_anim_library/Walk") # Changed to Walk
+	animations.play("animation_library_one/Walk") # Changed to Walk
 	
 	var nav_agent = enemy.nav_agent
 

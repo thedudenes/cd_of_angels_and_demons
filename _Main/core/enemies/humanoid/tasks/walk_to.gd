@@ -6,7 +6,7 @@ var target_position: Vector3 = Vector3.ZERO
 
 func enter() -> void:
 	#print("ENTER: WALK TO")
-	animations.play("universal_anim_library/Walk") # Changed to Walk
+	animations.play("animation_library_one/Walk") # Changed to Walk
 	
 	# 1. Get a random reachable point or a specific offset
 	# This assumes your enemy script has access to its NavigationAgent3D
