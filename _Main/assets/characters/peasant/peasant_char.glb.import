@@ -37,6 +37,45 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"peasant_char_Male_Peasant_Arms": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"peasant_char_Male_Peasant_Body": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://_Main/core/enemies/humanoid/oo/peasant_char_Male_Peasant_Body.res",
+"save_to_file/path": "uid://x742452rhsbe"
+},
+"peasant_char_Male_Peasant_Feet": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://_Main/core/enemies/humanoid/oo/peasant_char_Male_Peasant_Feet.res",
+"save_to_file/path": "uid://capef834ujspb"
+},
+"peasant_char_Male_Peasant_Legs": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://_Main/core/enemies/humanoid/oo/peasant_char_Male_Peasant_Legs.res",
+"save_to_file/path": "uid://d3rj3350rqgli"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

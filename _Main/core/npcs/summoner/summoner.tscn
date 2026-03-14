@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dmue2q1lefnyw" path="res://_Main/core/npcs/summoner/summoner.gd" id="1_wbtba"]
 [ext_resource type="Skin" uid="uid://cl6iq8mbeqhq5" path="res://_Main/core/player/resources/manny_skin_res.tres" id="3_74213"]
-[ext_resource type="ArrayMesh" uid="uid://bjsu26atuduwm" path="res://_Main/assets/characters/quat_male_naked/Eyebrows.tres" id="4_6g4hc"]
-[ext_resource type="ArrayMesh" uid="uid://dspch45bbpvns" path="res://_Main/assets/characters/quat_male_naked/Eyes.tres" id="5_45lk8"]
-[ext_resource type="ArrayMesh" uid="uid://feakmgoj68me" path="res://_Main/assets/characters/quat_male_naked/SuperHero_Male.tres" id="6_c6sgp"]
-[ext_resource type="ArrayMesh" uid="uid://br2cexpf25onq" path="res://_Main/assets/characters/quat_male_naked/Hair.tres" id="7_ervcv"]
-[ext_resource type="ArrayMesh" uid="uid://dk6qwjeby7anc" path="res://_Main/assets/characters/quat_male_naked/Beard.tres" id="8_842v7"]
-[ext_resource type="AnimationLibrary" uid="uid://dtxn4wh6wum8w" path="res://_Main/assets/animations/animation_library_one/universal_anim_library.res" id="10_cyp3y"]
+[ext_resource type="ArrayMesh" uid="uid://bjsu26atuduwm" path="res://_Main/assets/characters/base_character/meshes/Eyebrows.tres" id="4_6g4hc"]
+[ext_resource type="ArrayMesh" uid="uid://dspch45bbpvns" path="res://_Main/assets/characters/base_character/meshes/Eyes.tres" id="5_45lk8"]
+[ext_resource type="ArrayMesh" uid="uid://feakmgoj68me" path="res://_Main/assets/characters/base_character/meshes/SuperHero_Male.tres" id="6_c6sgp"]
+[ext_resource type="ArrayMesh" uid="uid://br2cexpf25onq" path="res://_Main/assets/characters/base_character/meshes/Hair.tres" id="7_ervcv"]
+[ext_resource type="ArrayMesh" uid="uid://dk6qwjeby7anc" path="res://_Main/assets/characters/base_character/meshes/Beard.tres" id="8_842v7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wbtba"]
 
@@ -502,7 +501,6 @@ mesh = ExtResource("7_ervcv")
 mesh = ExtResource("8_842v7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1632307375]
-libraries/universal_anim_library = ExtResource("10_cyp3y")
 playback_default_blend_time = 0.3
 
 [node name="InteractionArea" type="Area3D" parent="." unique_id=170834669]

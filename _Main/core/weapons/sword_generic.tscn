@@ -1,5 +1,5 @@
 [gd_scene format=3 uid="uid://dkg2ip38p2s8u"]
 
-[ext_resource type="PackedScene" uid="uid://2iwgmw7we2rn" path="res://_Main/assets/weapons/sword_generic_hifi.glb" id="1_8ykhn"]
+[ext_resource type="PackedScene" uid="uid://2iwgmw7we2rn" path="res://_Main/assets/weapons/swords/imports/sword_generic_hifi.glb" id="1_8ykhn"]
 
 [node name="sword_generic_hifi" unique_id=1109533068 instance=ExtResource("1_8ykhn")]

@@ -5,7 +5,7 @@ var player_found: bool = false
 func enter() -> void:
 	connect_signals()
 	#enemy.velocity = Vector3.ZERO
-	animations.play("universal_anim_library/Fixing_Kneeling")
+	animations.play("animation_library_one/Fixing_Kneeling")
 	player_found = false
 
 func physics_update(_delta: float) -> void:
@@ -23,5 +23,5 @@ func physics_update(_delta: float) -> void:
 				break # Stop looking once the player is found
 
 func animation_finished(s: String) -> void:
-	if s == "universal_anim_library/Fixing_Kneeling":
+	if s == "animation_library_one/Fixing_Kneeling":
 		emit_task_finished(true)

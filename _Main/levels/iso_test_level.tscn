@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
 [ext_resource type="Material" uid="uid://c0wmu6deyjyhs" path="res://_Main/assets/materials/scorched land/scorched_land.tres" id="4_1j0re"]
 [ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="5_1j0re"]
-[ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/structures/victorian_thing.tscn" id="5_2r0ec"]
-[ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/structures/statue_generic.tscn" id="5_ndqj5"]
+[ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/environment/victorian_thing.tscn" id="5_2r0ec"]
+[ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/environment/statue_generic.tscn" id="5_ndqj5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ndqj5"]
 panorama = ExtResource("1_ndqj5")
@@ -85,7 +85,7 @@ mesh = SubResource("BoxMesh_rsc05")
 shape = SubResource("BoxShape3D_ndqj5")
 
 [node name="generic_statue" parent="prototyping" unique_id=332542039 instance=ExtResource("5_ndqj5")]
-transform = Transform3D(-0.64704764, 0, 2.4148145, 0, 2.5, 0, -2.4148145, 0, -0.64704764, -1.6117086, 0.1447947, 16.282682)
+transform = Transform3D(-0.047601104, 0, 2.4995468, 0, 2.5000002, 0, -2.4995468, 0, -0.047601104, -1.6117086, 0.1447947, 16.282682)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="prototyping" unique_id=526380222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.505, 0)

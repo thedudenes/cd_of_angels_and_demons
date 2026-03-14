@@ -5,7 +5,7 @@ extends PlayerState
 
 func enter() -> void:
 	if animations:
-		animations.play("universal_anim_library/Jog_Fwd")
+		animations.play("animation_library_one/Jog_Fwd")
 		
 func update(delta: float) -> void:
 	# Get input
