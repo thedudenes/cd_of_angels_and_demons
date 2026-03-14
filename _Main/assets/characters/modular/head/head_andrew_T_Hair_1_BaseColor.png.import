@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hosd3cby4q24"
-path.s3tc="res://.godot/imported/head_andrew_T_Superhero_Male_Roughness.png-db956ee03a37b523e562ceb91e06bb6d.s3tc.ctex"
-path.etc2="res://.godot/imported/head_andrew_T_Superhero_Male_Roughness.png-db956ee03a37b523e562ceb91e06bb6d.etc2.ctex"
+uid="uid://dcwl5502irqx0"
+path.s3tc="res://.godot/imported/head_andrew_T_Hair_1_BaseColor.png-2acc5f81ea45318ee90940cb02136bf1.s3tc.ctex"
+path.etc2="res://.godot/imported/head_andrew_T_Hair_1_BaseColor.png-2acc5f81ea45318ee90940cb02136bf1.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "075886a4960c8d82728636977778e7a6"
+"md5": "f30cc84cd1ee4fa1c40e16f1acadff7b"
 }
 
 [deps]
 
-source_file="res://_Main/assets/characters/base_character/head_andrew_T_Superhero_Male_Roughness.png"
-dest_files=["res://.godot/imported/head_andrew_T_Superhero_Male_Roughness.png-db956ee03a37b523e562ceb91e06bb6d.s3tc.ctex", "res://.godot/imported/head_andrew_T_Superhero_Male_Roughness.png-db956ee03a37b523e562ceb91e06bb6d.etc2.ctex"]
+source_file="res://_Main/assets/characters/modular/head/head_andrew_T_Hair_1_BaseColor.png"
+dest_files=["res://.godot/imported/head_andrew_T_Hair_1_BaseColor.png-2acc5f81ea45318ee90940cb02136bf1.s3tc.ctex", "res://.godot/imported/head_andrew_T_Hair_1_BaseColor.png-2acc5f81ea45318ee90940cb02136bf1.etc2.ctex"]
 
 [params]
 

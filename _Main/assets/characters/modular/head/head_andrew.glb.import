@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j22pu6opscis"
-path="res://.godot/imported/head_andrew.glb-fcf453a0450f816cb6840c9462ef9719.scn"
+uid="uid://b3qeysyxpp025"
+path="res://.godot/imported/head_andrew.glb-2823ee6bce98a053c7c295ad535bbf2d.scn"
 
 [deps]
 
-source_file="res://_Main/assets/characters/base_character/head_andrew.glb"
-dest_files=["res://.godot/imported/head_andrew.glb-fcf453a0450f816cb6840c9462ef9719.scn"]
+source_file="res://_Main/assets/characters/modular/head/head_andrew.glb"
+dest_files=["res://.godot/imported/head_andrew.glb-2823ee6bce98a053c7c295ad535bbf2d.scn"]
 
 [params]
 

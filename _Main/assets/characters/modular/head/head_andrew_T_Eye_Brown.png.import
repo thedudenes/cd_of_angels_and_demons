@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5ntqhlex3r6t"
-path.s3tc="res://.godot/imported/head_andrew_T_Eye_Brown.png-b665622a5976ee8935e64675e1736e78.s3tc.ctex"
-path.etc2="res://.godot/imported/head_andrew_T_Eye_Brown.png-b665622a5976ee8935e64675e1736e78.etc2.ctex"
+uid="uid://bw2xr4hiosevt"
+path.s3tc="res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.s3tc.ctex"
+path.etc2="res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://_Main/assets/characters/base_character/head_andrew_T_Eye_Brown.png"
-dest_files=["res://.godot/imported/head_andrew_T_Eye_Brown.png-b665622a5976ee8935e64675e1736e78.s3tc.ctex", "res://.godot/imported/head_andrew_T_Eye_Brown.png-b665622a5976ee8935e64675e1736e78.etc2.ctex"]
+source_file="res://_Main/assets/characters/modular/head/head_andrew_T_Eye_Brown.png"
+dest_files=["res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.s3tc.ctex", "res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.etc2.ctex"]
 
 [params]
 
