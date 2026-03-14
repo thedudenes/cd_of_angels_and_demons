@@ -31,9 +31,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d8ig4"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_41sjg"]
-points = PackedVector3Array(0, 0, 0, 0, 15, -1.6, 5, 15, 0, -5, 15, 0, 0, 15, 1.6)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cive6"]
 resource_name = "MI_Hair_1.003"
 cull_mode = 2
@@ -120,6 +117,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_41sjg"]
+points = PackedVector3Array(0, 0, 0, 0, 15, -1.6, 5, 15, 0, -5, 15, 0, 0, 15, 1.6)
+
 [node name="Humanoid" type="CharacterBody3D" unique_id=360165436 node_paths=PackedStringArray("slots", "nav_agent", "detection_area")]
 script = ExtResource("1_d8ig4")
 slots = {
@@ -152,7 +152,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.90
 
 [node name="GeneralSkeleton" type="Skeleton3D" parent="Armature" unique_id=2095175618]
 unique_name_in_owner = true
-motion_scale = 0.94909996
 bones/0/name = "Root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -611,31 +610,33 @@ bones/64/scale = Vector3(1, 1.0000004, 0.9999999)
 
 [node name="Arms" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1445820457]
 mesh = ExtResource("2_dyduf")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="Belt" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1765793125]
 mesh = ExtResource("11_dyduf")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="Boots" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=354690643]
 mesh = ExtResource("6_dyduf")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="Gauntlet" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=789754524]
 mesh = ExtResource("7_e4m4v")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="Helmet" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1360454840]
 mesh = ExtResource("11_ww5b4")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="Legs" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=694248393]
 mesh = ExtResource("4_dyduf")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="Torso" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1049402504]
 mesh = ExtResource("2_ethl6")
-skeleton = NodePath("../../GeneralSkeleton")
+
+[node name="Eyebrows" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=130743418]
+mesh = SubResource("ArrayMesh_l4c3g")
+
+[node name="Eyes" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=735615805]
+mesh = SubResource("ArrayMesh_7brm6")
+
+[node name="Head" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=484377488]
+mesh = SubResource("ArrayMesh_erigd")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/GeneralSkeleton" unique_id=1264481086]
 transform = Transform3D(0.9977871, -0.05788737, -0.032707676, 0.04836459, 0.9694709, -0.24038845, 0.04562454, 0.23827466, 0.97012544, -0.013905905, 1.5640686, -0.008983679)
@@ -648,18 +649,6 @@ transform = Transform3D(-0.99778736, 0.048364624, -0.045624528, 0.057887334, 0.9
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Armature/GeneralSkeleton/BoneAttachment3D/Area3D" unique_id=36012043]
 transform = Transform3D(-1, 0, -8.742278e-08, 8.742278e-08, -4.371139e-08, -1, -3.821371e-15, -1, 4.371139e-08, 0, 1.6222733, 1.4901161e-08)
 shape = SubResource("ConvexPolygonShape3D_41sjg")
-
-[node name="Eyebrows" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=130743418]
-mesh = SubResource("ArrayMesh_l4c3g")
-skeleton = NodePath("../../GeneralSkeleton")
-
-[node name="Eyes" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=735615805]
-mesh = SubResource("ArrayMesh_7brm6")
-skeleton = NodePath("../../GeneralSkeleton")
-
-[node name="Head" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=484377488]
-mesh = SubResource("ArrayMesh_erigd")
-skeleton = NodePath("../../GeneralSkeleton")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1509294746]
 
