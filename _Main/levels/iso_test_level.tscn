@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
 [ext_resource type="Material" uid="uid://c8g7bo8rro21q" path="res://_Main/assets/materials/test_material.material" id="4_ki0e4"]
 [ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="5_1j0re"]
-[ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/structures/victorian_thing.tscn" id="5_2r0ec"]
-[ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/structures/statue_generic.tscn" id="5_ndqj5"]
+[ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/environment/victorian_thing.tscn" id="5_2r0ec"]
+[ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/environment/statue_generic.tscn" id="5_ndqj5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ndqj5"]
 panorama = ExtResource("1_ndqj5")
