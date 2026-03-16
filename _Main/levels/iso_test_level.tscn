@@ -85,7 +85,7 @@ mesh = SubResource("BoxMesh_rsc05")
 shape = SubResource("BoxShape3D_ndqj5")
 
 [node name="generic_statue" parent="prototyping" unique_id=332542039 instance=ExtResource("5_ndqj5")]
-transform = Transform3D(-0.047601104, 0, 2.4995468, 0, 2.5000002, 0, -2.4995468, 0, -0.047601104, -1.6117086, 0.1447947, 16.282682)
+transform = Transform3D(2.4995468, 0, 0.04760099, 0, 2.5000002, 0, -0.04760099, 0, 2.4995468, -1.6117086, 0.1447947, 16.282682)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="prototyping" unique_id=526380222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.505, 0)
