@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnk2o5d0hrm7y"
-path.s3tc="res://.godot/imported/character_beard_hair_T_Hair_1_BaseColor.png-8d1e592507582185cae0f51039a1fcc4.s3tc.ctex"
-path.etc2="res://.godot/imported/character_beard_hair_T_Hair_1_BaseColor.png-8d1e592507582185cae0f51039a1fcc4.etc2.ctex"
+uid="uid://bw2xr4hiosevt"
+path.s3tc="res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.s3tc.ctex"
+path.etc2="res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f30cc84cd1ee4fa1c40e16f1acadff7b"
+"md5": "830da396e71092b8bf809e8c522e8638"
 }
 
 [deps]
 
-source_file="res://_Main/assets/characters/hairstyles/character_beard_hair_T_Hair_1_BaseColor.png"
-dest_files=["res://.godot/imported/character_beard_hair_T_Hair_1_BaseColor.png-8d1e592507582185cae0f51039a1fcc4.s3tc.ctex", "res://.godot/imported/character_beard_hair_T_Hair_1_BaseColor.png-8d1e592507582185cae0f51039a1fcc4.etc2.ctex"]
+source_file="res://_Main/assets/characters/modular/head/head_andrew_T_Eye_Brown.png"
+dest_files=["res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.s3tc.ctex", "res://.godot/imported/head_andrew_T_Eye_Brown.png-818130faab68d2d1069c99c620a9e8b7.etc2.ctex"]
 
 [params]
 

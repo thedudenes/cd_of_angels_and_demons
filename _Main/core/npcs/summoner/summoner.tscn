@@ -2,11 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dmue2q1lefnyw" path="res://_Main/core/npcs/summoner/summoner.gd" id="1_wbtba"]
 [ext_resource type="Skin" uid="uid://cl6iq8mbeqhq5" path="res://_Main/core/player/resources/manny_skin_res.tres" id="3_74213"]
-[ext_resource type="ArrayMesh" uid="uid://bjsu26atuduwm" path="res://_Main/assets/characters/base_character/meshes/Eyebrows.tres" id="4_6g4hc"]
 [ext_resource type="ArrayMesh" uid="uid://dspch45bbpvns" path="res://_Main/assets/characters/base_character/meshes/Eyes.tres" id="5_45lk8"]
 [ext_resource type="ArrayMesh" uid="uid://feakmgoj68me" path="res://_Main/assets/characters/base_character/meshes/SuperHero_Male.tres" id="6_c6sgp"]
-[ext_resource type="ArrayMesh" uid="uid://br2cexpf25onq" path="res://_Main/assets/characters/base_character/meshes/Hair.tres" id="7_ervcv"]
-[ext_resource type="ArrayMesh" uid="uid://dk6qwjeby7anc" path="res://_Main/assets/characters/base_character/meshes/Beard.tres" id="8_842v7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wbtba"]
 
@@ -482,10 +479,6 @@ bones/64/position = Vector3(8.080867e-09, 0.07890003, -2.0942137e-08)
 bones/64/rotation = Quaternion(8.730481e-11, 1, -1.192093e-07, 1.1640998e-10)
 bones/64/scale = Vector3(1, 1, 0.9999995)
 
-[node name="Eyebrows" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=533816623]
-mesh = ExtResource("4_6g4hc")
-skin = ExtResource("3_74213")
-
 [node name="Eyes" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1824130205]
 mesh = ExtResource("5_45lk8")
 skin = ExtResource("3_74213")
@@ -493,12 +486,6 @@ skin = ExtResource("3_74213")
 [node name="SuperHero_Male" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1127336038]
 mesh = ExtResource("6_c6sgp")
 skin = ExtResource("3_74213")
-
-[node name="Hair" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=778019811]
-mesh = ExtResource("7_ervcv")
-
-[node name="Beard" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=679001787]
-mesh = ExtResource("8_842v7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1632307375]
 playback_default_blend_time = 0.3
