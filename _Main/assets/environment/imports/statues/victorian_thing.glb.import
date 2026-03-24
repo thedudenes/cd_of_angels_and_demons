@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bev557heu6qvj"
-path="res://.godot/imported/tolerance_statue.glb-081f165ce6a7ac7256f65d88cba0f48e.scn"
+uid="uid://cd5sk1khnsnye"
+path="res://.godot/imported/victorian_thing.glb-15f4d538c3fb62c862e17b16ff9a4bb3.scn"
 
 [deps]
 
-source_file="res://_Main/assets/environment/imports/tolerance_statue.glb"
-dest_files=["res://.godot/imported/tolerance_statue.glb-081f165ce6a7ac7256f65d88cba0f48e.scn"]
+source_file="res://_Main/assets/environment/imports/statues/victorian_thing.glb"
+dest_files=["res://.godot/imported/victorian_thing.glb-15f4d538c3fb62c862e17b16ff9a4bb3.scn"]
 
 [params]
 

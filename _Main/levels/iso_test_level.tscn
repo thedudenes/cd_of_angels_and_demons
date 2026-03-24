@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/all_sky/Cold Sunset Equirect.png" id="1_ndqj5"]
 [ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="2_dyftu"]
-[ext_resource type="Material" uid="uid://c0wmu6deyjyhs" path="res://_Main/assets/materials/scorched land/scorched_land.tres" id="4_1j0re"]
+[ext_resource type="Material" uid="uid://06vclpgwwyc8" path="res://addons/kenney_prototype_tools/materials/dark/material_07.tres" id="4_1j0re"]
 [ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="5_1j0re"]
 [ext_resource type="PackedScene" uid="uid://fiupwcqb5dtb" path="res://_Main/assets/environment/victorian_thing.tscn" id="5_2r0ec"]
 [ext_resource type="PackedScene" uid="uid://qc71xe4ycjh0" path="res://_Main/assets/environment/statue_generic.tscn" id="5_ndqj5"]
@@ -54,7 +54,8 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0), PackedInt32Arr
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Evniroment" unique_id=1693356828]
 transform = Transform3D(0.97011375, 0.12894422, -0.20555404, 1.7666551e-08, 0.8471218, 0.5313989, 0.24264997, -0.51551765, 0.8218046, 0, 0, 0)
-light_color = Color(0.92461795, 0.41996285, 0.34493977, 1)
+light_color = Color(0.8047473, 0.76350224, 0.6740818, 1)
+light_energy = 2.519
 light_indirect_energy = 4.497
 shadow_enabled = true
 

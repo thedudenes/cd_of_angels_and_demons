@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://fiupwcqb5dtb"]
 
-[ext_resource type="Texture2D" uid="uid://djkffsvpwd7ff" path="res://_Main/assets/environment/imports/victorian_thing_bake_diffuse.jpg" id="1_y4jos"]
-[ext_resource type="Texture2D" uid="uid://2j6ud1lq70fw" path="res://_Main/assets/environment/imports/victorian_thing_bake_metal-bake_rough.jpg" id="2_644yq"]
-[ext_resource type="Texture2D" uid="uid://dcbj83x0d8vou" path="res://_Main/assets/environment/imports/victorian_thing_bake_normal.jpg" id="3_11iu0"]
+[ext_resource type="Texture2D" uid="uid://djkffsvpwd7ff" path="res://_Main/assets/environment/imports/statues/victorian_thing_bake_diffuse.jpg" id="1_y4jos"]
+[ext_resource type="Texture2D" uid="uid://2j6ud1lq70fw" path="res://_Main/assets/environment/imports/statues/victorian_thing_bake_metal-bake_rough.jpg" id="2_644yq"]
+[ext_resource type="Texture2D" uid="uid://dcbj83x0d8vou" path="res://_Main/assets/environment/imports/statues/victorian_thing_bake_normal.jpg" id="3_11iu0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ico6"]
 resource_name = "Material.001"

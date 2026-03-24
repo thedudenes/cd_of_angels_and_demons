@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djkffsvpwd7ff"
-path.s3tc="res://.godot/imported/victorian_thing_bake_diffuse.jpg-0ce888a4971eb1c3b67242b1b0b947cf.s3tc.ctex"
-path.etc2="res://.godot/imported/victorian_thing_bake_diffuse.jpg-0ce888a4971eb1c3b67242b1b0b947cf.etc2.ctex"
+uid="uid://blr3ltpw00g4i"
+path.s3tc="res://.godot/imported/tolerance_statue_0.jpg-6a1ec77f041f70ad3b83cbe0962f951a.s3tc.ctex"
+path.etc2="res://.godot/imported/tolerance_statue_0.jpg-6a1ec77f041f70ad3b83cbe0962f951a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7060e1308186071edffc2459617354b5"
+"md5": "0047b37c9ff38f466f7f51479ff22495"
 }
 
 [deps]
 
-source_file="res://_Main/assets/environment/imports/victorian_thing_bake_diffuse.jpg"
-dest_files=["res://.godot/imported/victorian_thing_bake_diffuse.jpg-0ce888a4971eb1c3b67242b1b0b947cf.s3tc.ctex", "res://.godot/imported/victorian_thing_bake_diffuse.jpg-0ce888a4971eb1c3b67242b1b0b947cf.etc2.ctex"]
+source_file="res://_Main/assets/environment/imports/statues/tolerance_statue_0.jpg"
+dest_files=["res://.godot/imported/tolerance_statue_0.jpg-6a1ec77f041f70ad3b83cbe0962f951a.s3tc.ctex", "res://.godot/imported/tolerance_statue_0.jpg-6a1ec77f041f70ad3b83cbe0962f951a.etc2.ctex"]
 
 [params]
 

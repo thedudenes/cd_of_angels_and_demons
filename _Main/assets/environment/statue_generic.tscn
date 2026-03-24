@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://qc71xe4ycjh0"]
 
-[ext_resource type="Texture2D" uid="uid://blr3ltpw00g4i" path="res://_Main/assets/environment/imports/tolerance_statue_0.jpg" id="1_uqt7n"]
-[ext_resource type="Texture2D" uid="uid://dxmuuc6p3tbur" path="res://_Main/assets/environment/imports/tolerance_statue_1.jpg" id="2_x85tx"]
+[ext_resource type="Texture2D" uid="uid://blr3ltpw00g4i" path="res://_Main/assets/environment/imports/statues/tolerance_statue_0.jpg" id="1_uqt7n"]
+[ext_resource type="Texture2D" uid="uid://dxmuuc6p3tbur" path="res://_Main/assets/environment/imports/statues/tolerance_statue_1.jpg" id="2_x85tx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1rf1"]
 resource_name = "Scene_-_Root"

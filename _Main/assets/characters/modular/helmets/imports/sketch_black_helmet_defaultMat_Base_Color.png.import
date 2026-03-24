@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2j6ud1lq70fw"
-path.s3tc="res://.godot/imported/victorian_thing_bake_metal-bake_rough.jpg-fc291bb0670a27b1c3b6b3f1a4b399b7.s3tc.ctex"
-path.etc2="res://.godot/imported/victorian_thing_bake_metal-bake_rough.jpg-fc291bb0670a27b1c3b6b3f1a4b399b7.etc2.ctex"
+uid="uid://14iadnddboiv"
+path.s3tc="res://.godot/imported/sketch_black_helmet_defaultMat_Base_Color.png-061cebd88198ec9d7a7d4737c8f5ade3.s3tc.ctex"
+path.etc2="res://.godot/imported/sketch_black_helmet_defaultMat_Base_Color.png-061cebd88198ec9d7a7d4737c8f5ade3.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ad7ac015c05e05d081b73cc4425479f0"
+"md5": "e759d3b84c4f0a27ac8426d88fc3c72c"
 }
 
 [deps]
 
-source_file="res://_Main/assets/environment/imports/victorian_thing_bake_metal-bake_rough.jpg"
-dest_files=["res://.godot/imported/victorian_thing_bake_metal-bake_rough.jpg-fc291bb0670a27b1c3b6b3f1a4b399b7.s3tc.ctex", "res://.godot/imported/victorian_thing_bake_metal-bake_rough.jpg-fc291bb0670a27b1c3b6b3f1a4b399b7.etc2.ctex"]
+source_file="res://_Main/assets/characters/modular/helmets/imports/sketch_black_helmet_defaultMat_Base_Color.png"
+dest_files=["res://.godot/imported/sketch_black_helmet_defaultMat_Base_Color.png-061cebd88198ec9d7a7d4737c8f5ade3.s3tc.ctex", "res://.godot/imported/sketch_black_helmet_defaultMat_Base_Color.png-061cebd88198ec9d7a7d4737c8f5ade3.etc2.ctex"]
 
 [params]
 
