@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bh8w200n16qld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ernok"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" unique_id=832682884]
+offset_right = 1.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ernok")
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed rhoncus dolor, at porttitor erat. Nulla tempor aliquet justo. Proin id nunc eu ipsum rhoncus sodales"

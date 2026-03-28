@@ -4,10 +4,12 @@
 bg_color = Color(0.5014065, 0.50140655, 0.50140643, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7hqw"]
-bg_color = Color(0, 0, 0.19607843, 0)
+bg_color = Color(0, 0, 0, 0.41960785)
 
 [resource]
 Button/font_sizes/font_size = 32
 Button/styles/hover = SubResource("StyleBoxFlat_ma1gl")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 32
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_h7hqw")

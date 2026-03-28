@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://b7mj7bkgvw804" path="res://_Main/core/ui/scripts/ui_controller.gd" id="1_jpmm6"]
 [ext_resource type="Script" uid="uid://cilc1uev63ccl" path="res://_Main/core/ui/in_game_ui.gd" id="4_24h73"]
 [ext_resource type="Script" uid="uid://dmta2bv6vf6xr" path="res://_Main/core/ui/scripts/interaction_message.gd" id="5_7qjkt"]
+[ext_resource type="Script" uid="uid://bnr1vs4wfadr7" path="res://_Main/core/ui/scripts/dialog_box.gd" id="6_ernok"]
+[ext_resource type="PackedScene" uid="uid://bh8w200n16qld" path="res://_Main/core/ui/dialog_bubble.tscn" id="7_x4n3i"]
 
 [sub_resource type="Theme" id="Theme_8n0d6"]
 MarginContainer/constants/margin_bottom = 15
@@ -12,6 +14,12 @@ MarginContainer/constants/margin_left = 15
 MarginContainer/constants/margin_right = 15
 MarginContainer/constants/margin_top = 15
 VBoxContainer/constants/separation = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mihh"]
+bg_color = Color(0, 0, 0, 0.5254902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4n3i"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="UiController" type="CanvasLayer" unique_id=1596074769 node_paths=PackedStringArray("main_menu", "in_game_ui")]
 script = ExtResource("1_jpmm6")
@@ -65,7 +73,7 @@ layout_mode = 2
 theme = ExtResource("1_8n0d6")
 text = "Quit"
 
-[node name="InGameUI" type="Control" parent="." unique_id=1937100942]
+[node name="InGameUI" type="Control" parent="." unique_id=1937100942 node_paths=PackedStringArray("interaction_message", "dialog_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,41 +81,145 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_24h73")
+interaction_message = NodePath("MarginContainer/InteractionMessage")
+dialog_menu = NodePath("MarginContainer/DialogMenu")
 
-[node name="InteractionMessage" type="Control" parent="InGameUI" unique_id=1648355670 node_paths=PackedStringArray("message")]
+[node name="MarginContainer" type="MarginContainer" parent="InGameUI" unique_id=1128152327]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_7qjkt")
-message = NodePath("PanelContainer/MarginContainer/HBoxContainer/Label")
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
-[node name="PanelContainer" type="PanelContainer" parent="InGameUI/InteractionMessage" unique_id=1902604090]
+[node name="InteractionMessage" type="Control" parent="InGameUI/MarginContainer" unique_id=1648355670 node_paths=PackedStringArray("message")]
+layout_mode = 2
+script = ExtResource("5_7qjkt")
+message = NodePath("Label")
+
+[node name="Label" type="Label" parent="InGameUI/MarginContainer/InteractionMessage" unique_id=1821959409]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -182.0
+offset_top = -45.0
+offset_right = 182.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_8n0d6")
-
-[node name="MarginContainer" type="MarginContainer" parent="InGameUI/InteractionMessage/PanelContainer" unique_id=47126735]
-layout_mode = 2
-theme = ExtResource("1_8n0d6")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="InGameUI/InteractionMessage/PanelContainer/MarginContainer" unique_id=41114408]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="InGameUI/InteractionMessage/PanelContainer/MarginContainer/HBoxContainer" unique_id=1821959409]
-layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mihh")
 text = "interaction message"
+horizontal_alignment = 1
+autowrap_mode = 1
+uppercase = true
+
+[node name="DialogMenu" type="Control" parent="InGameUI/MarginContainer" unique_id=1927571136 node_paths=PackedStringArray("dialog_history", "player_dialog", "npc_name")]
+custom_minimum_size = Vector2(593.67, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+script = ExtResource("6_ernok")
+dialog_history = NodePath("DialogHistory/MarginContainer/ScrollContainer/VBoxContainer")
+player_dialog = NodePath("PlayerDialog")
+npc_name = NodePath("Label")
+
+[node name="DialogHistory" type="PanelContainer" parent="InGameUI/MarginContainer/DialogMenu" unique_id=1623816312]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 810.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameUI/MarginContainer/DialogMenu/DialogHistory" unique_id=92970660]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InGameUI/MarginContainer/DialogMenu/DialogHistory/MarginContainer" unique_id=948639445]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InGameUI/MarginContainer/DialogMenu/DialogHistory/MarginContainer/ScrollContainer" unique_id=343804783]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Label" parent="InGameUI/MarginContainer/DialogMenu/DialogHistory/MarginContainer/ScrollContainer/VBoxContainer" unique_id=832682884 instance=ExtResource("7_x4n3i")]
+layout_mode = 2
+
+[node name="PlayerDialog" type="PanelContainer" parent="InGameUI/MarginContainer/DialogMenu" unique_id=1388895179]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -208.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog" unique_id=430317409]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog/MarginContainer" unique_id=1127146563]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog/MarginContainer/ScrollContainer" unique_id=1583468295]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1858831507]
+custom_minimum_size = Vector2(528, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4n3i")
+text = "1. Accept."
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog/MarginContainer/ScrollContainer/VBoxContainer" unique_id=16252145]
+custom_minimum_size = Vector2(528, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4n3i")
+text = "2. Exit."
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="InGameUI/MarginContainer/DialogMenu" unique_id=1437958750]
+layout_mode = 0
+offset_left = -72.33008
+offset_top = 810.0
+offset_right = 188.66992
+offset_bottom = 879.0
+rotation = -1.5707964
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 50
+text = "NPC Name"
+horizontal_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/NewGame" to="MainMenu" method="_on_new_game_pressed"]
 [connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
