@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cobaucmmnvws6"]
+
+[ext_resource type="Script" uid="uid://dclbvlvbytctd" path="res://_Main/levels/level.gd" id="1_diwiy"]
+[ext_resource type="PackedScene" uid="uid://dnoryodgwx6we" path="res://_Main/npcs/summoner/summoner.tscn" id="1_vjvud"]
+[ext_resource type="PackedScene" uid="uid://b3a4mgau18k4w" path="res://_Main/core/player/player.tscn" id="3_y7dhs"]
+[ext_resource type="PackedScene" uid="uid://vsfaqmy2tfkr" path="res://_Main/core/enemies/humanoid/humanoid.tscn" id="4_bxmas"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_10r3s"]
+size = Vector2(30, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7dhs"]
+size = Vector3(30, 30, 0.001)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y7dhs"]
+
+[sub_resource type="Sky" id="Sky_bxmas"]
+sky_material = SubResource("ProceduralSkyMaterial_y7dhs")
+
+[sub_resource type="Environment" id="Environment_y7dhs"]
+background_mode = 2
+sky = SubResource("Sky_bxmas")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.0008
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+adjustment_enabled = true
+
+[node name="PlayerHub" type="Node3D" unique_id=1003542667]
+script = ExtResource("1_diwiy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=30550446]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_10r3s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=495834023]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=699861435]
+shape = SubResource("BoxShape3D_y7dhs")
+
+[node name="Summoner" parent="." unique_id=1384541883 instance=ExtResource("1_vjvud")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.8406725, 0, -2.1875563)
+
+[node name="Player" parent="." unique_id=850132343 instance=ExtResource("3_y7dhs")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1613256613]
+environment = SubResource("Environment_y7dhs")
+
+[node name="Humanoid" parent="." unique_id=360165436 node_paths=PackedStringArray("slots") instance=ExtResource("4_bxmas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.222622, 0.00050039316, 4.3688383)
+slots = {
+"arms": NodePath("Armature/GeneralSkeleton/Arms"),
+"belt": NodePath("Armature/GeneralSkeleton/Belt"),
+"boots": NodePath("Armature/GeneralSkeleton/Boots"),
+"gauntlet": NodePath("Armature/GeneralSkeleton/Gauntlet"),
+"helmet": NodePath("Armature/GeneralSkeleton/Helmet"),
+"legs": NodePath("Armature/GeneralSkeleton/Legs"),
+"torso": NodePath("Armature/GeneralSkeleton/Torso")
+}

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c1clvfhvbnylt"]
+
+[sub_resource type="Theme" id="Theme_0vvnf"]
+
+[node name="Ui" type="Control" unique_id=518282762]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1267851090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0vvnf")
+tab_alignment = 1
+current_tab = 2
+tab_0/title = "CHARACTERS"
+tab_1/title = "DIALOGUE"
+tab_2/title = "TIMELINE"
+
+[node name="Control" type="Control" parent="TabContainer" unique_id=155156849]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "CHARACTERS"
+
+[node name="Label" type="Label" parent="TabContainer/Control" unique_id=1007839010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "CHARACTERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="TabContainer" unique_id=1144218445]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "DIALOGUE"
+
+[node name="Label" type="Label" parent="TabContainer/Control2" unique_id=1833191070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "DIALOGUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="TabContainer" unique_id=895339942]
+layout_mode = 2
+metadata/_tab_index = 2
+metadata/_tab_name = "TIMELINE"
+
+[node name="Label" type="Label" parent="TabContainer/Control3" unique_id=291348333]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "TIMELINE"
+horizontal_alignment = 1
+vertical_alignment = 1

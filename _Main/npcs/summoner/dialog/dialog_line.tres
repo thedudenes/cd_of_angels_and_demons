@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://dh2nvbsldvokv"]
+
+[ext_resource type="Script" uid="uid://527d5gk8ws8a" path="res://_Main/core/resources/dialogue_line.gd" id="1_cm5ba"]
+
+[resource]
+script = ExtResource("1_cm5ba")
+text = "Hail, wanderer. I be the Summoner, bound by oath and ember. Does thy heart yearn for a comrade in this hollow silence? Or art thou moved by grace to lend thy strength unto a soul in direst need?"
+player_responses = Array[String](["1. I seek a companion. Let the beacons be lit, that a champion may find me.", "2. I offer my steel. Guide me to the side of a warrior in need.", "3. Neither, for now. My path is one I must tread alone."])
+metadata/_custom_type_script = "uid://527d5gk8ws8a"

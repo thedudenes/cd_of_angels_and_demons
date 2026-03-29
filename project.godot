@@ -10,6 +10,7 @@ config_version=5
 
 [animation]
 
+warnings/check_invalid_track_paths=false
 compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
@@ -18,15 +19,17 @@ config/name="cn_angels_and_demons"
 config/description="isometric action role playing videogame
 "
 config/version="0.0.1"
-run/main_scene="uid://eerkxg5xi513"
+run/main_scene="uid://d3op7yv4017en"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
-boot_splash/image="uid://cg0rev4xvchjn"
-config/icon="uid://cg0rev4xvchjn"
+boot_splash/image="uid://c3byqtfvj20cv"
+config/icon="uid://b3lmf8xnbx18n"
 
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GameManager="*uid://b28h16fxxmryx"
+UiManager="*uid://lcxnkqfda7ei"
 
 [dialogic]
 
@@ -70,12 +73,14 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+glossary/glossary_files=[]
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -132,13 +137,19 @@ roll={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
 
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/size=8192
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
-global_illumination/voxel_gi/quality=1
-global_illumination/sdfgi/probe_ray_count=2
+camera/depth_of_field/depth_of_field_bokeh_shape=2
+camera/depth_of_field/depth_of_field_bokeh_quality=3
+camera/depth_of_field/depth_of_field_use_jitter=true
 lights_and_shadows/positional_shadow/atlas_size=8192

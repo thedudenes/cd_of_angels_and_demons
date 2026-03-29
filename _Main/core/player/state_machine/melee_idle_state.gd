@@ -5,7 +5,7 @@ var input_dir: Vector2
 func enter() -> void:
 	initialize()
 	if animations:
-		animations.play("universal_anim_library/Sword_Idle")
+		animations.play("animation_library_one/Sword_Idle")
 	
 func update(_delta: float) -> void:
 	# move player velocity towards zero
@@ -21,5 +21,5 @@ func input(_event: InputEvent) -> void:
 		switch_state_emit("melee_attack")
 
 func animation_finished(s:String) -> void:
-	if s == "universal_anim_library/Sword_Idle":
+	if s == "animation_library_one/Sword_Idle":
 		switch_state_emit("idle")

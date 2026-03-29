@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d3op7yv4017en"]
+
+[ext_resource type="Script" uid="uid://cjkh03hi6s2ip" path="res://_Main/core/scene_controller.gd" id="1_gk580"]
+[ext_resource type="PackedScene" uid="uid://164cx1aasf3d" path="res://_Main/core/ui/ui_controller.tscn" id="2_bl3d7"]
+
+[node name="SceneController" type="Node" unique_id=858528155]
+script = ExtResource("1_gk580")
+
+[node name="UiController" parent="." unique_id=1596074769 instance=ExtResource("2_bl3d7")]
