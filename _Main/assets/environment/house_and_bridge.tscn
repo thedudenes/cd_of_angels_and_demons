@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://hymoio7km0p3"]
+
+[ext_resource type="PackedScene" uid="uid://fudsmviexjav" path="res://_Main/assets/blends/house_and_bridge.blend" id="1_dmc1d"]
+
+[node name="house_and_bridge" unique_id=205288133 instance=ExtResource("1_dmc1d")]
