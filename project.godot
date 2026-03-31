@@ -84,7 +84,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MarchingSquaresTerrain/plugin.cfg", "res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/MarchingSquaresTerrain/plugin.cfg", "res://addons/character_visualizer/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [input]
 
