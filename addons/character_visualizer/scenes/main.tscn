@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=564541413 node_paths=PackedStringArray("character_to_rotate")]
+[node name="Control" type="Control" parent="." unique_id=1764894496]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,30 +38,38 @@ offset_left = 419.0
 offset_right = -419.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control" unique_id=564541413 node_paths=PackedStringArray("character_to_rotate")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 script = ExtResource("1_6hfex")
 character_to_rotate = NodePath("SubViewport/Node3D/Character")
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1179805281]
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=1179805281]
 own_world_3d = true
 handle_input_locally = false
 size = Vector2i(1082, 1080)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1136166550]
+[node name="Node3D" type="Node3D" parent="Control/SubViewportContainer/SubViewport" unique_id=1136166550]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1569725916]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Control/SubViewportContainer/SubViewport/Node3D" unique_id=1569725916]
 environment = SubResource("Environment_xfqqt")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1282511113]
+[node name="Camera3D" type="Camera3D" parent="Control/SubViewportContainer/SubViewport/Node3D" unique_id=1282511113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.6)
 
-[node name="Character" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1535679099]
+[node name="Character" type="Node3D" parent="Control/SubViewportContainer/SubViewport/Node3D" unique_id=1535679099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01336205)
 
-[node name="Armature" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D/Character" unique_id=470420951]
+[node name="Armature" type="Node3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character" unique_id=470420951]
 
-[node name="GeneralSkeleton" type="Skeleton3D" parent="SubViewportContainer/SubViewport/Node3D/Character/Armature" unique_id=1898467494]
+[node name="GeneralSkeleton" type="Skeleton3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature" unique_id=1898467494]
 unique_name_in_owner = true
 bones/0/name = "Root"
 bones/0/parent = -1
@@ -519,41 +527,25 @@ bones/64/position = Vector3(3.1066896e-09, 0.07889982, -1.5676186e-08)
 bones/64/rotation = Quaternion(-2.3347882e-14, 1, -1.1920925e-07, -1.4210851e-14)
 bones/64/scale = Vector3(1, 1.0000004, 0.9999999)
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=392287515]
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=392287515]
 transform = Transform3D(-2.6149354e-07, -1, -7.748603e-07, -9.313226e-07, 7.748605e-07, -1, 1, -2.6149283e-07, -9.313227e-07, -0.68319964, 1.5064011, -0.0770526)
 bone_name = "RightHand"
 bone_idx = 34
 
-[node name="head_test" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=1748438665]
+[node name="head_test" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=1748438665]
 mesh = ExtResource("2_ct0d1")
 
-[node name="torso_test" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=480007936]
+[node name="torso_test" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=480007936]
 mesh = ExtResource("3_fv5ce")
 
-[node name="legs_test" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=1870494558]
+[node name="legs_test" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=1870494558]
 mesh = ExtResource("4_mbvb6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Node3D/Character" unique_id=709159621]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SubViewportContainer/SubViewport/Node3D/Character" unique_id=709159621]
 libraries/ = SubResource("AnimationLibrary_rca82")
 libraries/animation_library_one = ExtResource("13_bnq3l")
 libraries/animation_library_two = ExtResource("14_e26wd")
 playback_default_blend_time = 0.3
-
-[node name="Label" type="Label" parent="." unique_id=1194460225]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Player inventory"
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1955577962]
 layout_mode = 1

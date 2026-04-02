@@ -27,7 +27,6 @@ main_menu = NodePath("MainMenu")
 in_game_ui = NodePath("InGameUI")
 
 [node name="MainMenu" type="Control" parent="." unique_id=1840661187]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,6 +73,7 @@ theme = ExtResource("1_8n0d6")
 text = "Quit"
 
 [node name="InGameUI" type="Control" parent="." unique_id=1937100942 node_paths=PackedStringArray("interaction_message", "dialog_menu")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
