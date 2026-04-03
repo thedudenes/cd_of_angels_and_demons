@@ -5,20 +5,27 @@
 [ext_resource type="ArrayMesh" uid="uid://dbejy506hgclq" path="res://_Main/assets/meshes/naked/head_male.tres" id="2_ct0d1"]
 [ext_resource type="ArrayMesh" uid="uid://bkqtmq0djbex2" path="res://_Main/assets/meshes/naked/torso_male.tres" id="3_fv5ce"]
 [ext_resource type="ArrayMesh" uid="uid://4e0l07p7eijo" path="res://_Main/assets/meshes/naked/legs_male.tres" id="4_mbvb6"]
+[ext_resource type="Texture2D" uid="uid://gehlpichll31" path="res://addons/character_visualizer/lighting/studio/studio_lighting_hdri.exr" id="6_tbkrs"]
 [ext_resource type="Script" uid="uid://bfax8l0ofx433" path="res://addons/character_visualizer/scripts/animation_list.gd" id="8_tbkrs"]
 [ext_resource type="AnimationLibrary" uid="uid://kwu0od1b424p" path="res://_Main/assets/animations/animation_library_one/animation_library_one.res" id="13_bnq3l"]
 [ext_resource type="AnimationLibrary" uid="uid://c1qgh21emxete" path="res://_Main/assets/animations/animation_library_two/animation_library_two.res" id="14_e26wd"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m1lrs"]
-sky_top_color = Color(0.23314139, 0.4365137, 0.66843647, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ovvyc"]
+panorama = ExtResource("6_tbkrs")
 
 [sub_resource type="Sky" id="Sky_8dyem"]
-sky_material = SubResource("ProceduralSkyMaterial_m1lrs")
+sky_material = SubResource("PanoramaSkyMaterial_ovvyc")
 
 [sub_resource type="Environment" id="Environment_xfqqt"]
 background_mode = 2
 sky = SubResource("Sky_8dyem")
+sky_rotation = Vector3(-6.2831855, -4.6547933, 0)
 ambient_light_source = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rca82"]
 
@@ -77,6 +84,7 @@ environment = SubResource("Environment_xfqqt")
 
 [node name="Camera3D" type="Camera3D" parent="Control/SubViewportContainer/SubViewport/Node3D" unique_id=1282511113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.6)
+fov = 55.0
 
 [node name="Character" type="Node3D" parent="Control/SubViewportContainer/SubViewport/Node3D" unique_id=1535679099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01336205)
