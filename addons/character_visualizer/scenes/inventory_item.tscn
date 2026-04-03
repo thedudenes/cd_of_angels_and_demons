@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ckxo8brvibjpj"]
+
+[ext_resource type="Script" uid="uid://dlhn0co5xciue" path="res://addons/character_visualizer/scripts/inventory_item.gd" id="1_62cjd"]
+
+[node name="Item" type="Button" unique_id=103254444 node_paths=PackedStringArray("item_name", "level", "dmg", "weight")]
+custom_minimum_size = Vector2(0, 50)
+script = ExtResource("1_62cjd")
+item_name = NodePath("HBoxContainer/Name")
+level = NodePath("HBoxContainer/Level")
+dmg = NodePath("HBoxContainer/Dmg")
+weight = NodePath("HBoxContainer/Weight")
+equiped_color = Color(0, 0.30361181, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=295794986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="HBoxContainer" unique_id=246489451]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "A standard-issue steel helmet, remarkably heavy and poorly ventilated. Its rusted visor has been crudely welded shut from the inside.
+
+The Wardens of the Sunless Citadel were bound by an oath of absolute, eternal vigil. To ensure no guard would ever avert their gaze or succumb to the temptations of sleep, the royal smiths sealed their helms before their first watch.
+
+They held the line for centuries, long after the kingdom fell to ash and the lords they served were forgotten. When there was nothing left to protect, they simply stood there, staring into the abyss until they became part of the ruins themselves.
+
+Whatever eyes once peered through this narrow slit have long since rotted away, leaving behind only a hollow, unyielding stare."
+mouse_filter = 1
+text = "Steel Helmet"
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="HBoxContainer" unique_id=1427126324]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_vertical = 1
+text = "+++"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dmg" type="Label" parent="HBoxContainer" unique_id=234144573]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight" type="Label" parent="HBoxContainer" unique_id=17076402]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "3.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="HBoxContainer" unique_id=221842938]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
