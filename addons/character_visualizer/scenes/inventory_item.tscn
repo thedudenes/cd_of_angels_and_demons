@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlhn0co5xciue" path="res://addons/character_visualizer/scripts/inventory_item.gd" id="1_62cjd"]
 
-[node name="Item" type="Button" unique_id=103254444 node_paths=PackedStringArray("item_name", "level", "dmg", "weight")]
+[node name="InventoryItem" type="Button" unique_id=103254444 node_paths=PackedStringArray("item_name", "level", "dmg", "weight")]
 custom_minimum_size = Vector2(0, 50)
 script = ExtResource("1_62cjd")
 item_name = NodePath("HBoxContainer/Name")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bxxx1i28q2gdj"]
+
+[ext_resource type="Script" uid="uid://dlryxym3iscom" path="res://addons/character_visualizer/scripts/animation_item.gd" id="1_qlvwj"]
+
+[node name="AnimationItem" type="Button" unique_id=621027288]
+theme_override_font_sizes/font_size = 16
+text = "asdasdasd"
+alignment = 0
+script = ExtResource("1_qlvwj")

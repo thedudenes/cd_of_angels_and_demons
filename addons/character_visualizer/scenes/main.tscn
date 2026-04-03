@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dbejy506hgclq" path="res://_Main/assets/meshes/naked/head_male.tres" id="2_ct0d1"]
 [ext_resource type="ArrayMesh" uid="uid://bkqtmq0djbex2" path="res://_Main/assets/meshes/naked/torso_male.tres" id="3_fv5ce"]
 [ext_resource type="ArrayMesh" uid="uid://4e0l07p7eijo" path="res://_Main/assets/meshes/naked/legs_male.tres" id="4_mbvb6"]
+[ext_resource type="Script" uid="uid://bfax8l0ofx433" path="res://addons/character_visualizer/scripts/animation_list.gd" id="8_tbkrs"]
 [ext_resource type="AnimationLibrary" uid="uid://kwu0od1b424p" path="res://_Main/assets/animations/animation_library_one/animation_library_one.res" id="13_bnq3l"]
 [ext_resource type="AnimationLibrary" uid="uid://c1qgh21emxete" path="res://_Main/assets/animations/animation_library_two/animation_library_two.res" id="14_e26wd"]
 
@@ -20,6 +21,8 @@ sky = SubResource("Sky_8dyem")
 ambient_light_source = 3
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rca82"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fv5ce"]
 
 [node name="Main" type="Control" unique_id=79800294 node_paths=PackedStringArray("head", "helm", "torso", "legs", "armor_tab", "clothing_tab")]
 layout_mode = 3
@@ -560,6 +563,12 @@ libraries/animation_library_one = ExtResource("13_bnq3l")
 libraries/animation_library_two = ExtResource("14_e26wd")
 playback_default_blend_time = 0.3
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SubViewportContainer/SubViewport/Node3D" unique_id=1062845504]
+libraries/ = SubResource("AnimationLibrary_fv5ce")
+libraries/animation_library_one = ExtResource("13_bnq3l")
+libraries/animation_library_two = ExtResource("14_e26wd")
+playback_default_blend_time = 0.3
+
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1955577962]
 layout_mode = 1
 anchors_preset = 11
@@ -693,9 +702,24 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="TabContainer2" type="TabContainer" parent="." unique_id=1254847432]
+[node name="Panel" type="Panel" parent="." unique_id=220727272]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 419.0
 grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=1784648391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=376650752 node_paths=PackedStringArray("animations")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("8_tbkrs")
+animations = NodePath("../../../Control/SubViewportContainer/SubViewport/Node3D/AnimationPlayer")
