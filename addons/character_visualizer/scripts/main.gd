@@ -84,6 +84,7 @@ func populate_table() -> void:
 		list_item.assing_ref(e)
 		list_item.equip_item.connect(equip_item)
 		list_item.unequip_item.connect(unequip_item)
+		list_item.set_button_color(list_item.unequiped_color)
 		if e is Clothing:
 			clothing_tab.add_child(list_item)
 		if e is Armor:
@@ -104,12 +105,6 @@ func equip_item(item: Resource, button: InventoryItem) -> void:
 	else:
 		print("Resource is not a Wearable!")
 
-func remove_active_button(slot: String) -> void:
-	for button in active_buttons:
-		if Wearable.SLOT.keys()[button.item_ref.slot] == slot:
-			button.unselect()
-			active_buttons.erase(button)
-
 func unequip_item(item: Resource, button: InventoryItem) -> void:
 	if item is Wearable:
 		var slot_key = Wearable.SLOT.keys()[item.slot]
@@ -123,3 +118,9 @@ func unequip_item(item: Resource, button: InventoryItem) -> void:
 				legs.mesh = legs_naked
 	else:
 		print("Resource is not a Wearable!")
+
+func remove_active_button(slot: String) -> void:
+	for button in active_buttons:
+		if Wearable.SLOT.keys()[button.item_ref.slot] == slot:
+			button.unselect()
+			active_buttons.erase(button)
