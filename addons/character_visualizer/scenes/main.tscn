@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpxk8d8pf5wdi"]
 
 [ext_resource type="Script" uid="uid://dqlgdieoiv5j4" path="res://addons/character_visualizer/scripts/sub_viewport_container.gd" id="1_6hfex"]
-[ext_resource type="Script" uid="uid://b4n81gtej02pl" path="res://addons/character_visualizer/scenes/main.gd" id="1_fv5ce"]
+[ext_resource type="Script" uid="uid://b4n81gtej02pl" path="res://addons/character_visualizer/scripts/main.gd" id="1_fv5ce"]
 [ext_resource type="ArrayMesh" uid="uid://dbejy506hgclq" path="res://_Main/assets/meshes/naked/head_male.tres" id="2_ct0d1"]
 [ext_resource type="ArrayMesh" uid="uid://bkqtmq0djbex2" path="res://_Main/assets/meshes/naked/torso_male.tres" id="3_fv5ce"]
 [ext_resource type="ArrayMesh" uid="uid://4e0l07p7eijo" path="res://_Main/assets/meshes/naked/legs_male.tres" id="4_mbvb6"]

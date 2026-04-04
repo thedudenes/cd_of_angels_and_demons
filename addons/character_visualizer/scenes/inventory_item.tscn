@@ -9,7 +9,7 @@ item_name = NodePath("HBoxContainer/Name")
 level = NodePath("HBoxContainer/Level")
 dmg = NodePath("HBoxContainer/Dmg")
 weight = NodePath("HBoxContainer/Weight")
-equiped_color = Color(0, 0.30361181, 0, 1)
+equiped_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=295794986]
 layout_mode = 1

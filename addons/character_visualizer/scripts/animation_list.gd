@@ -21,6 +21,6 @@ func populate_animation_list(anim_list: Array[String]) -> void:
 		item.play_animation.connect(play_animation)
 
 func play_animation(anim_name: String) -> void:
-	print("PLAY: ", anim_name)
+	#print("PLAY: ", anim_name)
 	if animations.has_animation(anim_name):
 		animations.play(anim_name)
