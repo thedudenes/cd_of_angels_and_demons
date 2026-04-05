@@ -65,6 +65,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = -5.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
@@ -74,7 +78,7 @@ character_to_rotate = NodePath("SubViewport/Node3D/Character")
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=1179805281]
 own_world_3d = true
 handle_input_locally = false
-size = Vector2i(1082, 1080)
+size = Vector2i(1072, 1064)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="Control/SubViewportContainer/SubViewport" unique_id=1136166550]
@@ -583,7 +587,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -419.0
+offset_left = -416.0
 grow_horizontal = 0
 grow_vertical = 2
 current_tab = 1
@@ -714,7 +718,7 @@ metadata/_tab_index = 6
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 419.0
+offset_right = 416.0
 grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=1784648391]

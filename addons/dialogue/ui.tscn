@@ -2,6 +2,20 @@
 
 [sub_resource type="Theme" id="Theme_0vvnf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vvnf"]
+bg_color = Color(0.74724233, 0, 0.25167522, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf4du"]
+bg_color = Color(0.21950099, 0.21950105, 0.21950087, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvyph"]
+bg_color = Color(0.7490196, 0, 0.2509804, 1)
+
 [node name="Ui" type="Control" unique_id=518282762]
 layout_mode = 3
 anchors_preset = 15
@@ -9,9 +23,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1267851090]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,51 +36,194 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0vvnf")
 tab_alignment = 1
-current_tab = 2
+current_tab = 0
 tab_0/title = "CHARACTERS"
-tab_1/title = "DIALOGUE"
-tab_2/title = "TIMELINE"
+tab_1/title = "WORLD STATE"
 
 [node name="Control" type="Control" parent="TabContainer" unique_id=155156849]
-visible = false
+clip_contents = true
 layout_mode = 2
 metadata/_tab_index = 0
 metadata/_tab_name = "CHARACTERS"
 
-[node name="Label" type="Label" parent="TabContainer/Control" unique_id=1007839010]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Control" unique_id=854042262]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 60
+theme_override_constants/separation = 8
+
+[node name="Panel" type="Panel" parent="TabContainer/Control/HBoxContainer" unique_id=599409040]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Control/HBoxContainer/Panel" unique_id=1229202561]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0vvnf")
 text = "CHARACTERS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control2" type="Control" parent="TabContainer" unique_id=1144218445]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-metadata/_tab_name = "DIALOGUE"
-
-[node name="Label" type="Label" parent="TabContainer/Control2" unique_id=1833191070]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Control/HBoxContainer/Panel" unique_id=818872558]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "DIALOGUE"
+draw_focus_border = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/HBoxContainer/Panel/ScrollContainer" unique_id=896239545]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="TabContainer/Control/HBoxContainer/Panel/ScrollContainer/VBoxContainer" unique_id=918735839]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SUMMONER"
+
+[node name="Button2" type="Button" parent="TabContainer/Control/HBoxContainer/Panel/ScrollContainer/VBoxContainer" unique_id=703298046]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SUMMONER"
+
+[node name="Button3" type="Button" parent="TabContainer/Control/HBoxContainer/Panel/ScrollContainer/VBoxContainer" unique_id=734396357]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SUMMONER"
+
+[node name="Button4" type="Button" parent="TabContainer/Control/HBoxContainer/Panel/ScrollContainer/VBoxContainer" unique_id=601402820]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SUMMONER"
+
+[node name="Button5" type="Button" parent="TabContainer/Control/HBoxContainer/Panel/ScrollContainer/VBoxContainer" unique_id=1574645399]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SUMMONER"
+
+[node name="Button" type="Button" parent="TabContainer/Control/HBoxContainer/Panel" unique_id=1606623687]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tf4du")
+text = "+"
+
+[node name="Panel2" type="Panel" parent="TabContainer/Control/HBoxContainer" unique_id=1162836967]
+custom_minimum_size = Vector2(312, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Control/HBoxContainer/Panel2" unique_id=504183482]
+layout_mode = 0
+offset_right = 312.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xvyph")
+text = "ALL DIALOGUE FILES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Control/HBoxContainer/Panel2" unique_id=1522224754]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 33.0
+offset_right = 312.0
+grow_vertical = 2
+draw_focus_border = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/HBoxContainer/Panel2/ScrollContainer" unique_id=1538483858]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="TabContainer/Control/HBoxContainer/Panel2/ScrollContainer/VBoxContainer" unique_id=33086980]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "DIALOGUE1"
+
+[node name="Button2" type="Button" parent="TabContainer/Control/HBoxContainer/Panel2/ScrollContainer/VBoxContainer" unique_id=345970339]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "DIALOGUE2"
+
+[node name="Button3" type="Button" parent="TabContainer/Control/HBoxContainer/Panel2/ScrollContainer/VBoxContainer" unique_id=1498421530]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "DIALOGUE3"
+
+[node name="Button4" type="Button" parent="TabContainer/Control/HBoxContainer/Panel2/ScrollContainer/VBoxContainer" unique_id=419407120]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "DIALOGUE4"
+
+[node name="Button" type="Button" parent="TabContainer/Control/HBoxContainer/Panel2" unique_id=1146562326]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tf4du")
+text = "+"
+
+[node name="Panel3" type="Panel" parent="TabContainer/Control/HBoxContainer" unique_id=657688158]
+custom_minimum_size = Vector2(1336, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Control/HBoxContainer/Panel3" unique_id=169989541]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xvyph")
+text = "DIALOGUE FILE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control3" type="Control" parent="TabContainer" unique_id=895339942]
+visible = false
 layout_mode = 2
-metadata/_tab_index = 2
-metadata/_tab_name = "TIMELINE"
+metadata/_tab_index = 1
+metadata/_tab_name = "WORLD STATE"
 
 [node name="Label" type="Label" parent="TabContainer/Control3" unique_id=291348333]
 layout_mode = 1

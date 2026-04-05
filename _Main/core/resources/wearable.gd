@@ -8,7 +8,8 @@ enum SLOT {
 	legs,
 	ring,
 	necklace,
-	belt
+	belt,
+	cloack
 }
 
 @export var mesh: Resource

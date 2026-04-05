@@ -27,6 +27,7 @@ main_menu = NodePath("MainMenu")
 in_game_ui = NodePath("InGameUI")
 
 [node name="MainMenu" type="Control" parent="." unique_id=1840661187]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,7 +74,6 @@ theme = ExtResource("1_8n0d6")
 text = "Quit"
 
 [node name="InGameUI" type="Control" parent="." unique_id=1937100942 node_paths=PackedStringArray("interaction_message", "dialog_menu")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -192,9 +192,9 @@ custom_minimum_size = Vector2(528, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4n3i")
-text = "1. Accept."
+text = "1. I seek for the strenght of a companion"
 autowrap_mode = 1
 
 [node name="Label2" type="Label" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog/MarginContainer/ScrollContainer/VBoxContainer" unique_id=16252145]
@@ -202,8 +202,19 @@ custom_minimum_size = Vector2(528, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4n3i")
-text = "2. Exit."
+text = "2. I shall lend my strenght to a wortie warrior in direst need."
+autowrap_mode = 1
+
+[node name="Label3" type="Label" parent="InGameUI/MarginContainer/DialogMenu/PlayerDialog/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2064622845]
+custom_minimum_size = Vector2(528, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4n3i")
+text = "3. I better not, farewall."
 autowrap_mode = 1
 
 [node name="Label" type="Label" parent="InGameUI/MarginContainer/DialogMenu" unique_id=1437958750]
