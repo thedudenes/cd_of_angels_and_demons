@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://c1clvfhvbnylt"]
+
+[ext_resource type="PackedScene" uid="uid://cdml6ihp5thw7" path="res://addons/dialogue/scenes/character_list_item.tscn" id="1_56yk0"]
+[ext_resource type="Script" uid="uid://bkvbn5in4xonu" path="res://addons/dialogue/scripts/new_character.gd" id="2_5g47s"]
+[ext_resource type="PackedScene" uid="uid://c0ydcv3vhakxh" path="res://addons/dialogue/scenes/dialog_file_list_item.tscn" id="2_c24yt"]
+[ext_resource type="Script" uid="uid://ctktq4pjmxlr7" path="res://addons/dialogue/scripts/new_dialogue.gd" id="4_jrspx"]
+[ext_resource type="Script" uid="uid://6jy33aullxhs" path="res://addons/dialogue/scripts/new_character_popup.gd" id="5_jrspx"]
+
+[sub_resource type="Theme" id="Theme_0vvnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vvnf"]
+bg_color = Color(0.74724233, 0, 0.25167522, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf4du"]
+bg_color = Color(0.21950099, 0.21950105, 0.21950087, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvyph"]
+bg_color = Color(0.7490196, 0, 0.2509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g47s"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[node name="Main" type="Control" unique_id=518282762]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1267851090]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0vvnf")
+tab_alignment = 1
+current_tab = 0
+tab_1/title = "World State"
+
+[node name="Characters" type="Control" parent="TabContainer" unique_id=155156849]
+clip_contents = true
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Characters" unique_id=854042262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Characters" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=293454505]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/Characters" unique_id=1229202561]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0vvnf")
+text = "CHARACTERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Characters/HBoxContainer/Characters" unique_id=818872558]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer/Characters/ScrollContainer" unique_id=896239545]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" parent="TabContainer/Characters/HBoxContainer/Characters/ScrollContainer/VBoxContainer" unique_id=1618622011 instance=ExtResource("1_56yk0")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Characters/HBoxContainer/Characters" unique_id=721830316]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Button" type="Button" parent="TabContainer/Characters/HBoxContainer/Characters/MarginContainer" unique_id=1426755724 node_paths=PackedStringArray("popup")]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+tooltip_text = "CREATE NEW CHARACTER"
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tf4du")
+text = "+"
+script = ExtResource("2_5g47s")
+popup = NodePath("../../../../../../NewCharacterPopup")
+
+[node name="CharacterDialogFiles" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=2013068459]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/CharacterDialogFiles" unique_id=504183482]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xvyph")
+text = "ALL DIALOGUE FILES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Characters/HBoxContainer/CharacterDialogFiles" unique_id=1522224754]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer/CharacterDialogFiles/ScrollContainer" unique_id=1538483858]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" parent="TabContainer/Characters/HBoxContainer/CharacterDialogFiles/ScrollContainer/VBoxContainer" unique_id=182294561 instance=ExtResource("2_c24yt")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Characters/HBoxContainer/CharacterDialogFiles" unique_id=528094653]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Button" type="Button" parent="TabContainer/Characters/HBoxContainer/CharacterDialogFiles/MarginContainer" unique_id=1146562326]
+clip_contents = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tf4du")
+text = "+"
+script = ExtResource("4_jrspx")
+
+[node name="DialogFile" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=1502351969]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/DialogFile" unique_id=169989541]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xvyph")
+text = "DIALOGUE FILE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorldState" type="Control" parent="TabContainer" unique_id=1418172747]
+visible = false
+clip_contents = true
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "World State"
+
+[node name="NewCharacterPopup" type="Panel" parent="." unique_id=1057369504 node_paths=PackedStringArray("text_input")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -244.0
+offset_right = 368.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5g47s")
+script = ExtResource("5_jrspx")
+text_input = NodePath("MarginContainer/TextEdit")
+
+[node name="Label" type="Label" parent="NewCharacterPopup" unique_id=941332106]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+text = "CREATE NEW CHARACTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewCharacterPopup" unique_id=1305559696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -220.0
+offset_right = 368.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextEdit" type="TextEdit" parent="NewCharacterPopup/MarginContainer" unique_id=331410701]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+placeholder_text = "INTRODUCE CHARACTER NAME"
+
+[node name="MarginContainer2" type="MarginContainer" parent="NewCharacterPopup" unique_id=944411907]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewCharacterPopup/MarginContainer2" unique_id=2102603895]
+layout_mode = 2
+alignment = 2
+
+[node name="Cancel" type="Button" parent="NewCharacterPopup/MarginContainer2/HBoxContainer" unique_id=1084363643]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[node name="CreateNewCharacter" type="Button" parent="NewCharacterPopup/MarginContainer2/HBoxContainer" unique_id=973869439]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+text = "CONFIRM"
+
+[connection signal="pressed" from="NewCharacterPopup/MarginContainer2/HBoxContainer/Cancel" to="NewCharacterPopup" method="_on_cancel_pressed"]
+[connection signal="pressed" from="NewCharacterPopup/MarginContainer2/HBoxContainer/CreateNewCharacter" to="NewCharacterPopup" method="_on_create_new_character_pressed"]

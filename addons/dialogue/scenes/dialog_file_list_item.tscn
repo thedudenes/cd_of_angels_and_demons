@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c0ydcv3vhakxh"]
+
+[node name="Button" type="Button" unique_id=182294561]
+custom_minimum_size = Vector2(0, 63)
+theme_override_font_sizes/font_size = 16
+text = "DIALOGUE1"

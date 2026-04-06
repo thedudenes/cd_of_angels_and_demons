@@ -27,7 +27,6 @@ config/icon="uid://b3lmf8xnbx18n"
 
 [autoload]
 
-Dialogic="*uid://ds2q0uclmolvu"
 GameManager="*uid://b28h16fxxmryx"
 UiManager="*uid://lcxnkqfda7ei"
 
@@ -84,7 +83,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MarchingSquaresTerrain/plugin.cfg", "res://addons/character_visualizer/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/dialogue/plugin.cfg")
+enabled=PackedStringArray("res://addons/MarchingSquaresTerrain/plugin.cfg", "res://addons/character_visualizer/plugin.cfg", "res://addons/dialogue/plugin.cfg")
 
 [input]
 

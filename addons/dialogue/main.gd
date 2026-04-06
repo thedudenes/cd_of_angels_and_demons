@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-const MainPanel = preload("res://addons/dialogue/ui.tscn")
+const MainPanel = preload("res://addons/dialogue/main.tscn")
 
 var main_panel_instance
 
@@ -24,7 +24,7 @@ func _make_visible(visible):
 		main_panel_instance.visible = visible
 
 func _get_plugin_name():
-	return "Hola Facu"
+	return "Dialogue"
 
 func _get_plugin_icon():
 	return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
