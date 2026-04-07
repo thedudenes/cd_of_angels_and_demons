@@ -85,6 +85,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/MarchingSquaresTerrain/plugin.cfg", "res://addons/character_visualizer/plugin.cfg", "res://addons/dialogue/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 dialogic_default_action={

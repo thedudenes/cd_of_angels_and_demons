@@ -5,14 +5,12 @@ const CHARACTER_LIST = "res://_Main/dialogue/"
 const CHARACTER_ITEM_PATH = "res://addons/dialogue/scenes/character_list_item.tscn"
 
 @export var character_list: VBoxContainer
-@export var dialogue_files: VBoxContainer
+@export var main: Control
 
 func _ready() -> void:
 	refresh_list()
 
 func refresh_list() -> void:
-	
-	# Clear existing items
 	for child in character_list.get_children():
 		child.queue_free()
 
@@ -33,7 +31,7 @@ func refresh_list() -> void:
 					instance.text = file_name
 				
 				character_list.add_child(instance)
-				character_list.pressed.connect(dialogue_files.set_dialogue_list)
+				instance.pressed.connect(set_character.bind(file_name))
 				instance.tooltip_text = file_name + "."
 			
 			file_name = dir.get_next()
@@ -41,3 +39,6 @@ func refresh_list() -> void:
 		dir.list_dir_end()
 	else:
 		print("Error: Could not open path ", CHARACTER_LIST)
+
+func set_character(s: String) -> void:
+	main.set_character(s)

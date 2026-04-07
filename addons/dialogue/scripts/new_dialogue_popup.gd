@@ -12,31 +12,31 @@ func _ready() -> void:
 func _on_cancel_pressed() -> void:
 	hide()
 
-func _on_create_new_character_pressed() -> void:
+func _on_create_dialogue_pressed() -> void:
 	# 1. Sanitize the input to prevent illegal Windows paths (no trailing spaces or dots)
-	var character_name = text_input.text.strip_edges().replace(".", "")
+	var dialogue_name = text_input.text.strip_edges().replace(".", "")
 	
-	if character_name == "":
+	if dialogue_name == "":
 		printerr("WARNING: MUST ENTER CHARACTER NAME")
 		return 
 
-	var new_character_directory = CHARACTER_PATH + character_name
+	var new_dialogue_directory = CHARACTER_PATH + dialogue_name
 	
-	if DirAccess.dir_exists_absolute(new_character_directory):
+	if DirAccess.dir_exists_absolute(new_dialogue_directory):
 		printerr("WARNING: CHARACTER ALREADY EXISTS")
 	else:
-		var error = DirAccess.make_dir_recursive_absolute(new_character_directory)
+		var error = DirAccess.make_dir_recursive_absolute(new_dialogue_directory)
 		
 		if error == OK:
 			# --- CREATE DIALOGUE RESOURCE ---
-			var new_character = Character.new()
-			new_character.character_name = character_name
+			var new_dialogue = Dialogue.new()
+			new_dialogue.dialogue_name = dialogue_name
 			
-			var file_path = new_character_directory + "/" + character_name + "_data.tres"
-			var save_err = ResourceSaver.save(new_character, file_path)
+			var file_path = new_dialogue_directory + "/" + dialogue_name + "_data.tres"
+			var save_err = ResourceSaver.save(new_dialogue, file_path)
 			
 			# --- CREATE THE "dialogue" SUBFOLDER ---
-			var dialogue_folder_path = new_character_directory + "/dialogue"
+			var dialogue_folder_path = new_dialogue_directory + "/dialogue"
 			var dir_err = DirAccess.make_dir_absolute(dialogue_folder_path)
 			
 			if dir_err == OK:
