@@ -39,14 +39,14 @@ func _on_create_dialogue_pressed() -> void:
 
 	# 3. Create the file now that we are sure the path exists
 	create_file(dialogue_name, new_dialogue_directory)
-	dialogue.refresh_list(current_character)
+	dialogue.refresh_list()
 	hide()
 
 func create_file(dialogue_name: String, new_dialogue_directory: String) -> void:
 	var new_dialogue = Dialogue.new()
 	new_dialogue.title = dialogue_name
 	
-	var file_path = new_dialogue_directory + dialogue_name + "_data.tres"
+	var file_path = new_dialogue_directory + dialogue_name + ".tres"
 	
 	# Check if file already exists to prevent accidental overwriting
 	if FileAccess.file_exists(file_path):

@@ -19,4 +19,4 @@ func _on_filesystem_changed() -> void:
 
 func refresh_all() -> void:
 	characters.refresh_list()
-	#dialogue.refresh_list()
+	dialogue.refresh_list()
