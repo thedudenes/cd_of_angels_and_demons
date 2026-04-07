@@ -58,3 +58,6 @@ func _on_create_new_character_pressed() -> void:
 func on_hide() -> void:
 	print("HIDE")
 	text_input.text = ""
+
+func _on_button_pressed() -> void:
+	show()

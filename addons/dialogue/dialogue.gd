@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-const MainPanel = preload("res://addons/dialogue/main.tscn")
+const MainPanel = preload("res://addons/dialogue/scenes/main.tscn")
 
 var main_panel_instance
 
