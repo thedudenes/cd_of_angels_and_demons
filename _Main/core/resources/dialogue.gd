@@ -1,5 +1,5 @@
 extends Resource
 class_name Dialogue
 
-@export var name: String
+@export var title: String
 @export_multiline var text: String

@@ -5,7 +5,7 @@ const CHARACTER_LIST = "res://_Main/dialogue/"
 const CHARACTER_ITEM_PATH = "res://addons/dialogue/scenes/character_list_item.tscn"
 
 @export var character_list: VBoxContainer
-@export var main: Control
+@export var dialogue: VBoxContainer
 
 func _ready() -> void:
 	refresh_list()
@@ -41,4 +41,4 @@ func refresh_list() -> void:
 		print("Error: Could not open path ", CHARACTER_LIST)
 
 func set_character(s: String) -> void:
-	main.set_character(s)
+	dialogue.refresh_list(s)

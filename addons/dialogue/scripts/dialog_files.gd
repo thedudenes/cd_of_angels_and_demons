@@ -5,6 +5,9 @@ const DIALOGUE_PATH = "res://_Main/dialogue/"
 const DIALOGUE_ITEM_PATH = "res://addons/dialogue/scenes/dialog_list_item.tscn"
 
 @export var dialogue_list: VBoxContainer
+@export var creation_pop_up: Panel
+
+var current_character: String
 
 func _ready() -> void:
 	for child in dialogue_list.get_children():
@@ -13,8 +16,10 @@ func _ready() -> void:
 func refresh_list(s: String) -> void:
 	var dialogue_list_path = DIALOGUE_PATH + s + "/dialogue"
 	print("CHARACTER DIALOGUE FOLDER: ", dialogue_list_path)
-	#for child in dialogue_list.get_children():
-		#child.queue_free()
+	current_character = s
+	print("CHARACTER SELECTED: ",current_character)
+	for child in dialogue_list.get_children():
+		child.queue_free()
 
 	var dir = DirAccess.open(dialogue_list_path)
 	
@@ -40,3 +45,8 @@ func refresh_list(s: String) -> void:
 		dir.list_dir_end()
 	else:
 		print("Error: Could not open path ", DIALOGUE_PATH)
+
+func _on_popup_button_pressed() -> void:
+	if current_character != "":
+		creation_pop_up.current_character = current_character
+		creation_pop_up.show()
