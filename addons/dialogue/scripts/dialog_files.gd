@@ -14,12 +14,16 @@ func _ready() -> void:
 		child.queue_free()
 
 func refresh_list(s: String) -> void:
-	var dialogue_list_path = DIALOGUE_PATH + s + "/dialogue"
-	print("CHARACTER DIALOGUE FOLDER: ", dialogue_list_path)
 	current_character = s
-	print("CHARACTER SELECTED: ",current_character)
+	var dialogue_list_path = DIALOGUE_PATH + current_character + "/dialogue/"
+	
+	# Clear existing list
 	for child in dialogue_list.get_children():
 		child.queue_free()
+
+	if not DirAccess.dir_exists_absolute(dialogue_list_path):
+		print("No dialogue folder found for: ", current_character)
+		return
 
 	var dir = DirAccess.open(dialogue_list_path)
 	
@@ -28,23 +32,25 @@ func refresh_list(s: String) -> void:
 		var file_name = dir.get_next()
 
 		while file_name != "":
-			# Use begins_with (plural) to skip hidden system folders
-			if dir.current_is_dir() and not file_name.begins_with("."):
-				var character_scene = load(DIALOGUE_ITEM_PATH)
-				var instance = character_scene.instantiate()
+			# FIX 1: Look for FILES, not directories. 
+			# Also filter for .tres files and ignore the import files
+			if not dir.current_is_dir() and file_name.ends_with(".tres"):
+				var item_scene = load(DIALOGUE_ITEM_PATH)
+				var instance = item_scene.instantiate()
 				
-				# If your tscn's root is a Button, set the text
-				if instance is Button:
-					instance.text = file_name
+				# FIX 2: Ensure 'text' is set on the right property.
+				# If your item is a Button, 'instance.text' works.
+				# If your item is a Panel with a Label, use: instance.get_node("Label").text
+				instance.text = file_name.replace("_data.tres", "") 
 				
 				dialogue_list.add_child(instance)
-				instance.tooltip_text = file_name + "."
+				instance.tooltip_text = file_name
 			
 			file_name = dir.get_next()
 			
 		dir.list_dir_end()
 	else:
-		print("Error: Could not open path ", DIALOGUE_PATH)
+		printerr("Error: Could not open path ", dialogue_list_path)
 
 func _on_popup_button_pressed() -> void:
 	if current_character != "":

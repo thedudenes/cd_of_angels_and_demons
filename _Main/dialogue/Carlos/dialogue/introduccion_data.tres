@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://co7y8f07sdgem"]
+
+[ext_resource type="Script" uid="uid://d0dnf5w3anobd" path="res://_Main/core/resources/dialogue.gd" id="1_cdthe"]
+
+[resource]
+script = ExtResource("1_cdthe")
+title = "introduccion"

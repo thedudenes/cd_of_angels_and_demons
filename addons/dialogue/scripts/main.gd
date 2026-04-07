@@ -18,7 +18,5 @@ func _on_filesystem_changed() -> void:
 	refresh_all()
 
 func refresh_all() -> void:
-	#print("REFRESH CHARACTER LIST: ",characters)
 	characters.refresh_list()
-	#if Globals.current_character != "":
-		#dialogue.refresh_list(current_character)
+	#dialogue.refresh_list()
