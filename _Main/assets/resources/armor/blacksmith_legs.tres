@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://ck1s7t2mhenwj"]
+
+[ext_resource type="Script" uid="uid://tvjfhmxxebm6" path="res://_Main/core/resources/clothing.gd" id="1_oo54p"]
+[ext_resource type="ArrayMesh" uid="uid://c18a7xcexidva" path="res://_Main/assets/meshes/armor_sets/blacksmith_legs.tres" id="1_vham7"]
+
+[resource]
+script = ExtResource("1_oo54p")
+mesh = ExtResource("1_vham7")
+name = "Peasant Pants"
+slot = 3
+metadata/_custom_type_script = "uid://tvjfhmxxebm6"

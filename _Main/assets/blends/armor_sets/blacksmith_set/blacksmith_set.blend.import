@@ -48,6 +48,15 @@ _subresources={
 "save_to_file/fallback_path": "res://_Main/assets/meshes/armor_sets/blacksmith_torso.tres",
 "save_to_file/path": "uid://cxdkf1in5ldy"
 },
+"blacksmith_set_Shirt_mesh_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://_Main/assets/meshes/armor_sets/blacksmith_layered.tres",
+"save_to_file/path": "uid://b0jou7fop2by8"
+},
 "blacksmith_set_Sphere_005_Retopology_004": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,

@@ -4,14 +4,10 @@ extends Control
 const wearables_path = "res://_Main/assets/resources/armor/"
 const inventory_item = preload("res://addons/character_visualizer/scenes/inventory_item.tscn")
 
-@export var head: MeshInstance3D
 @export var helm: MeshInstance3D
 @export var torso: MeshInstance3D
 @export var legs: MeshInstance3D
-@export var head_naked: ArrayMesh
-@export var torso_naked: ArrayMesh
-@export var legs_naked: ArrayMesh
-@export var head_slot: Dictionary[InventoryItem, MeshInstance3D]
+@export var layered: MeshInstance3D
 
 @export var armor_tab: Control
 @export var clothing_tab: Control
@@ -102,6 +98,8 @@ func equip_item(item: Resource, button: InventoryItem) -> void:
 				torso.mesh = item.mesh
 			"legs":
 				legs.mesh = item.mesh
+			"layered":
+				layered.mesh = item.mesh
 	else:
 		print("Resource is not a Wearable!")
 
@@ -113,9 +111,11 @@ func unequip_item(item: Resource, button: InventoryItem) -> void:
 			"helm":
 				helm.mesh = null
 			"torso":
-				torso.mesh = torso_naked
+				torso.mesh = null
 			"legs":
-				legs.mesh = legs_naked
+				legs.mesh = null
+			"layered":
+				layered.mesh = null
 	else:
 		print("Resource is not a Wearable!")
 
