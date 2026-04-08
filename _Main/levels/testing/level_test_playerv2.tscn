@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://2ajgi0go1jnb"]
+
+[ext_resource type="Material" uid="uid://06vclpgwwyc8" path="res://addons/kenney_prototype_tools/materials/dark/material_07.tres" id="1_d7ybs"]
+[ext_resource type="PackedScene" uid="uid://vbliuk50pt4h" path="res://_Main/core/player/player_v2.tscn" id="1_mygks"]
+[ext_resource type="Texture2D" uid="uid://ftjhpdl01nqb" path="res://assets/panoramas/all_sky/Cold Sunset Equirect.png" id="3_uxqrb"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kyxqn"]
+panorama = ExtResource("3_uxqrb")
+energy_multiplier = 0.3
+
+[sub_resource type="Sky" id="Sky_ki0e4"]
+sky_material = SubResource("PanoramaSkyMaterial_kyxqn")
+
+[sub_resource type="Environment" id="Environment_4pjii"]
+background_mode = 2
+background_energy_multiplier = 3.81
+sky = SubResource("Sky_ki0e4")
+ambient_light_source = 3
+ambient_light_color = Color(0.5084095, 0.7016969, 0.80738515, 1)
+ambient_light_energy = 2.79
+reflected_light_source = 2
+tonemap_exposure = 1.41
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_mode = 1
+fog_light_energy = 2.25
+fog_sun_scatter = 1.0
+fog_density = 0.1776
+fog_aerial_perspective = 0.24
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 1.135
+adjustment_saturation = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_mygks"]
+material = ExtResource("1_d7ybs")
+size = Vector3(100, 0.05, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uxqrb"]
+size = Vector3(100, 0.05, 100)
+
+[node name="LevelTestPlayerv2" type="Node3D" unique_id=775488434]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1083494257]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=516639275]
+transform = Transform3D(0.97011375, 0.12894422, -0.20555404, 1.7666551e-08, 0.8471218, 0.5313989, 0.24264997, -0.51551765, 0.8218046, 0, 0, 0)
+light_color = Color(0.92461795, 0.41996285, 0.34493977, 1)
+light_indirect_energy = 4.497
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1681604982]
+environment = SubResource("Environment_4pjii")
+
+[node name="Player" parent="." unique_id=850132343 instance=ExtResource("1_mygks")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1385347565]
+mesh = SubResource("BoxMesh_mygks")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1938093270]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=2133890091]
+shape = SubResource("BoxShape3D_uxqrb")

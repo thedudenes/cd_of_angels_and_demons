@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://cgld0q7wfg3vb"]
 
 [ext_resource type="Script" uid="uid://tvjfhmxxebm6" path="res://_Main/core/resources/clothing.gd" id="1_6yyva"]
-[ext_resource type="ArrayMesh" uid="uid://bry3p214vyc7t" path="res://_Main/assets/meshes/armor_sets/blacksmith_layered.tres" id="1_i66gt"]
+[ext_resource type="ArrayMesh" uid="uid://b0jou7fop2by8" path="res://_Main/assets/meshes/armor_sets/blacksmith_layered.tres" id="1_i66gt"]
 
 [resource]
 script = ExtResource("1_6yyva")
 mesh = ExtResource("1_i66gt")
-name = "Apron"
+name = "Blacksmith Apron"
 slot = 7
 metadata/_custom_type_script = "uid://tvjfhmxxebm6"
