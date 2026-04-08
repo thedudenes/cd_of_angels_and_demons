@@ -7,6 +7,9 @@ const DIALOGUE_ITEM_PATH = "res://addons/dialogue/scenes/dialog_list_item.tscn"
 @export var characters: VBoxContainer
 @export var list: VBoxContainer
 @export var creation_pop_up: Panel
+@export var dialogue_editor: VBoxContainer
+
+var current_dialogue: Dialogue
 
 func _ready() -> void:
 	for child in list.get_children():
@@ -35,20 +38,22 @@ func refresh_list() -> void:
 			if not dir.current_is_dir() and file_name.ends_with(".tres"):
 				var item_scene = load(DIALOGUE_ITEM_PATH)
 				var instance = item_scene.instantiate()
-				
-				# FIX 2: Ensure 'text' is set on the right property.
-				# If your item is a Button, 'instance.text' works.
-				# If your item is a Panel with a Label, use: instance.get_node("Label").text
-				instance.text = file_name.replace(".tres", "") 
-				#instance.pressed.connect()
+				#print(characters.current_character + " DIALOGUES: ",dialogue_list_path + file_name)
+				var resource = load(dialogue_list_path + file_name)
+				#print("DIALOGUE: ", resource)
+				instance.set_resource(resource)
+				instance.pressed.connect(set_current_dialogue.bind(resource))
 				list.add_child(instance)
-				instance.tooltip_text = file_name
 			
 			file_name = dir.get_next()
 			
 		dir.list_dir_end()
 	else:
 		printerr("Error: Could not open path ", dialogue_list_path)
+
+func set_current_dialogue(r: Dialogue) -> void:
+	current_dialogue = r
+	
 
 func _on_popup_button_pressed() -> void:
 	if characters.current_character != "":

@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c0ydcv3vhakxh"]
 
+[ext_resource type="Script" uid="uid://utjg70poj1tq" path="res://addons/dialogue/scripts/dialog_list_item.gd" id="1_xrahr"]
+
 [node name="Button" type="Button" unique_id=182294561]
 custom_minimum_size = Vector2(0, 63)
 theme_override_font_sizes/font_size = 16
 text = "DIALOGUE1"
+script = ExtResource("1_xrahr")

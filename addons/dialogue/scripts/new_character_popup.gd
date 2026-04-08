@@ -30,9 +30,9 @@ func _on_create_new_character_pressed() -> void:
 		if error == OK:
 			# --- CREATE DIALOGUE RESOURCE ---
 			var new_character = Character.new()
-			new_character.character_name = character_name
+			new_character.name = character_name
 			
-			var file_path = new_character_directory + "/" + character_name + "_data.tres"
+			var file_path = new_character_directory + "/" + character_name + ".tres"
 			var save_err = ResourceSaver.save(new_character, file_path)
 			
 			# --- CREATE THE "dialogue" SUBFOLDER ---

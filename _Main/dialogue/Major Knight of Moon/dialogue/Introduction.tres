@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://5fnw755lbwdw"]
-
-[ext_resource type="Script" uid="uid://d0dnf5w3anobd" path="res://_Main/core/resources/dialogue.gd" id="1_qrx3f"]
-
-[resource]
-script = ExtResource("1_qrx3f")
-title = "Introduction"

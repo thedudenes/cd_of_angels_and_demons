@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://d2odcibw4fr65"]
+
+[ext_resource type="Script" uid="uid://d0dnf5w3anobd" path="res://_Main/core/resources/dialogue.gd" id="1_1ec4l"]
+[ext_resource type="Script" uid="uid://kqwbxdq2xghg" path="res://_Main/core/resources/character.gd" id="2_xrtlh"]
+
+[resource]
+script = ExtResource("2_xrtlh")
+name = "Carlos"

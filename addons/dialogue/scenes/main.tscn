@@ -69,13 +69,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="Character" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=293454505 node_paths=PackedStringArray("list", "dialogue")]
+[node name="Character" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=293454505 node_paths=PackedStringArray("list", "dialogue", "dialogue_editor")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 script = ExtResource("2_7cvjs")
 list = NodePath("ScrollContainer/List")
 dialogue = NodePath("../Dialogue")
+dialogue_editor = NodePath("../DialogueEditor")
 
 [node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/Character" unique_id=1229202561]
 layout_mode = 2
@@ -116,7 +117,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_tf4du")
 text = "+"
 
-[node name="Dialogue" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=2013068459 node_paths=PackedStringArray("characters", "list", "creation_pop_up")]
+[node name="Dialogue" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=2013068459 node_paths=PackedStringArray("characters", "list", "creation_pop_up", "dialogue_editor")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
@@ -124,6 +125,7 @@ script = ExtResource("4_7cvjs")
 characters = NodePath("../Character")
 list = NodePath("ScrollContainer/List")
 creation_pop_up = NodePath("../../../../NewDialoguePopup")
+dialogue_editor = NodePath("../DialogueEditor")
 
 [node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/Dialogue" unique_id=504183482]
 layout_mode = 2
@@ -164,10 +166,12 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_tf4du")
 text = "+"
 
-[node name="DialogueEditor" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=1502351969 node_paths=PackedStringArray("character_name")]
+[node name="DialogueEditor" type="VBoxContainer" parent="TabContainer/Characters/HBoxContainer" unique_id=1502351969 node_paths=PackedStringArray("character", "dialog", "character_name")]
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("4_ckk3t")
+character = NodePath("../Character")
+dialog = NodePath("../Dialogue")
 character_name = NodePath("Label2")
 
 [node name="Label" type="Label" parent="TabContainer/Characters/HBoxContainer/DialogueEditor" unique_id=169989541]

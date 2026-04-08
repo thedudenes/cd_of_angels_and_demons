@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cdml6ihp5thw7"]
 
+[ext_resource type="Script" uid="uid://088m36sj6glr" path="res://addons/dialogue/scripts/character_list_item.gd" id="1_s614r"]
+
 [node name="Button" type="Button" unique_id=1618622011]
 custom_minimum_size = Vector2(0, 63)
 theme_override_font_sizes/font_size = 16
 text = "SUMMONER"
 text_overrun_behavior = 3
+script = ExtResource("1_s614r")
