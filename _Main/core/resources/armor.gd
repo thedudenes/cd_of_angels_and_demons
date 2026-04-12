@@ -1,5 +1,4 @@
-extends Wearable
-class_name Armor
+class_name Armor extends Wearable
 
 @export_group("resistances")
 @export var physical_resistance: float

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqlgdieoiv5j4" path="res://addons/character_visualizer/scripts/sub_viewport_container.gd" id="1_6hfex"]
 [ext_resource type="Script" uid="uid://b4n81gtej02pl" path="res://addons/character_visualizer/scripts/main.gd" id="1_fv5ce"]
 [ext_resource type="Texture2D" uid="uid://gehlpichll31" path="res://addons/character_visualizer/lighting/studio/studio_lighting_hdri.exr" id="6_tbkrs"]
+[ext_resource type="Script" uid="uid://bnxunhmovsdeo" path="res://addons/character_visualizer/scripts/tab.gd" id="7_mbvb6"]
 [ext_resource type="Script" uid="uid://bfax8l0ofx433" path="res://addons/character_visualizer/scripts/animation_list.gd" id="8_tbkrs"]
 [ext_resource type="ArrayMesh" uid="uid://d3ak4fd7yoscy" path="res://_Main/assets/meshes/player_full_body/human_male_naked.tres" id="12_tp15k"]
 [ext_resource type="AnimationLibrary" uid="uid://kwu0od1b424p" path="res://_Main/assets/animations/animation_library_one/animation_library_one.res" id="13_bnq3l"]
@@ -226,7 +227,7 @@ bind/64/pose = Transform3D(-1, 1.4210853e-14, -8.4703184e-22, 4.384023e-14, 3.87
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fv5ce"]
 
-[node name="Main" type="Control" unique_id=79800294 node_paths=PackedStringArray("helm", "torso", "legs", "layered", "armor_tab", "clothing_tab")]
+[node name="Main" type="Control" unique_id=79800294 node_paths=PackedStringArray("head", "torso", "legs", "layered")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,12 +236,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_fv5ce")
-helm = NodePath("Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton/healm")
+head = NodePath("Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton/head")
 torso = NodePath("Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton/torso")
 legs = NodePath("Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton/legs")
 layered = NodePath("Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton/layered")
-armor_tab = NodePath("TabContainer/Armor/VBoxContainer")
-clothing_tab = NodePath("TabContainer/Clothing/VBoxContainer")
 
 [node name="Control" type="Control" parent="." unique_id=1764894496]
 layout_mode = 1
@@ -267,6 +266,7 @@ character_to_rotate = NodePath("SubViewport/Node3D/Character")
 own_world_3d = true
 handle_input_locally = false
 size = Vector2i(1082, 1080)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="Control/SubViewportContainer/SubViewport" unique_id=1136166550]
@@ -746,7 +746,7 @@ bones/64/scale = Vector3(1, 1.0000013, 1.0000002)
 mesh = ExtResource("12_tp15k")
 skin = SubResource("Skin_q1gxj")
 
-[node name="healm" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=968733402]
+[node name="head" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=968733402]
 skin = SubResource("Skin_q1gxj")
 
 [node name="torso" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Node3D/Character/Armature/GeneralSkeleton" unique_id=290268899]
@@ -773,11 +773,14 @@ anchor_bottom = 1.0
 offset_left = -419.0
 grow_horizontal = 0
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 
-[node name="Armor" type="Control" parent="TabContainer" unique_id=1083374504]
-visible = false
+[node name="Armor" type="Control" parent="TabContainer" unique_id=1083374504 node_paths=PackedStringArray("main", "list")]
 layout_mode = 2
+script = ExtResource("7_mbvb6")
+path = "res://_Main/assets/resources/armor/"
+main = NodePath("../..")
+list = NodePath("VBoxContainer/ScrollContainer/VBoxContainer")
 metadata/_tab_index = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Armor" unique_id=411914430]
@@ -787,6 +790,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Armor/VBoxContainer" unique_id=858754494]
 layout_mode = 2
@@ -826,51 +831,80 @@ text = "VALUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Clothing" type="Control" parent="TabContainer" unique_id=1025555201]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Armor/VBoxContainer" unique_id=779246240]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Armor/VBoxContainer/ScrollContainer" unique_id=1274391219]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Clothing" type="Control" parent="TabContainer" unique_id=1025555201 node_paths=PackedStringArray("main", "list")]
+visible = false
+layout_mode = 2
+script = ExtResource("7_mbvb6")
+path = "res://_Main/assets/resources/clothing/"
+main = NodePath("../..")
+list = NodePath("VBoxContainer/ScrollContainer/VBoxContainer")
 metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Clothing" unique_id=1202352825]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Clothing" unique_id=808813423]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Clothing/VBoxContainer" unique_id=2034271892]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Clothing/VBoxContainer" unique_id=1238250511]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=628507636]
+[node name="Label" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=554152823]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 text = "NAME"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=2020277965]
+[node name="Label2" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=1895985131]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "LEVEL"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=2018380327]
+[node name="Label3" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=74439278]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "DAMAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=786066467]
+[node name="Label4" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=273700329]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "WEIGHT"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=12016279]
+[node name="Label5" type="Label" parent="TabContainer/Clothing/VBoxContainer/HBoxContainer" unique_id=764089938]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "VALUE"
+horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Clothing/VBoxContainer" unique_id=2074050525]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Clothing/VBoxContainer/ScrollContainer" unique_id=1034514543]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Weapons" type="Control" parent="TabContainer" unique_id=1325650227]
 visible = false

@@ -1,2 +1,3 @@
-extends Wearable
-class_name Clothing
+class_name Clothing extends Wearable
+
+@export var warmth: float

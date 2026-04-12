@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Armor" format=3 uid="uid://0ekbdvdy4ocv"]
+
+[ext_resource type="ArrayMesh" uid="uid://cp3caekqjno4y" path="res://_Main/assets/meshes/armor_sets/knight_ebony_legs.tres" id="1_dcnsv"]
+[ext_resource type="Script" uid="uid://dtup4fyyuhe3p" path="res://_Main/core/resources/armor.gd" id="1_gj4r0"]
+
+[resource]
+script = ExtResource("1_gj4r0")
+slot = 3
+name = "Ebony Knight's Troussers"
+mesh = ExtResource("1_dcnsv")
+metadata/_custom_type_script = "uid://dtup4fyyuhe3p"

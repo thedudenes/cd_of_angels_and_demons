@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Armor" format=3 uid="uid://dlmskqfme81nt"]
+
+[ext_resource type="Script" uid="uid://dtup4fyyuhe3p" path="res://_Main/core/resources/armor.gd" id="1_8bua6"]
+[ext_resource type="ArrayMesh" uid="uid://d0wrbobtsh8ou" path="res://_Main/assets/meshes/armor_sets/knight_ebony_helmet.tres" id="1_a5m3k"]
+
+[resource]
+script = ExtResource("1_8bua6")
+name = "Ebony Knight's Helm"
+mesh = ExtResource("1_a5m3k")
+metadata/_custom_type_script = "uid://dtup4fyyuhe3p"

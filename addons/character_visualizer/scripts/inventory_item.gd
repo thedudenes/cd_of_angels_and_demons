@@ -1,6 +1,5 @@
 @tool
-extends Button
-class_name InventoryItem
+class_name InventoryItem extends Button
 
 signal equip_item(item: Resource, b: InventoryItem)
 signal unequip_item(item: Resource, b: InventoryItem)
@@ -12,40 +11,51 @@ signal unequip_item(item: Resource, b: InventoryItem)
 @export var equiped_color: Color
 @export var unequiped_color: Color
 
-var item_ref: Resource
-var equiped: bool = false
+var item_res: Resource
+var selected: bool = false
 
-func change_name(s: String) -> void:
+func write_name(s: String) -> void:
 	item_name.text = s
 
-func change_level(s: String) -> void:
+func read_name() -> String:
+	return item_name.text
+
+func write_level(s: String) -> void:
 	level.text = s
 
-func change_dmg(s: String) -> void:
+func read_level() -> String:
+	return level.text
+
+func write_dmg(s: String) -> void:
 	dmg.text = s
 
-func change_weight(s: String) -> void:
+func read_dmg() -> String:
+	return dmg.text
+
+func write_weight(s: String) -> void:
 	weight.text = s
 
-func assing_ref(r: Resource) -> void:
-	item_ref = r
+func read_weight() -> String:
+	return weight.text
 
-func _pressed() -> void:
-	if equiped:
-		unequip_item.emit(item_ref, self)
-		unselect()
+func write_res(r: Resource) -> void:
+	item_res = r
+
+func read_res() -> Resource:
+	return item_res
+
+func write_selected(b: bool) -> void:
+	selected = b
+
+func read_selected() -> bool:
+	return selected
+
+func toggle_select() -> void:
+	write_selected(!selected)
+	if selected:
+		set_button_color(equiped_color)
 	else:
-		equip_item.emit(item_ref, self)
-		select()
-		
-	equiped = !equiped
-
-func unselect() -> void:
-	set_button_color(unequiped_color) 
-	equiped = !equiped
-
-func select() -> void:
-	set_button_color(equiped_color)
+		set_button_color(unequiped_color) 
 
 func set_button_color(new_color: Color) -> void:
 	# 1. Get the current stylebox or create a new one if it doesn't exist

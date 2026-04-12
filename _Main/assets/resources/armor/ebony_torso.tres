@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Armor" format=3 uid="uid://bghn7lu5by77"]
+
+[ext_resource type="ArrayMesh" uid="uid://bs4rb44g53xpj" path="res://_Main/assets/meshes/armor_sets/knight_ebony_torso.tres" id="1_hfnxo"]
+[ext_resource type="Script" uid="uid://dtup4fyyuhe3p" path="res://_Main/core/resources/armor.gd" id="1_wn735"]
+
+[resource]
+script = ExtResource("1_wn735")
+slot = 2
+name = "Ebony Knight's Armor"
+mesh = ExtResource("1_hfnxo")
+metadata/_custom_type_script = "uid://dtup4fyyuhe3p"

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvp1msmfftsu8"
-path.s3tc="res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-aa711408274713c774643b9e3051fb00.s3tc.ctex"
-path.etc2="res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-aa711408274713c774643b9e3051fb00.etc2.ctex"
+path.s3tc="res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-7cb7785c39e226b62a7c131f0545b761.s3tc.ctex"
+path.etc2="res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-7cb7785c39e226b62a7c131f0545b761.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://_Main/assets/blends/armor_sets/knight_ebony_set/ebony_knight_set_T_Shoulders_Roughness.png"
-dest_files=["res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-aa711408274713c774643b9e3051fb00.s3tc.ctex", "res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-aa711408274713c774643b9e3051fb00.etc2.ctex"]
+source_file="res://_Main/assets/blends/armor_sets/knight_ebony_set/Textures/ebony_knight_set_T_Shoulders_Roughness.png"
+dest_files=["res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-7cb7785c39e226b62a7c131f0545b761.s3tc.ctex", "res://.godot/imported/ebony_knight_set_T_Shoulders_Roughness.png-7cb7785c39e226b62a7c131f0545b761.etc2.ctex"]
 
 [params]
 

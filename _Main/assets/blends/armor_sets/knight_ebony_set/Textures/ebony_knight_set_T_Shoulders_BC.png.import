@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0n2drrd2oaqn"
-path.s3tc="res://.godot/imported/ebony_knight_set_T_Breastplate_Roughness.png-922089f7e8efbf312bc03a367154a91f.s3tc.ctex"
-path.etc2="res://.godot/imported/ebony_knight_set_T_Breastplate_Roughness.png-922089f7e8efbf312bc03a367154a91f.etc2.ctex"
+uid="uid://bsxriclud2138"
+path.s3tc="res://.godot/imported/ebony_knight_set_T_Shoulders_BC.png-8f0c0cf4972312131dde9877dac81fed.s3tc.ctex"
+path.etc2="res://.godot/imported/ebony_knight_set_T_Shoulders_BC.png-8f0c0cf4972312131dde9877dac81fed.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "64b0205ae3e7de790ece1896cf93c90e"
+"md5": "2d2b19aaf10e691076d2d36d97c621a3"
 }
 
 [deps]
 
-source_file="res://_Main/assets/blends/armor_sets/knight_ebony_set/ebony_knight_set_T_Breastplate_Roughness.png"
-dest_files=["res://.godot/imported/ebony_knight_set_T_Breastplate_Roughness.png-922089f7e8efbf312bc03a367154a91f.s3tc.ctex", "res://.godot/imported/ebony_knight_set_T_Breastplate_Roughness.png-922089f7e8efbf312bc03a367154a91f.etc2.ctex"]
+source_file="res://_Main/assets/blends/armor_sets/knight_ebony_set/Textures/ebony_knight_set_T_Shoulders_BC.png"
+dest_files=["res://.godot/imported/ebony_knight_set_T_Shoulders_BC.png-8f0c0cf4972312131dde9877dac81fed.s3tc.ctex", "res://.godot/imported/ebony_knight_set_T_Shoulders_BC.png-8f0c0cf4972312131dde9877dac81fed.etc2.ctex"]
 
 [params]
 

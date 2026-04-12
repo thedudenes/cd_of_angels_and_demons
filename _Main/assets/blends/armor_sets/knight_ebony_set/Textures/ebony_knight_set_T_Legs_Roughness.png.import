@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmw4prx26e8yv"
-path.s3tc="res://.godot/imported/ebony_knight_set_T_Helmet_Roughness.png-8c21585d6edbdbf0d62eef603d5c59de.s3tc.ctex"
-path.etc2="res://.godot/imported/ebony_knight_set_T_Helmet_Roughness.png-8c21585d6edbdbf0d62eef603d5c59de.etc2.ctex"
+uid="uid://wjeebnu5uvvr"
+path.s3tc="res://.godot/imported/ebony_knight_set_T_Legs_Roughness.png-bb71ece4b999174b3ca52d796a1456af.s3tc.ctex"
+path.etc2="res://.godot/imported/ebony_knight_set_T_Legs_Roughness.png-bb71ece4b999174b3ca52d796a1456af.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "19a805178bd07b6c7fbd53f7b75706c3"
+"md5": "6830a80a51d6e04f6f620c8b33f71a92"
 }
 
 [deps]
 
-source_file="res://_Main/assets/blends/armor_sets/knight_ebony_set/ebony_knight_set_T_Helmet_Roughness.png"
-dest_files=["res://.godot/imported/ebony_knight_set_T_Helmet_Roughness.png-8c21585d6edbdbf0d62eef603d5c59de.s3tc.ctex", "res://.godot/imported/ebony_knight_set_T_Helmet_Roughness.png-8c21585d6edbdbf0d62eef603d5c59de.etc2.ctex"]
+source_file="res://_Main/assets/blends/armor_sets/knight_ebony_set/Textures/ebony_knight_set_T_Legs_Roughness.png"
+dest_files=["res://.godot/imported/ebony_knight_set_T_Legs_Roughness.png-bb71ece4b999174b3ca52d796a1456af.s3tc.ctex", "res://.godot/imported/ebony_knight_set_T_Legs_Roughness.png-bb71ece4b999174b3ca52d796a1456af.etc2.ctex"]
 
 [params]
 

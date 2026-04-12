@@ -1,126 +1,132 @@
 @tool
 extends Control
 
-const wearables_path = "res://_Main/assets/resources/armor/"
+signal refresh
+
 const inventory_item = preload("res://addons/character_visualizer/scenes/inventory_item.tscn")
 
-@export var helm: MeshInstance3D
+@export_group("Mesh Slots")
+@export var head: MeshInstance3D
 @export var torso: MeshInstance3D
 @export var legs: MeshInstance3D
 @export var layered: MeshInstance3D
-
-@export var armor_tab: Control
-@export var clothing_tab: Control
-
-var wearables: Array[Wearable] = []
-var active_buttons: Array[InventoryItem]
+@export_group("Clothing")
+@export var head_clothing: Clothing
+@export var torso_clothing: Clothing
+@export var legs_clothing: Clothing
+@export var layered_clothing: Clothing
+@export_group("Armor")
+@export var head_armor: Armor
+@export var torso_armor: Armor
+@export var legs_armor: Armor
 
 func _ready() -> void:
-	load_wearables()
-	populate_table()
 	if Engine.is_editor_hint():
 		var efs = EditorInterface.get_resource_filesystem()
 		if not efs.filesystem_changed.is_connected(_on_filesystem_changed):
 			efs.filesystem_changed.connect(_on_filesystem_changed)
-	
-	refresh_all()
 
-#THIS FUNCTION TRIGGERS WHENEVER ANY FILE IN THE PROJECT CHANGES
 func _on_filesystem_changed() -> void:
 	print("Filesystem changed, updating Visualizer...")
-	refresh_all()
+	refresh.emit()
 
-func refresh_all() -> void:
-	clear_tables()
-	load_wearables()
-	populate_table()
+func equip_head(r: Wearable) -> void:
+	if r is Clothing:
+		if head_armor == null:
+			head.mesh = r.mesh
+		head_clothing = r
+	if r is Armor:
+		head.mesh = r.mesh
+		head_armor = r
 
-func clear_tables() -> void:
-	if armor_tab:
-		for child in armor_tab.get_children().filter(func(child): return child is InventoryItem):
-			child.queue_free()
-	if clothing_tab:
-		for child in clothing_tab.get_children().filter(func(child): return child is InventoryItem):
-			child.queue_free()
-	wearables.clear()
+func unequip_head(r: Wearable) -> void:
+	if r is Clothing:
+		if head_armor == null:
+			head.mesh = null
+		head_clothing = null
+	if r is Armor:
+		if head_clothing == null:
+			head.mesh = null
+		else:
+			head.mesh = head_clothing.mesh
+		head_armor = null
 
-func load_wearables() -> void:
-	# Open the directory
-	var dir = DirAccess.open(wearables_path)
-	
+func equip_torso(r: Wearable) -> void:
+	if r is Clothing:
+		if torso_armor == null:
+			torso.mesh = r.mesh
+		torso_clothing = r
+	if r is Armor:
+		torso.mesh = r.mesh
+		torso_armor = r
+
+func unequip_torso(r: Wearable) -> void:
+	if r is Clothing:
+		if torso_armor == null:
+			torso.mesh = null
+		torso_clothing = null
+	if r is Armor:
+		if torso_clothing == null:
+			torso.mesh = null
+		else:
+			torso.mesh = torso_clothing.mesh
+		torso_armor = null
+
+func equip_legs(r: Wearable) -> void:
+	if r is Clothing:
+		if legs_armor == null:
+			legs.mesh = r.mesh
+		legs_clothing = r
+	if r is Armor:
+		legs.mesh = r.mesh
+		legs_armor = r
+
+func unequip_legs(r: Wearable) -> void:
+	if r is Clothing:
+		if legs_armor == null:
+			legs.mesh = null
+		legs_clothing = null
+	if r is Armor:
+		if legs_clothing == null:
+			legs.mesh = null
+		else:
+			legs.mesh = legs_clothing.mesh
+		legs_armor = null
+
+func equip_layered(r: Wearable) -> void:
+	layered.mesh = r.mesh
+	layered_clothing
+
+func unequip_layered(r: Wearable) -> void:
+	layered.mesh = null
+	layered_clothing = null
+
+# cada tab envia el path de items y la lista a ser llenada, se instancian los botones,
+# se le asigna un resource a cada uno y se conecta por señal pressed a la funcion
+# equipar item
+func populate_table(path: String, list: VBoxContainer, items: Array[InventoryItem]) -> void:
+	var dir = DirAccess.open(path)
 	if dir:
 		# Start iterating through the files
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
-		
 		while file_name != "":
-			# Ignore directories and focus on resource files
-			# Note: When exported, .tres files become .remap, 
-			# but load() handles this automatically if you use the original path.
 			if !dir.current_is_dir() and file_name.ends_with(".tres"):
-				var full_path = wearables_path + file_name
-				var resource = load(full_path)
-				
-				# Check if the resource is actually a Wearable
-				if resource is Wearable:
-					wearables.append(resource)
+				#load item resource
+				var resource_path: String = path + file_name
+				var resource = load(path + file_name)
+				#load list_item scene
+				var list_item =  inventory_item.instantiate()
+				if resource is Item:
+					list_item.write_res(resource)
+					list_item.write_name(resource.name)
+					items.push_front(list_item)
+					list.add_child(list_item)
 				else:
-					push_warning("Found resource at " + full_path + " but it is not a Wearable.")
+					push_warning("Found resource at " + resource_path + " but it is not an Item.")
 			
 			file_name = dir.get_next()
 		
 		dir.list_dir_end()
 	else:
-		push_error("An error occurred when trying to access the path: " + wearables_path)
-
-func populate_table() -> void:
-	for e in wearables:
-		var list_item = inventory_item.instantiate()
-		list_item.change_name(e.name)
-		list_item.assing_ref(e)
-		list_item.equip_item.connect(equip_item)
-		list_item.unequip_item.connect(unequip_item)
-		list_item.set_button_color(list_item.unequiped_color)
-		if e is Clothing:
-			clothing_tab.add_child(list_item)
-		if e is Armor:
-			armor_tab.add_child(list_item)
-
-func equip_item(item: Resource, button: InventoryItem) -> void:
-	if item is Wearable:
-		var slot_key = Wearable.SLOT.keys()[item.slot]		
-		remove_active_button(slot_key)
-		active_buttons.push_front(button)
-		match slot_key:
-			"helm":
-				helm.mesh = item.mesh
-			"torso":
-				torso.mesh = item.mesh
-			"legs":
-				legs.mesh = item.mesh
-			"layered":
-				layered.mesh = item.mesh
-	else:
-		print("Resource is not a Wearable!")
-
-func unequip_item(item: Resource, button: InventoryItem) -> void:
-	if item is Wearable:
-		var slot_key = Wearable.SLOT.keys()[item.slot]
-		remove_active_button(slot_key)
-		match slot_key:
-			"helm":
-				helm.mesh = null
-			"torso":
-				torso.mesh = null
-			"legs":
-				legs.mesh = null
-			"layered":
-				layered.mesh = null
-	else:
-		print("Resource is not a Wearable!")
-
-func remove_active_button(slot: String) -> void:
-	for button in active_buttons:
-		if Wearable.SLOT.keys()[button.item_ref.slot] == slot:
-			button.unselect()
-			active_buttons.erase(button)
+		push_error("An error occurred when trying to access the path: " + dir)
