@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://cpfof4gjopcbt"]
+
+[ext_resource type="Script" uid="uid://tvjfhmxxebm6" path="res://_Main/core/resources/clothing.gd" id="1_tdeky"]
+[ext_resource type="ArrayMesh" uid="uid://cxdkf1in5ldy" path="res://_Main/assets/meshes/armor_sets/blacksmith_torso.tres" id="1_xgmrt"]
+
+[resource]
+script = ExtResource("1_tdeky")
+slot = 2
+name = "Blacksmith's Shirt"
+mesh = ExtResource("1_xgmrt")
+metadata/_custom_type_script = "uid://tvjfhmxxebm6"

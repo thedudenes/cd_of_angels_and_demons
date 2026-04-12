@@ -1,5 +1,4 @@
-extends Resource
-class_name Wearable
+class_name Wearable extends Item
 
 enum SLOT {
 	head,
@@ -12,7 +11,4 @@ enum SLOT {
 	layered
 }
 
-@export var mesh: Resource
-@export var name: String
 @export var slot: SLOT
-@export var weight: float
