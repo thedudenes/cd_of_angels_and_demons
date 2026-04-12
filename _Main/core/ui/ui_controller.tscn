@@ -27,6 +27,7 @@ main_menu = NodePath("MainMenu")
 in_game_ui = NodePath("InGameUI")
 
 [node name="MainMenu" type="Control" parent="." unique_id=1840661187]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,8 +73,101 @@ layout_mode = 2
 theme = ExtResource("1_8n0d6")
 text = "Quit"
 
-[node name="InGameUI" type="Control" parent="." unique_id=1937100942 node_paths=PackedStringArray("interaction_message", "dialog_menu")]
+[node name="PauseMenu" type="Control" parent="." unique_id=1954224369]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmlsb")
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu" unique_id=180316183]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -94.5
+offset_right = 283.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8n0d6")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/PanelContainer" unique_id=1464186647]
+layout_mode = 2
+theme = SubResource("Theme_8n0d6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PanelContainer/MarginContainer" unique_id=1696270812]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1089561692]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "Codename: Of Angels And Demons"
+
+[node name="NewGame" type="Button" parent="PauseMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1079270708]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "New Game"
+
+[node name="Quit" type="Button" parent="PauseMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=602849858]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "Quit"
+
+[node name="Settings" type="Control" parent="." unique_id=2091006321]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmlsb")
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings" unique_id=931927657]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -94.5
+offset_right = 283.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8n0d6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/PanelContainer" unique_id=97540377]
+layout_mode = 2
+theme = SubResource("Theme_8n0d6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/PanelContainer/MarginContainer" unique_id=1482771875]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/PanelContainer/MarginContainer/VBoxContainer" unique_id=1055020594]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "Codename: Of Angels And Demons"
+
+[node name="NewGame" type="Button" parent="Settings/PanelContainer/MarginContainer/VBoxContainer" unique_id=1495277420]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "New Game"
+
+[node name="Quit" type="Button" parent="Settings/PanelContainer/MarginContainer/VBoxContainer" unique_id=60140375]
+layout_mode = 2
+theme = ExtResource("1_8n0d6")
+text = "Quit"
+
+[node name="InGameUI" type="Control" parent="." unique_id=1937100942 node_paths=PackedStringArray("interaction_message", "dialog_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,6 +191,7 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
 [node name="InteractionMessage" type="Control" parent="InGameUI/MarginContainer" unique_id=1648355670 node_paths=PackedStringArray("message")]
+visible = false
 layout_mode = 2
 script = ExtResource("5_7qjkt")
 message = NodePath("Label")
@@ -121,6 +216,7 @@ autowrap_mode = 1
 uppercase = true
 
 [node name="DialogMenu" type="Control" parent="InGameUI/MarginContainer" unique_id=1927571136 node_paths=PackedStringArray("dialog_history", "player_dialog", "npc_name")]
+visible = false
 custom_minimum_size = Vector2(593.67, 0)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -221,5 +317,12 @@ text = "NPC Name"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="PlayerHud" type="Control" parent="InGameUI/MarginContainer" unique_id=2001251844]
+layout_mode = 2
+
 [connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/NewGame" to="MainMenu" method="_on_new_game_pressed"]
 [connection signal="pressed" from="MainMenu/PanelContainer/MarginContainer/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenu/PanelContainer/MarginContainer/VBoxContainer/NewGame" to="PauseMenu" method="_on_new_game_pressed"]
+[connection signal="pressed" from="PauseMenu/PanelContainer/MarginContainer/VBoxContainer/Quit" to="PauseMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings/PanelContainer/MarginContainer/VBoxContainer/NewGame" to="Settings" method="_on_new_game_pressed"]
+[connection signal="pressed" from="Settings/PanelContainer/MarginContainer/VBoxContainer/Quit" to="Settings" method="_on_quit_pressed"]
