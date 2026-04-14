@@ -229,11 +229,11 @@ height = 0.5793431
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u20ck"]
 radius = 0.08203125
-height = 0.41056985
+height = 0.39278492
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m3x4v"]
 radius = 0.08203125
-height = 0.52830166
+height = 0.4636184
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2bpu"]
 radius = 0.07470703
@@ -740,6 +740,7 @@ mesh = ExtResource("3_2f05x")
 skin = SubResource("Skin_2tv4l")
 
 [node name="Head" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1953117878]
+visible = false
 
 [node name="WeistAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton" unique_id=337433561]
 transform = Transform3D(1, 0, 0, 0, 1, -5.364418e-07, 0, 5.364418e-07, 1, 0, 0.94909996, -0.05187079)
@@ -749,56 +750,60 @@ use_external_skeleton = true
 external_skeleton = NodePath("..")
 
 [node name="SoftBody3D" type="SoftBody3D" parent="Armature/GeneralSkeleton/WeistAttachment" unique_id=1765835379]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0267984e-09, -0.9491081, 0.059639324)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0005482, 0.11212063)
 mesh = ExtResource("5_m3x4v")
 collision_layer = 2
 collision_mask = 2
-pressure_coefficient = 1.0
+parent_collision_ignore = NodePath("../../../..")
+total_mass = 0.3
 pinned_points = [10, 8, 4, 3, 1, 0, 5, 7, 6, 56, 57, 59]
 attachments/0/point_index = 10
 attachments/0/spatial_attachment_path = NodePath("..")
-attachments/0/offset = Vector3(0.17746937, 0.14822298, 0.063743696)
+attachments/0/offset = Vector3(0.17746937, 0.0967828, 0.116225004)
 attachments/1/point_index = 8
 attachments/1/spatial_attachment_path = NodePath("..")
-attachments/1/offset = Vector3(0.1490391, 0.15464932, 0.12888981)
+attachments/1/offset = Vector3(0.1490391, 0.10320914, 0.18137112)
 attachments/2/point_index = 4
 attachments/2/spatial_attachment_path = NodePath("..")
-attachments/2/offset = Vector3(0.14105205, 0.15168184, 0.1395993)
+attachments/2/offset = Vector3(0.14105205, 0.10024166, 0.1920806)
 attachments/3/point_index = 3
 attachments/3/spatial_attachment_path = NodePath("..")
-attachments/3/offset = Vector3(0.12716119, 0.14769119, 0.15728909)
+attachments/3/offset = Vector3(0.12716119, 0.09625101, 0.2097704)
 attachments/4/point_index = 1
 attachments/4/spatial_attachment_path = NodePath("..")
-attachments/4/offset = Vector3(0.08097228, 0.14220077, 0.18607172)
+attachments/4/offset = Vector3(0.08097228, 0.09076059, 0.23855303)
 attachments/5/point_index = 0
 attachments/5/spatial_attachment_path = NodePath("..")
-attachments/5/offset = Vector3(0.03576719, 0.13115126, 0.20609647)
+attachments/5/offset = Vector3(0.035767186, 0.07971108, 0.25857776)
 attachments/6/point_index = 5
 attachments/6/spatial_attachment_path = NodePath("..")
-attachments/6/offset = Vector3(-0.017039623, 0.12477499, 0.20528895)
+attachments/6/offset = Vector3(-0.017039627, 0.07333481, 0.25777024)
 attachments/7/point_index = 7
 attachments/7/spatial_attachment_path = NodePath("..")
-attachments/7/offset = Vector3(-0.069286555, 0.1379413, 0.18645723)
+attachments/7/offset = Vector3(-0.069286555, 0.08650112, 0.23893854)
 attachments/8/point_index = 6
 attachments/8/spatial_attachment_path = NodePath("..")
-attachments/8/offset = Vector3(-0.11415282, 0.13806075, 0.16073647)
+attachments/8/offset = Vector3(-0.11415282, 0.08662057, 0.21321778)
 attachments/9/point_index = 56
 attachments/9/spatial_attachment_path = NodePath("..")
-attachments/9/offset = Vector3(-0.1464541, 0.155729, 0.13009974)
+attachments/9/offset = Vector3(-0.1464541, 0.10428882, 0.18258105)
 attachments/10/point_index = 57
 attachments/10/spatial_attachment_path = NodePath("..")
-attachments/10/offset = Vector3(-0.16653886, 0.15951043, 0.09984398)
+attachments/10/offset = Vector3(-0.16653886, 0.108070254, 0.15232529)
 attachments/11/point_index = 59
 attachments/11/spatial_attachment_path = NodePath("..")
-attachments/11/offset = Vector3(-0.18270168, 0.1429072, 0.072294906)
+attachments/11/offset = Vector3(-0.18270168, 0.09146702, 0.12477621)
 
 [node name="Torso" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1096100845]
+visible = false
 mesh = ExtResource("4_bdpfv")
 
 [node name="Legs" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=1930820407]
+visible = false
 mesh = ExtResource("5_u20ck")
 
 [node name="Layer" type="MeshInstance3D" parent="Armature/GeneralSkeleton" unique_id=273311028]
+visible = false
 mesh = ExtResource("6_bdpfv")
 
 [node name="Collisions" type="Node3D" parent="Armature/GeneralSkeleton" unique_id=1137797423]
@@ -810,13 +815,17 @@ bone_idx = 3
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/ChestAttachment" unique_id=1402873141]
-collision_layer = 3
-collision_mask = 3
+[node name="RigidBody3D" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/ChestAttachment" unique_id=1514163415]
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/ChestAttachment/area" unique_id=1421147425]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/ChestAttachment/RigidBody3D" unique_id=1421147425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.051489234, -0.025846697)
 shape = SubResource("CapsuleShape3D_bdpfv")
+debug_fill = false
 
 [node name="UpperLeftLegAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=1972518616]
 transform = Transform3D(-1, 0, 0, 0, -1, 3.695488e-06, 0, 3.695488e-06, 1, 0.11430514, 0.9711999, -0.044870805)
@@ -825,14 +834,18 @@ bone_idx = 55
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/UpperLeftLegAttachment" unique_id=367724942]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/UpperLeftLegAttachment" unique_id=848086753]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/UpperLeftLegAttachment/area" unique_id=1835717026]
-transform = Transform3D(1, 0, 0, 0, 0.9979959, -0.06327818, 0, 0.06327824, 0.9979958, 0.003679037, 0.11968142, -0.030666903)
+transform = Transform3D(1, 0, 0, 0, 0.9979959, -0.06327818, 0, 0.06327824, 0.9979958, 0.003679037, 0.11080682, -0.031229608)
 shape = SubResource("CapsuleShape3D_u20ck")
+debug_fill = false
 
 [node name="UpperRightLegAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=506655256]
 transform = Transform3D(-1, 1.8611583e-08, -1.3025811e-10, -1.8611583e-08, -1, 3.695488e-06, -1.3018932e-10, 3.695488e-06, 1, -0.11430514, 0.9711999, -0.044870805)
@@ -841,14 +854,18 @@ bone_idx = 60
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/UpperRightLegAttachment" unique_id=2031125565]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/UpperRightLegAttachment" unique_id=1337613513]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/UpperRightLegAttachment/area" unique_id=2093176438]
 transform = Transform3D(1, 4.839328e-16, 3.664961e-15, 3.5475095e-16, 0.9944266, -0.10543096, 4.1633363e-17, 0.10543102, 0.9944265, 0.003679037, 0.10860482, -0.03243023)
 shape = SubResource("CapsuleShape3D_u20ck")
+debug_fill = false
 
 [node name="LowerRightLegAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=236298549]
 transform = Transform3D(1, 8.042352e-09, -4.107835e-10, 8.042353e-09, -1, 3.964641e-06, -4.107516e-10, -3.964641e-06, -1, -0.114305116, 0.54239964, -0.044969395)
@@ -857,14 +874,18 @@ bone_idx = 61
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/LowerRightLegAttachment" unique_id=1674708041]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/LowerRightLegAttachment" unique_id=1776979309]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/LowerRightLegAttachment/area" unique_id=1028395116]
-transform = Transform3D(-1, -8.7423096e-08, -7.1054274e-15, 8.529236e-08, -0.97563404, -0.21942112, 1.9182341e-08, -0.2194211, 0.9756339, -0.0058557345, 0.15316156, 0.005802663)
+transform = Transform3D(-1, -8.742321e-08, -5.495604e-15, 8.529236e-08, -0.9756357, -0.21942125, 1.9182341e-08, -0.21942128, 0.9756356, -0.0058557317, 0.14613718, 0.004222855)
 shape = SubResource("CapsuleShape3D_m3x4v")
+debug_fill = false
 
 [node name="LowerLeftLegAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=1665686250]
 transform = Transform3D(1, -9.902764e-09, -1.2661711e-09, -9.9027595e-09, -1, 3.964641e-06, -1.2662104e-09, -3.964641e-06, -1, 0.11430512, 0.54239964, -0.044969395)
@@ -873,14 +894,18 @@ bone_idx = 56
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/LowerLeftLegAttachment" unique_id=161120343]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/LowerLeftLegAttachment" unique_id=116785048]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/LowerLeftLegAttachment/area" unique_id=1868855381]
 transform = Transform3D(1, 6.6474604e-14, 6.4392935e-15, -9.553469e-14, 0.9756341, -0.21942154, 9.880985e-15, 0.21942121, 0.9756383, -0.005855724, 0.15509394, 0.0062372573)
 shape = SubResource("CapsuleShape3D_m3x4v")
+debug_fill = false
 
 [node name="LeftUpperArmAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=483401957]
 transform = Transform3D(8.940694e-08, 1, 8.9406946e-08, 4.5448544e-07, 8.940685e-08, -1, -1, 8.9406974e-08, -4.5448544e-07, 0.21201156, 1.4554999, -0.07427077)
@@ -889,14 +914,18 @@ bone_idx = 8
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/LeftUpperArmAttachment" unique_id=1417966167]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/LeftUpperArmAttachment" unique_id=645882117]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/LeftUpperArmAttachment/area" unique_id=507861978]
 transform = Transform3D(1, 2.842171e-14, -6.366463e-12, -5.684342e-14, 0.99278915, -0.11991247, 0, 0.11991233, 0.9927956, -0.005855739, 0.012112051, -0.041707635)
 shape = SubResource("CapsuleShape3D_l2bpu")
+debug_fill = false
 
 [node name="RightUpperArmAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=397008355]
 transform = Transform3D(2.9802294e-08, -1, -1.490116e-07, -4.5448547e-07, 1.4901151e-07, -1, 1, 2.9802354e-08, -4.5448544e-07, -0.21201156, 1.4554999, -0.07427074)
@@ -905,14 +934,18 @@ bone_idx = 32
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/RightUpperArmAttachment" unique_id=939036544]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/RightUpperArmAttachment" unique_id=1892619447]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/RightUpperArmAttachment/area" unique_id=1903727171]
 transform = Transform3D(1, -5.547096e-15, -1.5061211e-15, -4.9668603e-14, 0.9937813, -0.11138242, -1.1934902e-15, 0.11138248, 0.9937812, -0.005855739, -0.005332656, -0.04408408)
 shape = SubResource("CapsuleShape3D_l2bpu")
+debug_fill = false
 
 [node name="RightLowerArmAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=340643505]
 transform = Transform3D(3.576279e-07, -1, -1.490115e-07, 1, 3.576278e-07, 1.41561e-07, -1.41561e-07, -1.4901154e-07, 1, -0.46301144, 1.4554999, -0.08187068)
@@ -921,12 +954,18 @@ bone_idx = 33
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/RightLowerArmAttachment" unique_id=698827175]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/RightLowerArmAttachment" unique_id=451780086]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/RightLowerArmAttachment/area" unique_id=453120348]
 transform = Transform3D(1, 6.2803096e-12, 7.1054274e-14, 2.3092639e-14, 0.99378043, -0.11138233, 0, 0.11138235, 0.99378043, -0.0058557987, 0.011134863, -0.042238425)
 shape = SubResource("CapsuleShape3D_0cf2v")
+debug_fill = false
 
 [node name="LeftLowerArmAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=2007430083]
 transform = Transform3D(2.3841855e-07, 1, 8.940692e-08, -0.99999994, 2.384185e-07, 2.235177e-08, 2.2351742e-08, -8.94069e-08, 0.99999994, 0.46301156, 1.4555, -0.08187071)
@@ -935,14 +974,18 @@ bone_idx = 9
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/LeftLowerArmAttachment" unique_id=940183703]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/LeftLowerArmAttachment" unique_id=23324417]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/LeftLowerArmAttachment/area" unique_id=2066183721]
 transform = Transform3D(1, 6.2438943e-13, 7.1054274e-14, 2.3092639e-14, 0.99378043, -0.11138233, 0, 0.11138235, 0.99378043, -0.0058557987, 0.016394913, -0.041648872)
 shape = SubResource("CapsuleShape3D_0cf2v")
+debug_fill = false
 
 [node name="LeftHandAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=1279039839]
 transform = Transform3D(-2.0255115e-07, 1, 6.55651e-07, 8.121132e-07, 6.556511e-07, -0.9999999, -0.9999999, -2.0255058e-07, -8.121133e-07, 0.70648724, 1.4555001, -0.074270695)
@@ -951,12 +994,18 @@ bone_idx = 10
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/LeftHandAttachment" unique_id=1293091419]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/LeftHandAttachment" unique_id=1686964853]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/LeftHandAttachment/area" unique_id=77319888]
 transform = Transform3D(1, 6.252776e-13, 5.684342e-14, -4.973799e-14, 0.9897192, -0.14304374, -8.526513e-13, 0.14304376, 0.9897192, -0.0058557987, 0.0008254051, -0.036807895)
 shape = SubResource("CapsuleShape3D_v7lxt")
+debug_fill = false
 
 [node name="RightHandAttachment" type="BoneAttachment3D" parent="Armature/GeneralSkeleton/Collisions" unique_id=1129055926]
 transform = Transform3D(-2.6149354e-07, -1, -7.748603e-07, -9.313226e-07, 7.748605e-07, -1, 1, -2.6149283e-07, -9.313227e-07, -0.7064871, 1.4555001, -0.07427065)
@@ -965,12 +1014,18 @@ bone_idx = 34
 use_external_skeleton = true
 external_skeleton = NodePath("../..")
 
-[node name="area" type="Area3D" parent="Armature/GeneralSkeleton/Collisions/RightHandAttachment" unique_id=1438852396]
+[node name="area" type="RigidBody3D" parent="Armature/GeneralSkeleton/Collisions/RightHandAttachment" unique_id=2050890729]
 transform = Transform3D(1, 0, 0, 0, 0.9946182, 0.10360843, 0, -0.10360843, 0.9946182, 0.0043239594, 0.115352154, 0.042376406)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+sleeping = true
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/GeneralSkeleton/Collisions/RightHandAttachment/area" unique_id=1780611820]
 transform = Transform3D(1, 2.5579538e-13, -1.364242e-12, -1.4210855e-14, 0.9895839, -0.14394152, 0, 0.1439411, 0.9895865, -0.0058557913, -0.010987639, -0.038544178)
 shape = SubResource("CapsuleShape3D_v7lxt")
+debug_fill = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1730600996]
 libraries/ = SubResource("AnimationLibrary_e280n")
