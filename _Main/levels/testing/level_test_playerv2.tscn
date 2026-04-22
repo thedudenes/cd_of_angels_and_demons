@@ -3,6 +3,13 @@
 [ext_resource type="Material" uid="uid://06vclpgwwyc8" path="res://addons/kenney_prototype_tools/materials/dark/material_07.tres" id="1_d7ybs"]
 [ext_resource type="PackedScene" uid="uid://vbliuk50pt4h" path="res://_Main/core/player/player_v2.tscn" id="1_mygks"]
 
+[sub_resource type="Environment" id="Environment_mygks"]
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_mygks"]
 material = ExtResource("1_d7ybs")
 size = Vector3(100, 0.05, 100)
@@ -16,13 +23,15 @@ size = Vector3(100, 0.05, 100)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=516639275]
 transform = Transform3D(0.97011375, 0.12894422, -0.20555404, 1.7666551e-08, 0.8471218, 0.5313989, 0.24264997, -0.51551765, 0.8218046, 0, 0, 0)
-light_color = Color(0.92461795, 0.41996285, 0.34493977, 1)
-light_indirect_energy = 4.497
+light_energy = 2.124
+light_indirect_energy = 3.978
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1681604982]
+environment = SubResource("Environment_mygks")
 
 [node name="Player" parent="." unique_id=850132343 instance=ExtResource("1_mygks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.335144e-05, 0.04621899, 1.4543533e-05)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1385347565]
 mesh = SubResource("BoxMesh_mygks")
